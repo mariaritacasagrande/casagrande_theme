@@ -74,6 +74,7 @@
 
 
             <!-- ./Pagination & action buttons -->
+
         <?php endif; ?>
         <!-- Go top button/arrow -->
         <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
