@@ -140,19 +140,6 @@ add_action('widgets_init', 'casagrande_widgets_init');
 /**
  * Enqueue scripts and styles.
  */
-function casagrande_scripts()
-{
-	wp_enqueue_style('casagrande-style', get_stylesheet_uri());
-	wp_enqueue_style('casagrande-extra-style', get_theme_file_uri('/css/bootstrap.css'));
-	wp_style_add_data('casagrande-style', 'rtl', 'replace');
-
-	wp_enqueue_script('casagrande-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
-
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
-	}
-}
-add_action('wp_enqueue_scripts', 'casagrande_scripts');
 
 /**
  * Implement the Custom Header feature.
