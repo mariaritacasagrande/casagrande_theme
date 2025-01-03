@@ -14,9 +14,10 @@ Template Name: Blog
         <!-- Começa o Loop. -->
  <?php if (have_posts()):
             while (have_posts()):
-                the_post(); ?>
-             
-        <article class="post-article col-sm-4 col-xs-12">
+                the_post(); ?>           
+
+
+     <article class="post-article col-sm-4 col-xs-12">
             <div class="img-holder">
                 <a href="<?php the_permalink() ?>" rel="bookmark"
                                 title="Permanent Link to <?php the_title_attribute(); ?>">
@@ -37,7 +38,12 @@ Template Name: Blog
             </div>
         </article>
 
-         
+        
+                <!-- O primeiro IF testou para ver se havia posts a serem mostrados -->
+                <!-- Este ELSE diz ao WordPress o que fazer se não houver nenhum -->
+                <p>Sorry, no posts matched your criteria.</p>
+        
+                <!-- Término verdadeiro do Loop -->
             <?php endif; ?>
 
     </div>
