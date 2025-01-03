@@ -532,7 +532,7 @@ jQuery(document).ready(function ($) {
 						];
 						//add here your location via latitude and longitud
 						var styledMap = new google.maps.StyledMapType(styles, { name: "Styled Map" });
-						var latlng = new google.maps.LatLng(37.075474, 15.286586);
+						var latlng = new google.maps.LatLng(-23.5011331, -46.7009439);
 						var mapOptions = {
 							zoom: 13,
 							center: latlng,
