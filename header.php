@@ -32,6 +32,26 @@
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon-16x16.png"
 		sizes="16x16" />
 
+
+	<!-- Main scripts -->
+	<script src="/js/vendor/jquery.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/plugins.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script>
+		if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+			var msViewportStyle = document.createElement("style")
+			msViewportStyle.appendChild(
+				document.createTextNode(
+					"@-ms-viewport{width:auto!important}"
+				)
+			)
+			document.getElementsByTagName("head")[0].appendChild(msViewportStyle)
+		}
+	</script>
+
+
+
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700%7CWork+Sans:200,400,300,500'
 		rel='stylesheet' type='text/css'>
