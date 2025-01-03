@@ -24,21 +24,21 @@
 
 	<!-- Favicon -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144"
-		href="https://ritacasagrande.com/wp-content/themes/Casagrande/apple-touch-icon-144x144.png" />
+		href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-144x144.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="152x152"
-		href="https://ritacasagrande.com/wp-content/themes/Casagrande/apple-touch-icon-152x152.png" />
-	<link rel="icon" type="image/png" href="https://ritacasagrande.com/wp-content/themes/Casagrande/favicon-32x32.png"
+		href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon-32x32.png"
 		sizes="32x32" />
-	<link rel="icon" type="image/png" href="https://ritacasagrande.com/wp-content/themes/Casagrande/favicon-16x16.png"
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon-16x16.png"
 		sizes="16x16" />
 
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700%7CWork+Sans:200,400,300,500'
 		rel='stylesheet' type='text/css'>
 	<!-- Main styles -->
-	<link rel="stylesheet" href="https://ritacasagrande.com/wp-content/themes/Casagrande/css/bootstrap.css"
-		type="text/css" media="all" />
-	<link rel="stylesheet" href="https://ritacasagrande.com/wp-content/themes/Casagrande/css/style.css" type="text/css"
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css" type="text/css"
+		media="all" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css" type="text/css"
 		media="all" />
 
 	<?php wp_head(); ?>
