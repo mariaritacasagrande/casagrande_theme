@@ -40,8 +40,12 @@ Template Name: Contact
     <link href='//fonts.googleapis.com/css?family=Lora:400,400italic,700%7CWork+Sans:200,400,300,500' rel='stylesheet'
         type='text/css'>
     <!-- Main styles -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css" type="text/css"
+        media="all" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css" type="text/css"
+        media="all" />
+
+    <?php wp_head(); ?>
 </head>
 
 <body class="contact-page" data-page="regular">
