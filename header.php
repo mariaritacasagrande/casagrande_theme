@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="description" content="Büro is a unique minimalist Premium HTML5 Template for creative agencies and freelances">
+	<meta name="description" content="Maria Rita Casagrande - Full Stack Developer">
 	<!-- Twitter Cards -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@heythemers" />
-	<meta name="twitter:creator" content="@vangarret" />
+	<meta name="twitter:site" content="@ritacasagrande" />
+	<meta name="twitter:creator" content="@ritacasagrande" />
 	<!-- Open Graph | Facebook & Google Plus -->
-	<meta property="og:title" content="Büro - Minimalist HTML5 Premium Portfolio Template for Studios &amp; Agencies">
-	<meta property="og:url" content="https://heythemers.com/templates/buro/buro-google/index.html">
-	<meta property="og:description" content="Büro is a unique minimalist Premium HTML5 Template for creative agencies and freelances">
-	<meta property="og:image" content="https://image-tf.s3.envato.com/files/194471742/screenshots/00-buro-cover-tf.__large_preview.png">
+	<meta property="og:title" content="Maria Rita Casagrande - Full Stack Developer">
+	<meta property="og:url" content="https://ritacasagrande.com">
+	<meta property="og:description" content="Maria Rita Casagrande - Full Stack Developer">
+	<meta property="og:image"
+		content="https://image-tf.s3.envato.com/files/194471742/screenshots/00-buro-cover-tf.__large_preview.png">
 	<meta property="og:image:width" content="600">
 	<meta property="og:image:height" content="315">
 	<meta property="og:type" content="website">
 
-	<title>Büro - Minimalist HTML5 Premium Portfolio Template for Studios &amp; Agencies</title>
-	
-	<!-- Favicon -->	
+	<title>Maria Rita Casagrande - Full Stack Developer</title>
+
+	<!-- Favicon -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
 	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 
 	<!-- Google Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Lora:400,400italic,700%7CWork+Sans:200,400,300,500' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Lora:400,400italic,700%7CWork+Sans:200,400,300,500' rel='stylesheet'
+		type='text/css'>
 	<!-- Main styles -->
-	
+
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bootstrap.css" type="text/css" media="all">
-	
-	
-		<?php wp_head();?>
+	<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/bootstrap.css" type="text/css" media="all"> -->
+
+
+	<?php wp_head(); ?>
 </head>
 
 <!-- Body classes:  -->
@@ -43,6 +46,7 @@
 <!-- "fltrs-fx-curtain" adds the curtain effect overlay when filtering -->
 <!-- notice that in case you want to add any effect, you will need to choose -->
 <!-- from one or another. Both filters could cause unexpected behaviors -->
+
 <body class="portfolio-page fltrs-fx-fade fltrs-scale" data-page="portfolio">
 	<!-- Preloader -->
 	<div id="preloader">
@@ -55,13 +59,15 @@
 			<div class="container">
 				<nav class="navbar">
 					<div class="navbar-header">
-						<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"><span></span></button>
+						<button aria-controls="navbar" aria-expanded="false" data-target="#navbar"
+							data-toggle="collapse" class="navbar-toggle collapsed" type="button"><span></span></button>
 						<!-- Logo -->
 						<div class="logo">
 							<!-- When you will add your own logo, make sure to add your logo´s width and height sizes -->
 							<!-- Adding retina/HDPi support is so easy as adding a double sized image within the srcset attribute with the '2x' descriptor. -->
 							<!-- The src attribute will display the regular size logo -->
-							<a href="index.html"><img srcset="images/logo@2x.png 2x" src="images/logo.png" width="27" height="45" alt="Büro — design atelier"></a>
+							<a href="index.html"><img srcset="images/logo@2x.png 2x" src="images/logo.png" width="27"
+									height="45" alt="Büro — design atelier"></a>
 						</div>
 					</div>
 					<!-- Main navigation -->
@@ -70,9 +76,12 @@
 							<li class="active">
 								<a href="index.html" data-title="Work" data-subtitle="Latest projects">Work</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="index.html" title="Portfolio page with 2 columns project grid">2 Columns</a></li>
-									<li><a href="index-col-03.html" title="Portfolio page with 3 columns project grid">3 Columns</a></li>
-									<li><a href="index-col-04.html" title="Portfolio right sided heading">4 Columns</a></li>
+									<li><a href="index.html" title="Portfolio page with 2 columns project grid">2
+											Columns</a></li>
+									<li><a href="index-col-03.html" title="Portfolio page with 3 columns project grid">3
+											Columns</a></li>
+									<li><a href="index-col-04.html" title="Portfolio right sided heading">4 Columns</a>
+									</li>
 								</ul>
 							</li>
 							<li>
@@ -92,11 +101,12 @@
 								</ul>
 							</li>
 							<li>
-								<a href="contact.html" data-title="Hello" data-subtitle="We love to say hola">Contact</a>
+								<a href="contact.html" data-title="Hello"
+									data-subtitle="We love to say hola">Contact</a>
 							</li>
 						</ul>
 					</div>
 				</nav> <!-- ./Main navigation -->
 			</div>
-		
+
 		</header>
