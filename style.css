@@ -1,12 +1,11 @@
-/*
-Theme Name: Casagrande
-Author: Maria Rita Casagrande
-Author URI: https://ritacasagrande.com
-Description: A development theme, from static HTML to WordPress
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/*--------------------------------------------------------------------------------------------------------------------
+   Template Name: Casagrande
+   Theme URI: ritacasagrande.com
+   Description: Maria Rita Casagrande - Full Stack Developer
+   Author: Maria Rita Casagrande
+   Author URI: https://mariaritacasagrande.com
+   Version: 1.1.5
+----------------------------------------------------------------------------------------------------------------------*/
 
 /* ---------------------------------------------------------
  1. Embedded font styles
@@ -26,8 +25,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  ---------------------------------------------------------*/
 @font-face {
     font-family: 'FontAwesome';
-    src: url('/fonts/fontawesome-webfont.eot?v=4.6.3');
-    src: url('/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('/fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+    src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
