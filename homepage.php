@@ -52,69 +52,35 @@ Template Name: Homepage
                 <div class="row portfolio-list js-ajax-container">
                     <!-- 'data-filter' attributes allow you to join the item with the category -->
                     <!-- this category must be the same that previously within 'filter-nav' -->
-                    <div class="img-holder prjct-item" data-filter="branding">
-                        <a href="single-project-assistant.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-01.jpg"
-                                alt="image description" class="img-responsive" width="672" height="672">
-                            <span class="caption">Assistant<span>— branding</span></span>
-                        </a>
-                    </div>
-                    <div class="img-holder prjct-item" data-filter="illustration">
-                        <a href="single-project.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-06.jpg"
-                                alt="image description" class="img-responsive" width="672" height="448">
-                            <span class="caption">People by Leif<span>— branding</span></span>
-                        </a>
-                    </div>
-                    <div class="img-holder prjct-item" data-filter="branding">
-                        <a href="single-project-titelles.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-04.jpg"
-                                alt="image description" class="img-responsive" width="672" height="672">
-                            <span class="caption">Titelles al Born<span>— branding</span></span>
-                        </a>
-                    </div>
-                    <div class="img-holder prjct-item" data-filter="photography">
-                        <a href="single-project-field.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-02.jpg"
-                                alt="image description" class="img-responsive" width="672" height="448">
-                            <span class="caption">Anthropologie<span>— photography</span></span>
-                        </a>
-                    </div>
-                    <div class="img-holder prjct-item" data-filter="branding">
-                        <a href="single-project-jack.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-03.jpg"
-                                alt="image description" class="img-responsive" width="672" height="448">
-                            <span class="caption">Jack Wills<span>— branding</span></span>
-                        </a>
-                    </div>
-                    <div class="img-holder prjct-item" data-filter="photography">
-                        <a href="single-project-lovely.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-05.jpg"
-                                alt="image description" class="img-responsive" width="672" height="448">
-                            <span class="caption">Lovely Bastard<span>— photography</span></span>
-                        </a>
-                    </div>
-                    <div class="img-holder prjct-item" data-filter="motion">
-                        <a href="single-project-gil.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-07.jpg"
-                                alt="image description" class="img-responsive" width="672" height="448">
-                            <span class="caption">Gill Vicente<span>— motion</span></span>
-                        </a>
-                    </div>
-                    <div class="img-holder prjct-item" data-filter="branding">
-                        <a href="single-project-urbana.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-08.jpg"
-                                alt="image description" class="img-responsive" width="672" height="672">
-                            <span class="caption">Urbana<span>— branding</span></span>
-                        </a>
-                    </div>
-                    <div class="img-holder prjct-item" data-filter="motion">
-                        <a href="single-project-mutualismi.html">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/grid-projects/project-09.jpg"
-                                alt="image description" class="img-responsive" width="672" height="448">
-                            <span class="caption">Mutualismi<span>— motion</span></span>
-                        </a>
-                    </div>
+
+                    <?php
+                    // if everything is in place and ready, let's start the loop
+                    if (have_posts()):
+                        while (have_posts()):
+                            the_post(); ?>
+
+                            <?php static $count = 0;
+                            if ($count == "n") {
+                                break;
+                            } else { ?>
+
+
+
+                                <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
+                                    <a href="s<?php the_permalink() ?>">
+                                        <img src="<?php the_post_thumbnail(); ?>" alt="<?php the_title(); ?>" class="img-responsive"
+                                            width="672" height="672">
+                                        <span class="caption"><?php the_title(); ?><span>—
+                                                <?php the_category('- '); ?></span></span>
+                                    </a>
+                                </div>
+
+                                <?php $count++;
+                            } ?>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
                 </div>
                 <div class="row btn-block">
                     <div class="grid-pag clearfix">
