@@ -47,11 +47,7 @@ Template Name: Contact
                 <p class="feat-text highlight">Subscribe to our newsletter in order to stay updated about our new
                     projects.</p>
                 <form class="validate-news">
-                    <div class="row input-row col-md-12">
-                        <input type="email" id="news-mail" class="form-control required-email"
-                            placeholder="Your e-mail">
-                    </div>
-                    <button type="submit" class="btn btn-submit">Subscribe<i class="arrow right-arrow"></i></button>
+                    <?php echo apply_shortcodes('[contact-form-7 id="b354011" title="Newsletter"]'); ?>
                 </form>
                 <small>* we promise that we won´t spam you, never.</small>
                 <small id="msg-submit-news" class="form-success hidde">You have been succesfully subscribed to our
