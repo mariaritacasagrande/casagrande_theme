@@ -12,8 +12,8 @@ Template Name: About
         <!-- Page head/intro title & subtitle -->
         <div class="container heading-section">
             <div class="intro big-heading parallax col-sm-12">
-                <h1><?php single_post_title(); ?></h1>
-                <p><?php the_field('subtitle', $post->ID); ?></p>
+                <h1><?php the_field('titulo_extra', $post->ID); ?></h1>
+                <p><?php the_field('subtitulo', $post->ID); ?></p>
             </div>
         </div>
         <!-- ./Page head/intro title & subtitle -->
