@@ -10,7 +10,6 @@ if (is_page(contact)) {
 } else {
     get_header();
 }
-wp_head();
 ?>
 
 <!-- Main content -->
