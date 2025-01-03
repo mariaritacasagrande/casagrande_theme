@@ -1,5 +1,5 @@
 <?php
-
+// menus
 function casagrande_register_nav_menus()
 {
     register_nav_menus(array(
@@ -9,6 +9,7 @@ function casagrande_register_nav_menus()
 }
 add_action('after_setup_theme', 'casagrande_register_nav_menus');
 
+// habilitar Widgets
 function casagrande_widgets_init()
 {
     register_sidebar(array(
@@ -25,5 +26,50 @@ function casagrande_widgets_init()
     ));
 }
 add_action('widgets_init', 'casagrande_widgets_init');
+
+// limitar quantidade de revisões
+function casagrande_post_revisions_by_type($revisions, $post)
+{
+
+    if ('post' == $post->post_type) {
+        $revisions = 5;
+    }
+
+    return $revisions;
+
+}
+
+add_filter('wp_revisions_to_keep', 'casagrande_post_revisions_by_type', 10, 2);
+
+
+// esconder erros de login
+
+function casagrande_hide_login_errors()
+{
+    return 'Credenciais Invalidas';
+}
+add_filter('login_errors', 'casagrande_hide_login_errors');
+
+// adicionar imagens de destaque no rss
+
+function casagrande_featured_image_rss($content)
+{
+    global $post;
+    if (has_post_thumbnail($post->ID)) {
+        $content = '<div>' . get_the_post_thumbnail($post->ID, 'full', array('style' => 'margin-bottom: 15px;')) . '</div>' . $content;
+    }
+    return $content;
+}
+
+add_filter('the_excerpt_rss', 'casagrande_featured_image_rss');
+add_filter('the_content_feed', 'casagrande_featured_image_rss');
+
+// suporte svg
+function casagrande_myme_types($mime_types)
+{
+    $mime_types['svg'] = 'image/svg+xml';
+    return $mime_types;
+}
+add_filter('upload_mimes', 'casagrande_myme_types', 1, 1);
 
 ?>
