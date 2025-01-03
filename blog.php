@@ -68,7 +68,7 @@ Template Name: Blog
                 <p class="excerpt"><?php the_excerpt(); ?><span class="post-grad"></span></p>
                 <div class="meta">
                     <em><a href="#">News</a> — <a href="#"><?php the_category(', '); ?></a></em>
-                    <time datetime="2016-10-27"><?php the_time('F jS, Y') ?></time>
+                    <time><?php the_time('F jS, Y') ?></time>
                 </div>
             </div>
         </article> -->
