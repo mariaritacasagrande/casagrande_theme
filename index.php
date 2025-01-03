@@ -56,21 +56,34 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
 
-                        <a href="<?php echo $previous_post_link; ?>" rel="prev" class="arrow left-arrow"></a>
+                    <?php $previous_post_obj = get_adjacent_post('', '', true);
+                    if (!empty($previous_post_obj)) {
+                        $previous_post_ID = isset($previous_post_obj->ID) ? $previous_post_obj->ID : '';
+                        $previous_post_link = get_permalink($previous_post_ID); ?>
 
-                    </div>
-                    <div class="pag pag-next col-sm-4 col-xs-6 text-right">
-                        <a href="<?php echo $next_post_link; ?>" rel="next" class="arrow right-arrow"></a>
-                    </div>
+                        <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
+                            <a href="<?php echo $previous_post_link; ?>" class="link prev-post">
+                                <span class="arrow left-arrow"></span>Older Posts
+                            </a>
+                        </div>
+
+                    <?php } ?>
+                    <?php $next_post_obj = get_adjacent_post('', '', false);
+                    if (!empty($next_post_obj)) {
+                        $next_post_ID = isset($next_post_obj->ID) ? $next_post_obj->ID : '';
+                        $next_post_link = get_permalink($next_post_ID); ?>
+                        <div class="pag pag-next col-sm-4 col-xs-6 text-right">
+                            <a href="<?php echo $next_post_link; ?>" class="link add next-post">Newer Posts
+                                <span class="arrow right-arrow"></span>
+                            </a>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
 
 
-
             <!-- ./Pagination & action buttons -->
-
         <?php endif; ?>
         <!-- Go top button/arrow -->
         <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
