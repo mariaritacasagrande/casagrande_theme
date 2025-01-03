@@ -60,7 +60,7 @@
                         </ul>
                     </div>
                     <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
-                        <a href="<?php echo previous_posts_link(''); ?>" class="link prev-post">
+                        <a href="<?php echo previous_posts_link(); ?>" class="link prev-post">
                             <span class="arrow left-arrow"></span>Older Posts
                         </a>
                     </div>
