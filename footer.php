@@ -66,10 +66,10 @@
 <!-- Main scripts -->
 
 <!-- Main scripts -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.js"></script>
+<script src="https://ritacasagrande.com/wp-content/themes/Casagrande/js/vendor/jquery.js"></script>
+<script src="https://ritacasagrande.com/wp-content/themes/Casagrande/js/main.js"></script>
+<script src="https://ritacasagrande.com/wp-content/themes/Casagrande/s/plugins.js"></script>
+<script src="https://ritacasagrande.com/wp-content/themes/Casagrande/js/bootstrap.js"></script>
 <script>
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
         var msViewportStyle = document.createElement("style")
