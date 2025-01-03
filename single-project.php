@@ -1,7 +1,8 @@
 <?php
-/*
-Template Name: Project
-*/
+/**
+ * Template Name: Project
+ * Template Post Type: project
+ */
 ?>
 
 <!-- Main content -->
