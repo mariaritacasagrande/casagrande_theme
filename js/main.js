@@ -551,7 +551,7 @@ jQuery(document).ready(function ($) {
 						map.setMapTypeId('map_style');
 						var myLatlng = new google.maps.LatLng(-46.7009439, - 23.5011331);
 						var image = new google.maps.MarkerImage(
-							'../images/map-logo.png',
+							'https://ritacasagrande.com/wp-content/themes/Casagrande/images/map-logo.png',
 							new google.maps.Size(58, 65),
 							new google.maps.Point(0, 0),
 							new google.maps.Point(24, 62)
@@ -918,7 +918,7 @@ jQuery(document).ready(function ($) {
 
 					$.ajax({
 						type: "POST",
-						url: "../php/newsletter-process.php",
+						url: "https://ritacasagrande.com/wp-content/themes/Casagrande/php/newsletter-process.php",
 						data: "email=" + email,
 						success: function (text) {
 							if (text == "success") {
