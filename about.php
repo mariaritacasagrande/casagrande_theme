@@ -30,7 +30,7 @@ Template Name: About
                         <div class="row">
                             <div class="col-lg-5 col-sm-12">
                                 <p class="text-bigger alt-font"><?php the_content(); ?></p>
-                                <p class="mar-top-xs">Do not hesitate to visit us in our studio.</p>
+
                                 <?php the_field('endereco_e_email', $post->ID); ?>
                             </div>
                             <div class="col-lg-6 col-sm-12 col-lg-offset-1">
@@ -50,9 +50,9 @@ Template Name: About
                                                     alt="Team Member">
                                             </header>
                                             <footer class="mar-btm-md">
-                                                <h4 class="mar-top-xs"><?php the_field('nome', $post->ID); ?>"</h4>
-                                                <small><?php the_field('cargo', $post->ID); ?>"</small>
-                                                <p class="mar-top-xs"><?php the_field('imagem_time', $post->ID); ?>"</p>
+                                                <h4 class="mar-top-xs"><?php the_field('nome', $post->ID); ?></h4>
+                                                <small><?php the_field('cargo', $post->ID); ?></small>
+                                                <p class="mar-top-xs"><?php the_field('curriculo', $post->ID); ?>"</p>
                                             </footer>
                                         </article>
 
