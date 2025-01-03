@@ -25,20 +25,27 @@ Template Name: Blog
                         <div class="post">
                         <?php } ?>
 
-                        <!-- Mostra o título como um link para o link permanente do post -->
-                        <h2><a href="<?php the_permalink() ?>" rel="bookmark"
-                                title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-
-                        <!-- Mostra a data e um link para outros posts do mesmo autor. -->
-                        <small><?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></small>
-
-                        <!-- Mostra o conteúdo do post em uma DIV -->
-                        <div class="entry">
-                            <?php the_content(); ?>
-                        </div>
-
-                        <!-- Mostra uma lista de categorias do post separadas por vírgula -->
-                        <p class="postmetadata">Posted in <?php the_category(', '); ?></p>
+                        <article class="post-article col-sm-4 col-xs-12">
+                            <div class="img-holder">
+                                <a href="<?php the_permalink() ?>" rel="bookmark"
+                                    title="Permanent Link to <?php the_title_attribute(); ?>">
+                                    <img src="images/blog-feat-img/img12.jpg" width="455" height="640" alt="image description"
+                                        class="img-responsive lazy">
+                                    <div class="caption text-center text-lowercase">
+                                        <span class="holder"><i class="arrow right-arrow"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text">
+                                <h2><a href="<?php the_permalink() ?>" rel="bookmark"
+                                        title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                                <p class="excerpt"><?php the_excerpt(); ?><span class="post-grad"></span></p>
+                                <div class="meta">
+                                    <em><a href="#">News</a> — <a href="#"><?php the_category(', '); ?></a></em>
+                                    <time><?php the_time('F jS, Y') ?></time>
+                                </div>
+                            </div>
+                        </article>
                     </div> <!-- Fecha a primeira DIV -->
 
                     <!-- Termina o Loop (mas repare no "else" - veja próxima linha) -->
@@ -52,26 +59,7 @@ Template Name: Blog
             <?php endif; ?>
 
 
-            <!-- <article class="post-article col-sm-4 col-xs-12">
-            <div class="img-holder">
-                <a href="<?php the_permalink() ?>" rel="bookmark"
-                                title="Permanent Link to <?php the_title_attribute(); ?>">
-                    <img src="images/blog-feat-img/img12.jpg" width="455" height="640" alt="image description"
-                        class="img-responsive lazy">
-                    <div class="caption text-center text-lowercase">
-                        <span class="holder"><i class="arrow right-arrow"></i></span>
-                    </div>
-                </a>
-            </div>
-            <div class="text">
-                <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-                <p class="excerpt"><?php the_excerpt(); ?><span class="post-grad"></span></p>
-                <div class="meta">
-                    <em><a href="#">News</a> — <a href="#"><?php the_category(', '); ?></a></em>
-                    <time><?php the_time('F jS, Y') ?></time>
-                </div>
-            </div>
-        </article> -->
+
 
         </div>
 
