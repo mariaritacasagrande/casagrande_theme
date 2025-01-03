@@ -131,5 +131,4 @@ Template Name: Homepage
         <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
     </main>
 
-    <?php get_sidebar(); ?>
     <?php get_footer(); ?>
