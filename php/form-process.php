@@ -7,7 +7,7 @@ $message = $_POST["message"];
 // YOU ONLY NEED TO MODIFY THIS TWO VARIABLES
 // WITH YOUR MAIL ACCOUNT AND CUSTOMIZE YOUR
 // SUBJECT ONCE THE MAIL ARRIVES TO YOUR INBOX
-$EmailTo = "olamariarita@gmail.com";
+$EmailTo = "contato@ritacasagrande.com";
 $Subject = "New Message Received from your Website!";
 
 // prepare email body text
