@@ -9,9 +9,8 @@
                 <address>Freguesia do Ó<br>São Paulo<br>Sp, Brasil</address>
             </div>
             <div class="col-md-3">
-                <a class="show tel" href="tel:34609331754">+(55) 11 9 4891 0734</a>
-                <a
-                    href="mailto:&#104;&#101;&#121;&#64;&#98;&#117;&#114;&#111;&#46;&#99;&#111;&#109;">&#104;&#101;&#121;&#64;&#98;&#117;&#114;&#111;&#46;&#99;&#111;&#109;</a>
+                <a class="show tel" href="https://w.app/YOH6Kj">+(55) 11 9 4891 0734</a>
+                <a href="mailto:contato@ritacasagrande.com">contato@ritacasagrande.com</a>
             </div>
             <div class="col-md-3">
                 <ul class="list-inline social-networks text-right">
@@ -53,10 +52,9 @@
                     <li><a target="_blank"
                             href="https://pinterest.com/pin/create/button/?url=<?php the_permalink() ?>"><span
                                 class="fa fa-pinterest"></span><span class="social-title">Pinterest</span></a></li>
-                    <li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink() ?>"><span
-                                class="fa fa-google-plus"></span><span class="social-title">G+</span></a></li>
-                    <li><a target="_blank"
-                            href="&#109;&#097;&#105;&#108;&#116;&#111;:&#104;&#101;&#121;&#064;&#100;&#101;&#109;&#111;&#046;&#099;&#111;&#109;"><span
+                    <li><a target="_blank" href="https://linkedin.com.com/share?url=<?php the_permalink() ?>"><span
+                                class="fa fa-linkedin"></span><span class="social-title">Linkedin</span></a></li>
+                    <li><a target="_blank" href="mailto:emaildoseuamigo@gmail.com"><span
                                 class="fa fa-envelope"></span><span class="social-title">Mail</span></a></li>
                 </ul>
             </div>
@@ -87,7 +85,7 @@
 
 <!--Google Maps API.V3-->
 <script type="text/javascript"
-    src="//maps.googleapis.com/maps/api/js?key=;"></script>
+    src="//maps.googleapis.com/maps/api/js?key=AIzaSyCoBKcqNEb7_YQRec1y98lkent_nA5vOtA&amp;"></script>
 
 <!-- Google Analytics -->
 <script>
