@@ -70,7 +70,7 @@
 							<!-- When you will add your own logo, make sure to add your logo´s width and height sizes -->
 							<!-- Adding retina/HDPi support is so easy as adding a double sized image within the srcset attribute with the '2x' descriptor. -->
 							<!-- The src attribute will display the regular size logo -->
-							<a href="<?php echo get_site_uri(); ?>"><img
+							<a href="<?php echo get_site_url(); ?>"><img
 									srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
 									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="45"
 									height="69" alt="Maria Rita Casagrande - Full Stack Developer"></a>
