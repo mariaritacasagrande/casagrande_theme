@@ -19,8 +19,8 @@ Template Name: Contact
     <div class="container contact-form mar-btm-xlg">
         <div class="row">
             <div class="col-md-6 col-md-offset-6">
-                <form class="validate-form"></form>
-                <?php echo apply_shortcodes('[contact-form-7 id="dbd401d" title="Formulário de contato 1"]'); ?>
+                <form class="validate-form">
+                    <?php echo apply_shortcodes('[contact-form-7 id="dbd401d" title="Formulário de contato 1"]'); ?>
                 </form>
                 <small id="msg-submit-form" class="form-success hidde">We will back to you as soon as possible.
                     Thanks!</small>
