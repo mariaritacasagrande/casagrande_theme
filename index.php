@@ -57,43 +57,21 @@
                         </ul>
                     </div>
 
-                    <?php
-                    function getPrevNext()
-                    {
-                        $pagelist = get_pages('sort_column=menu_order&sort_order=asc');
-                        $pages = array();
-                        foreach ($pagelist as $page) {
-                            $pages[] += $page->ID;
-                        }
+                    <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
+                        <a href="<?php echo get_permalink($prevID); ?>" class="link prev-post">
+                            <span class="arrow left-arrow"></span>Older Posts
+                        </a>
+                    </div>
 
-                        $current = array_search(get_the_ID(), $pages);
-                        $prevID = $pages[$current - 1];
-                        $nextID = $pages[$current + 1];
 
-                        echo '<div class="navigation">';
 
-                        if (!empty($prevID)) {
-                            echo '<div class="alignleft">';
-                            echo '<a href="';
-                            echo get_permalink($prevID);
-                            echo '"';
-                            echo 'title="';
-                            echo get_the_title($prevID);
-                            echo '">Previous</a>';
-                            echo "</div>";
-                        }
-                        if (!empty($nextID)) {
-                            echo '<div class="alignright">';
-                            echo '<a href="';
-                            echo get_permalink($nextID);
-                            echo '"';
-                            echo 'title="';
-                            echo get_the_title($nextID);
-                            echo '">Next</a>';
-                            echo "</div>";
-                        }
-                    }
-                    ?>
+                    <div class="pag pag-next col-sm-4 col-xs-6 text-right">
+                        <a href="<?php echo get_permalink($nextID); ?>" class="link add next-post">Newer Posts
+                            <span class="arrow right-arrow"></span>
+                        </a>
+                    </div>
+
+
 
                     <!-- ./Pagination & action buttons -->
 
