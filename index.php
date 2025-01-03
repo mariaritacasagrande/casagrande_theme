@@ -57,28 +57,18 @@
                         </ul>
                     </div>
 
-                    <?php $previous_page_obj = get_adjacent_page('', '', true);
-                    if (!empty($previous_page_obj)) {
-                        $previous_page_ID = isset($previous_page_obj->ID) ? $previous_page_obj->ID : '';
-                        $previous_page_link = get_permalink($previous_page_ID); ?>
+                    <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
+                        <a href="<?php echo $previous_post_link; ?>" class="link prev-post">
+                            <span class="arrow left-arrow"></span>Older Posts
+                        </a>
+                    </div>
 
-                        <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
-                            <a href="<?php echo $previous_page_link; ?>" class="link prev-post">
-                                <span class="arrow left-arrow"></span>Older Posts
-                            </a>
-                        </div>
+                    <div class="pag pag-next col-sm-4 col-xs-6 text-right">
+                        <a href="<?php echo $next_post_link; ?>" class="link add next-post">Newer Posts
+                            <span class="arrow right-arrow"></span>
+                        </a>
+                    </div>
 
-                    <?php } ?>
-                    <?php $next_post_obj = get_adjacent_post('', '', false);
-                    if (!empty($next_post_obj)) {
-                        $next_post_ID = isset($next_post_obj->ID) ? $next_post_obj->ID : '';
-                        $next_post_link = get_permalink($next_post_ID); ?>
-                        <div class="pag pag-next col-sm-4 col-xs-6 text-right">
-                            <a href="<?php echo $next_post_link; ?>" class="link add next-post">Newer Posts
-                                <span class="arrow right-arrow"></span>
-                            </a>
-                        </div>
-                    <?php } ?>
                 </div>
             </div>
 
