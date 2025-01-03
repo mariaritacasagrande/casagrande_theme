@@ -72,13 +72,37 @@
 							<!-- The src attribute will display the regular size logo -->
 							<a href="index.html"><img
 									srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
-									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="80"
-									height="123" alt="Maria Rita Casagrande - Full Stack Developer"></a>
+									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="45"
+									height="69" alt="Maria Rita Casagrande - Full Stack Developer"></a>
 						</div>
 					</div>
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
-						<php? $menus=wp_get_nav_menus(); foreach ( $menus as $menu /** @var WP_Term $menu */ ) {
+
+
+						<?php
+						$menu_name = 'main_nav';
+						$locations = get_nav_menu_locations();
+						$menu = wp_get_nav_menu_object($locations[$menu_name]);
+						$menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
+						?>
+
+						<nav>
+							<ul class="nav navbar-nav">
+
+								<li class="item">
+									<a href="<?php echo $link; ?>" class="title">
+										<?php echo $title; ?>
+									</a>
+
+							</ul>
+						</nav>
+
+
+
+						<!-- <php? 
+							$menus=wp_get_nav_menus(); foreach ( $menus as $menu /** @var WP_Term $menu */ ) 
+							{
 							$menu_items=wp_get_nav_menu_items( $menu->term_id );
 							if ( ! empty( $menu_items ) ) {
 							echo '<ul class="nav navbar-nav">';
@@ -88,7 +112,7 @@
 								echo '</ul>';
 							}
 							}
-							?>
+							?> -->
 					</div>
 				</nav> <!-- ./Main navigation -->
 			</div>
