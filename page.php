@@ -6,7 +6,7 @@
         <!-- Page head/intro title & subtitle -->
         <div class="container heading-section">
             <div class="intro big-heading parallax col-sm-12">
-                <h1>The Craft</h1>
+                <h1><?php single_post_title(); ?></h1>
                 <p>Crafting ideas to generate branding experiences.<br class="nobr">
                     Büro trascends the beauty to achieve the function.</p>
             </div>
