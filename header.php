@@ -72,45 +72,23 @@
 							<!-- The src attribute will display the regular size logo -->
 							<a href="index.html"><img
 									srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
-									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="29"
-									height="45" alt="Maria Rita Casagrande - Full Stack Developer"></a>
+									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="80"
+									height="123" alt="Maria Rita Casagrande - Full Stack Developer"></a>
 						</div>
 					</div>
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
-						<ul class="nav navbar-nav">
-							<li class="active">
-								<a href="index.html" data-title="Work" data-subtitle="Latest projects">Work</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="index.html" title="Portfolio page with 2 columns project grid">2
-											Columns</a></li>
-									<li><a href="index-col-03.html" title="Portfolio page with 3 columns project grid">3
-											Columns</a></li>
-									<li><a href="index-col-04.html" title="Portfolio right sided heading">4 Columns</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="about-agency.html" data-title="Büro" data-subtitle="The Agency">About</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="about.html">Studio</a></li>
-									<li><a href="about-studio-alternative.html">Studio alt</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="blog.html" data-title="News" data-subtitle="Read our Blog">News</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="single-post.html">Single post</a></li>
-									<li><a href="single-post-alt.html">Single post alt</a></li>
-									<li><a href="single-post-left-sidebar.html">Left sidebar</a></li>
-									<li><a href="single-post-right-sidebar.html">Right sidebar</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="contact.html" data-title="Hello"
-									data-subtitle="We love to say hola">Contact</a>
-							</li>
-						</ul>
+						<php? $menus=wp_get_nav_menus(); foreach ( $menus as $menu /** @var WP_Term $menu */ ) {
+							$menu_items=wp_get_nav_menu_items( $menu->term_id );
+							if ( ! empty( $menu_items ) ) {
+							echo '<ul class="nav navbar-nav">';
+								foreach ( $menu_items as $menu_item ) {
+								echo '<li><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
+								}
+								echo '</ul>';
+							}
+							}
+							?>
 					</div>
 				</nav> <!-- ./Main navigation -->
 			</div>
