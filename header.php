@@ -37,8 +37,6 @@
 		rel='stylesheet' type='text/css'>
 	<!-- Main styles -->
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" media="all" />
-
 	<?php wp_head(); ?>
 </head>
 
