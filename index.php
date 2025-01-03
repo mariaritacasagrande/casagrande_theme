@@ -60,19 +60,18 @@
                         </ul>
                     </div>
                     <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
-                        <span class="arrow left-arrow"></span><span
-                            class="link prev-post"><?php previous_posts_link('Older posts'); ?></span>
-
+                        <a href="<?php echo previous_posts_link(''); ?>" class="link prev-post">
+                            <span class="arrow left-arrow"></span>Older Posts
+                        </a>
                     </div>
                     <div class="pag pag-next col-sm-4 col-xs-6 text-right">
-                        <span class="arrow right-arrow"></span><span
-                            class="link add next-post"><?php next_posts_link('Newer posts'); ?></span>
-
+                        <a href="<?php echo next_posts_link(); ?>" class="link add next-post">Newer Posts
+                            <span class="arrow right-arrow"></span>
+                        </a>
                     </div>
                 </div>
             </div>
             <!-- ./Pagination & action buttons -->
-
 
         <?php endif; ?>
         <!-- Go top button/arrow -->
