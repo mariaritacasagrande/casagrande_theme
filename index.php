@@ -33,7 +33,7 @@
                             <p class="excerpt"><?php the_excerpt(); ?><span class="post-grad"></span></p>
                             <div class="meta">
                                 <em>
-                                    <?php the_category(' - '); ?>
+                                    <?php the_category(', '); ?>
                                 </em>
                                 <time><?php the_time('F jS, Y') ?></time>
                             </div>
