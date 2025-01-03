@@ -66,6 +66,7 @@
                     </div>
                     <div class="pag pag-next col-sm-4 col-xs-6 text-right">
                         <?php echo get_next_posts_link(); ?>
+                        <span class="arrow right-arrow"></span>
                         </a>
                     </div>
                 </div>

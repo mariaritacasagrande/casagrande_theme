@@ -125,7 +125,7 @@ function get_next_posts_link($label = null, $max_page = 0)
         $attr = apply_filters('next_posts_link_attributes', '');
 
         return sprintf(
-            '<a href="%1$s" %2$s class="link add next-post">Newer Posts %3$s</a><span class="arrow right-arrow"></span>',
+            '<a href="%1$s" %2$s class="link add next-post">%3$s</a>',
             next_posts($max_page, false),
             $attr,
             preg_replace('/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label)
