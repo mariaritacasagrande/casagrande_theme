@@ -143,7 +143,7 @@ add_action('widgets_init', 'casagrande_widgets_init');
 function casagrande_scripts()
 {
 	wp_enqueue_style('casagrande-style', get_stylesheet_uri());
-	wp_enqueue_style('casagrande-extra-style', get_theme_file_uri('/bootstrap.css'));
+	wp_enqueue_style('casagrande-extra-style', get_theme_file_uri('/css/bootstrap.css'));
 	wp_style_add_data('casagrande-style', 'rtl', 'replace');
 
 	wp_enqueue_script('casagrande-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
@@ -173,6 +173,16 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/2.html';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/3.html';
 
 /**
  * Load Jetpack compatibility file.
