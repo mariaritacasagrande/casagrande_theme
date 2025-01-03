@@ -103,3 +103,4 @@ Template Name: Contact
     <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 </main>
 <!-- #/main content area -->
+<?php get_footer(); ?>
