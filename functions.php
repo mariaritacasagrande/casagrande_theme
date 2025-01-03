@@ -94,4 +94,44 @@ add_theme_support('editor-styles');
 add_theme_support('html5', array('style', 'script'));
 add_theme_support('automatic-feed-links');
 
+//prev-next
+
+function get_next_posts_link($label = null, $max_page = 0)
+{
+    global $paged, $wp_query;
+
+    if (!$max_page) {
+        $max_page = $wp_query->max_num_pages;
+    }
+
+    if (!$paged) {
+        $paged = 1;
+    }
+
+    $next_page = (int) $paged + 1;
+
+    if (null === $label) {
+        $label = __('Next Page &raquo;');
+    }
+
+    if (!is_single() && ($next_page <= $max_page)) {
+        /**
+         * Filters the anchor tag attributes for the next posts page link.
+         *
+         * @since 2.7.0
+         *
+         * @param string $attributes Attributes for the anchor tag.
+         */
+        $attr = apply_filters('next_posts_link_attributes', '');
+
+        return sprintf(
+            '<a href="%1$s" %2$s class="link add next-post">Newer Posts %3$s</a><span class="arrow right-arrow"></span>',
+            next_posts($max_page, false),
+            $attr,
+            preg_replace('/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label)
+        );
+    }
+}
+
+
 ?>
