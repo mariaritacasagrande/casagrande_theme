@@ -16,56 +16,7 @@ Template Name: Contact
     </div>
 
     <!-- Contact form -->
-    <div class="container contact-form mar-btm-xlg">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-6">
-                <form class="validate-form">
-                    <div class="row">
-                        <div class="input-row col-md-6">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control required-field" id="name" placeholder="Name"
-                                required>
-                        </div>
-                        <div class="input-row col-md-6">
-                            <label for="mail">Email address</label>
-                            <input type="email" class="form-control required-email" id="mail" placeholder="Email"
-                                required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-row col-md-6">
-                            <label for="phone">Phone</label>
-                            <input type="tel" class="form-control required-number" id="phone" placeholder="Phone Number"
-                                required>
-                        </div>
-                        <div class="input-row col-md-6">
-                            <label for="topic">Topic</label>
-                            <select id="topic" class="form-control required-select">
-                                <option>Select</option>
-                                <option>Project in process</option>
-                                <option>New Project</option>
-                                <option>General Queries</option>
-                                <option>Say Hello</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-row col-md-12">
-                            <label for="message">Comment</label>
-                            <textarea id="message" cols="30" rows="10" placeholder="Say Hello!"
-                                class="form-control required-field" required></textarea>
-                        </div>
-                        <div id="submit-btn">
-                            <input type="submit" value="send">
-                            <i class="arrow right-arrow"></i>
-                        </div>
-                    </div>
-                </form>
-                <small id="msg-submit-form" class="form-success hidde">We will back to you as soon as possible.
-                    Thanks!</small>
-            </div>
-        </div>
-    </div>
+    <?php echo apply_shortcodes('[contact-form-7 id="dbd401d" title="Formulário de contato 1"]'); ?>
     <!-- ./Contact form -->
 
     <!-- Map -->
