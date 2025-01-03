@@ -3,7 +3,7 @@
  * Template Name: Project
  * Template Post Type: project
  */
-?>
+get_header(); ?>
 
 <!-- Main content -->
 <main id="main">
