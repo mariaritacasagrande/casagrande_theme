@@ -85,7 +85,7 @@
 
 <!--Google Maps API.V3-->
 <script type="text/javascript"
-    src="//maps.googleapis.com/maps/api/js?key=AIzaSyAGHGFiezCqgHErvsVgHr4AE1EhDJZL-DM&amp;"></script>
+    src="//maps.googleapis.com/maps/api/js?key=AIzaSyCoBKcqNEb7_YQRec1y98lkent_nA5vOtA&amp;"></script>
 
 <!-- Google Analytics -->
 <script>
