@@ -7,11 +7,9 @@
  * @package ritacasagrande
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
+if (!is_active_sidebar('sidebar-1')) {
+   return;
 }
 ?>
 
-<aside class="blog-sidebar col-md-3 col-md-pull-8">
-   <?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- /.blog-sidebar -->
+<?php dynamic_sidebar('sidebar-1'); ?>
