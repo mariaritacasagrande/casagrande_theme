@@ -72,7 +72,7 @@
 							<!-- The src attribute will display the regular size logo -->
 							<a href="index.html"><img
 									srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
-									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="27"
+									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="29"
 									height="45" alt="Maria Rita Casagrande - Full Stack Developer"></a>
 						</div>
 					</div>
