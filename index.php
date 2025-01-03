@@ -56,7 +56,17 @@
                             </li>
                         </ul>
                     </div>
+                    <?php
+                    $pagelist = get_pages('sort_column=menu_order&sort_order=asc');
+                    $pages = array();
+                    foreach ($pagelist as $page) {
+                        $pages[] += $page->ID;
+                    }
 
+                    $current = array_search(get_the_ID(), $pages);
+                    $prevID = $pages[$current - 1];
+                    $nextID = $pages[$current + 1];
+                    ?>
                     <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
                         <a href="<?php echo get_permalink($prevID); ?>" class="link prev-post">
                             <span class="arrow left-arrow"></span>Older Posts
