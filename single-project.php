@@ -7,113 +7,80 @@
 
 <!-- Main content -->
 <main id="main">
-    <!-- Page head/intro title & subtitle -->
-    <div class="container heading-section">
-        <div class="intro big-heading parallax col-sm-12">
-            <h1>People by Leif</h1>
-            <p class="feat-text">People are people is the last project that we have developed for Schomedde, a very
-                talented german photographer and a great partner.</p>
-            <ul class="list-inline meta-cats">
-                <li><a href="#">Branding</a></li>
-                <li><a href="#">Identity</a></li>
-            </ul>
-        </div>
-    </div>
+    <?php if (have_posts()):
+        while (have_posts()):
+            the_post(); ?>
 
-    <div class="projects-section">
-        <!-- Project contents -->
-        <div class="container">
-            <div class="media-container">
-                <img src="images/projects/project-01/img21.jpg" width="1380" height="813" alt="image description"
-                    class="img-responsive lazy">
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 media-container">
-                    <div class="video-inner">
-                        <div class="video-wrapper">
-                            <div>
-                                <iframe src="//www.youtube.com/embed/coyi-iubCJo" width="560" height="315"
-                                    allowfullscreen></iframe>
+            <!-- O código a seguir testa se o post atual pertence à categoria 3 -->
+            <!-- Se pertence, a classe css da DIV será definida como "post-cat-three". -->
+            <!-- Se não, a classe da DIV será definida como "post". -->
+            <?php if (in_category('3')) { ?>
+                <div class="post-cat-three">
+                <?php } else { ?>
+                    <div class="post">
+                    <?php } ?>
+                    <div id="the-post" class="container">
+                        <article class="post-main">
+                            <div class="post-entry">
+                                <div class="heading-section">
+                                    <header class="header big-heading parallax">
+                                        <h1><?php the_title(); ?></h1>
+                                        <div class="meta">
+                                            <?php the_time('F jS, Y') ?>
+                                            <em>
+                                                post written by <a href="#" class="author"><?php the_author_posts_link() ?></a>
+                                                <span>in <?php the_category(', '); ?></span> — <?php the_tags(', '); ?>
+                                            </em>
+                                        </div>
+                                    </header>
+                                </div>
+                                <div class="post-body col-md-8 col-md-push-4">
+                                    <?php the_content(); ?>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 media-container">
-                    <div class="video-inner">
-                        <div class="video-wrapper">
-                            <div>
-                                <iframe src="//player.vimeo.com/video/117760906" width="560" height="315"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 media-container">
-                    <img src="images/projects/project-01/img23.jpg" height="550" width="675" alt="image description"
-                        class="img-responsive lazy">
-                </div>
-                <div class="col-sm-6 media-container">
-                    <img src="images/projects/project-01/img24.jpg" height="550" width="675" alt="image description"
-                        class="img-responsive lazy">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 media-container">
-                    <img src="images/projects/project-01/img25.jpg" width="675" height="550" alt="image description"
-                        class="img-responsive lazy">
-                    <div class="caption">
-                        <div class="holder">Another cool caption</div>
-                    </div>
-                </div>
-                <div class="col-sm-6 media-container">
-                    <img src="images/projects/project-01/img26.jpg" width="675" height="550" alt="image description"
-                        class="img-responsive lazy">
-                </div>
-            </div>
-            <div class="row">
-                <div class="centered-content-vh col-sm-6 col-sm-offset-3">
-                    <h3 class="highlight">The Magazine</h3>
-                    <p>The process continues with all the identity implementation<br>in different supports</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 media-container">
-                    <img src="images/projects/project-01/img27.jpg" width="1380" height="1035" alt="image description"
-                        class="img-responsive lazy">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ./Project contents -->
+                            <!-- Termina o Loop (mas repare no "else" - veja próxima linha) -->
+                        <?php endwhile; else: ?>
 
-    <!-- Pagination & action buttons -->
-    <div class="container link-area">
-        <div class="row links-section">
-            <div class="col-sm-4 col-xs-12 col-sm-push-4 clearfix text-center">
-                <ul class="list-inline links-holder">
-                    <li><a href="index.html">Back</a></li>
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#myModal">Share</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
-                <a href="single-project-assistant.html" class="link prev-post">
-                    <span class="arrow left-arrow"></span>Assistant
-                </a>
-            </div>
-            <div class="pag pag-next col-sm-4 col-xs-6 text-right">
-                <a href="single-project-field.html" class="link add next-post">Field Notes
-                    <span class="arrow right-arrow"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- ./Pagination & action buttons -->
+                        <!-- O primeiro IF testou para ver se havia posts a serem mostrados -->
+                        <!-- Este ELSE diz ao WordPress o que fazer se não houver nenhum -->
+                        <p>Sorry, no posts matched your criteria.</p>
 
-    <!-- Go top button/arrow -->
-    <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+                        <!-- Término verdadeiro do Loop -->
+                    <?php endif; ?>
+                </article>
+
+            </div>
+
+            <!-- Pagination & action buttons -->
+            <div class="container-fluid link-area">
+                <div class="container links-section">
+                    <div class="col-md-4 col-xs-12 col-md-push-4 clearfix text-center">
+                        <ul class="list-inline links-holder">
+                            <li><a href="blog.html">Back</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#myModal">Share</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
+                        <a href="#" class="link prev-post">
+                            <span class="arrow left-arrow"></span>Wellington bar
+                        </a>
+                    </div>
+                    <div class="pag pag-next col-md-4 col-xs-6 text-right">
+                        <a href="#" class="link add next-post">New project for Adidas
+                            <span class="arrow right-arrow"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ./Pagination & action buttons -->
+
+
+
+            <!-- Go top button/arrow -->
+            <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
+
+<?php get_footer(); ?>
