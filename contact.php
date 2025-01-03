@@ -4,7 +4,14 @@ Template Name: Contact
 */
 ?>
 
-<?php get_header(); ?>
+<?php
+if (is_page(contact)) {
+    get_header('contact');
+} else {
+    get_header();
+}
+wp_head();
+?>
 
 <!-- Main content -->
 <main id="main">
