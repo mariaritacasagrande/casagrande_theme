@@ -10,9 +10,16 @@ Template Name: Blog
 <main id="main" class="container">
     <div class="row article-holder">
         <!-- Post -->
+
+        <!-- Começa o Loop. -->
+ <?php if (have_posts()):
+            while (have_posts()):
+                the_post(); ?>
+             
         <article class="post-article col-sm-4 col-xs-12">
             <div class="img-holder">
-                <a href="single-post.html">
+                <a href="<?php the_permalink() ?>" rel="bookmark"
+                                title="Permanent Link to <?php the_title_attribute(); ?>">
                     <img src="images/blog-feat-img/img12.jpg" width="455" height="640" alt="image description"
                         class="img-responsive lazy">
                     <div class="caption text-center text-lowercase">
@@ -21,17 +28,17 @@ Template Name: Blog
                 </a>
             </div>
             <div class="text">
-                <h2><a href="single-post.html">Grow Manchester</a></h2>
-                <p class="excerpt">Finished our last collaboration with Grow Manchester one of our beloved clients based
-                    in UK. We did a deep research into a new field for us. Real Estate websites have... ya ahora
-                    imaginemos que aquí tenemos mucho más cotenido del que cabría esperar y empuja al resto de los
-                    artículos<span class="post-grad"></span></p>
+                <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                <p class="excerpt"><?php the_excerpt(); ?><span class="post-grad"></span></p>
                 <div class="meta">
-                    <em><a href="#">News</a> — <a href="#">Branding</a> — <a href="#">Project</a></em>
-                    <time datetime="2016-10-27">27th Oct, 2016</time>
+                    <em><a href="#">News</a> — <a href="#"><?php the_category(', '); ?></a></em>
+                    <time><?php the_time('F jS, Y') ?></time>
                 </div>
             </div>
         </article>
+
+         
+            <?php endif; ?>
 
     </div>
 
