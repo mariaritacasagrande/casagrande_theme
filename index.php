@@ -38,10 +38,6 @@
                         </div>
                     </article>
 
-                    // here, we continue with the limiting of the number of displayed posts
-                    // each iteration of the loop increases the value of '$count' by one
-                    // the final two lines complete the loop and close the if statement
-
                     <?php $count++;
                 } ?>
             <?php endwhile; ?>
