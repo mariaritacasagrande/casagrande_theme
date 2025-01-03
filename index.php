@@ -57,13 +57,13 @@
                         </ul>
                     </div>
 
-                    <?php $previous_post_obj = get_adjacent_post('', '', true);
-                    if (!empty($previous_post_obj)) {
-                        $previous_post_ID = isset($previous_post_obj->ID) ? $previous_post_obj->ID : '';
-                        $previous_post_link = get_permalink($previous_post_ID); ?>
+                    <?php $previous_page_obj = get_adjacent_page('', '', true);
+                    if (!empty($previous_page_obj)) {
+                        $previous_page_ID = isset($previous_page_obj->ID) ? $previous_page_obj->ID : '';
+                        $previous_page_link = get_permalink($previous_page_ID); ?>
 
                         <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
-                            <a href="<?php echo $previous_post_link; ?>" class="link prev-post">
+                            <a href="<?php echo $previous_page_link; ?>" class="link prev-post">
                                 <span class="arrow left-arrow"></span>Older Posts
                             </a>
                         </div>
