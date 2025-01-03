@@ -85,7 +85,7 @@
 							if (!empty($menu_items)) {
 								echo '<ul class="nav navbar-nav">';
 								foreach ($menu_items as $menu_item) {
-									echo '<li><a href="' . $menu_item->url . '" data-title="' . $menu_item->attr_title . '" ' . $menu_item->description . '">' . $menu_item->title . '</a></li>';
+									echo '<li><a href="' . $menu_item->url . '" data-title="' . $menu_item->attr_title . '" data-subtitle="' . $menu_item->description . '">' . $menu_item->title . '</a></li>';
 								}
 								echo '</ul>';
 							}
