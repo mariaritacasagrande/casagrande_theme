@@ -23,19 +23,21 @@
 	<title>Maria Rita Casagrande - Full Stack Developer</title>
 
 	<!-- Favicon -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144"
+		href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152"
+		href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>favicon-32x32.png"
+		sizes="32x32" />
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>favicon-16x16.png"
+		sizes="16x16" />
 
 	<!-- Google Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Lora:400,400italic,700%7CWork+Sans:200,400,300,500' rel='stylesheet'
-		type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700%7CWork+Sans:200,400,300,500'
+		rel='stylesheet' type='text/css'>
 	<!-- Main styles -->
 
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" media="all" />
-
-
 
 	<?php wp_head(); ?>
 </head>
@@ -66,8 +68,10 @@
 							<!-- When you will add your own logo, make sure to add your logo´s width and height sizes -->
 							<!-- Adding retina/HDPi support is so easy as adding a double sized image within the srcset attribute with the '2x' descriptor. -->
 							<!-- The src attribute will display the regular size logo -->
-							<a href="index.html"><img srcset="images/logo@2x.png 2x" src="images/logo.png" width="27"
-									height="45" alt="Büro — design atelier"></a>
+							<a href="index.html"><img
+									srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
+									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="27"
+									height="45" alt="Maria Rita Casagrande - Full Stack Developer"></a>
 						</div>
 					</div>
 					<!-- Main navigation -->
