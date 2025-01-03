@@ -52,7 +52,7 @@ Template Name: About
                                             <footer class="mar-btm-md">
                                                 <h4 class="mar-top-xs"><?php the_field('nome', $post->ID); ?></h4>
                                                 <small><?php the_field('cargo', $post->ID); ?></small>
-                                                <p class="mar-top-xs"><?php the_field('curriculo', $post->ID); ?>"</p>
+                                                <p class="mar-top-xs"><?php the_field('curriculo', $post->ID); ?></p>
                                             </footer>
                                         </article>
 
@@ -61,43 +61,12 @@ Template Name: About
                                         <div class="col-sm-6 col-xs-12">
                                             <hr class="mar-top-sm">
                                             <h5 class="alt-font mar-btm-xs">Services</h5>
-                                            <ul class="list-unstyled alt-font">
-                                                <li><strong>Branding</strong></li>
-                                                <li>Identity</li>
-                                                <li>Brand Aplication</li>
-                                                <li>Web Development</li>
-                                                <li>App Development</li>
-                                                <li>UX Research</li>
-                                            </ul>
-                                            <ul class="list-unstyled alt-font">
-                                                <li><strong>Print</strong></li>
-                                                <li>Magazines design</li>
-                                                <li>Brand Application</li>
-                                                <li>Custom lettering</li>
-                                            </ul>
-                                            <ul class="list-unstyled alt-font">
-                                                <li><strong>Interactive</strong></li>
-                                                <li>Web design</li>
-                                                <li>Web development</li>
-                                            </ul>
+                                            <?php the_field('servicos', $post->ID); ?>
                                         </div>
                                         <div class="col-sm-6 col-xs-12 mar-btm-md">
                                             <hr class="mar-top-sm">
                                             <h5 class="alt-font mar-btm-xs">Publications &amp; Recognitions</h5>
-                                            <ul class="list-unstyled alt-font">
-                                                <li>Awwwards Site of the Month, June 2015</li>
-                                                <li>Webby Awards, 2013</li>
-                                                <li>TWA Site of the day, Jagger Website</li>
-                                                <li>Cannes film festival, best website</li>
-                                                <li>Intern Magazine, interview to Natalie</li>
-                                                <li>TGD, interview and studio visit</li>
-                                                <li>AIGA, honorific mention, 2015</li>
-                                                <li>AIGA, best european studio, 2014</li>
-                                                <li>Awwwards Site of the day, Junno 2015</li>
-                                            </ul>
-                                            <small><strong>Mentions received in regular media:</strong></small><br>
-                                            <small>The Times / Tribune / Taxi Design Magazine / Webdesigner Mag / El Pais /
-                                                Horchata</small>
+                                            <?php the_field('publicacoes_e_reconhecimento', $post->ID); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -107,12 +76,7 @@ Template Name: About
 
 
                 </section>
-                <section class="entry-meta"><?php if (count(get_the_category())): ?>
-                        <span class="category-links">
-                            Posted under: <?php echo get_the_category_list(', '); ?>
-                        </span>
-                    <?php endif; ?>
-                </section>
+
             </article>
         <?php endwhile; ?>
 
