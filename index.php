@@ -20,7 +20,7 @@
                         <div class="img-holder">
                             <a href="<?php the_permalink() ?>" rel="bookmark"
                                 title="Permanent Link to <?php the_title_attribute(); ?>">
-                                <img src="images/blog-feat-img/img12.jpg" width="455" height="640" alt="image description"
+                                <img src="<?php the_post_thumbnail(); ?>" width="455" height="640" alt="<?php the_title(); ?>"
                                     class="img-responsive lazy">
                                 <div class="caption text-center text-lowercase">
                                     <span class="holder"><i class="arrow right-arrow"></i></span>
