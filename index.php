@@ -46,9 +46,6 @@
 
 
             <!-- fim post -->
-
-
-
             <!-- Pagination & action buttons -->
             <div class="container link-area">
                 <div class="row links-section">
@@ -60,17 +57,18 @@
                         </ul>
                     </div>
                     <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
-                        <span class="arrow left-arrow"></span><span
-                            class="link prev-post"><?php previous_posts_link('Older posts'); ?></span>
+
+                        <a href="<?php echo $previous_post_link; ?>" rel="prev" class="arrow left-arrow"></a>
 
                     </div>
                     <div class="pag pag-next col-sm-4 col-xs-6 text-right">
-                        <span class="arrow right-arrow"></span><span
-                            class="link add next-post"><?php next_posts_link('Newer posts'); ?></span>
-
+                        <a href="<?php echo $next_post_link; ?>" rel="next" class="arrow right-arrow"></a>
                     </div>
                 </div>
             </div>
+
+
+
             <!-- ./Pagination & action buttons -->
 
         <?php endif; ?>
