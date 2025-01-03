@@ -3,13 +3,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div><a href="#">Büro<br>Design Atelier</a></div>
+                <div><a href="#">Casagrande<br> Studio</a></div>
             </div>
             <div class="col-md-3">
-                <address>20 Oak Street<br>Building 31<br>Manchester, UK</address>
+                <address>Freguesia do Ó<br>São Paulo<br>Sp, Brasil</address>
             </div>
             <div class="col-md-3">
-                <a class="show tel" href="tel:34609331754">+(34) 609 33 17 54</a>
+                <a class="show tel" href="tel:34609331754">+(55) 11 9 4891 0734</a>
                 <a
                     href="mailto:&#104;&#101;&#121;&#64;&#98;&#117;&#114;&#111;&#46;&#99;&#111;&#109;">&#104;&#101;&#121;&#64;&#98;&#117;&#114;&#111;&#46;&#99;&#111;&#109;</a>
             </div>
@@ -38,6 +38,34 @@
 
 </div>
 <!-- #/wrapper -->
+
+<!-- social modal box -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <ul class="list-inline social-networks text-center">
+                    <li><a target="_blank"
+                            href="https://twitter.com/intent/tweet?status=Check%20this%20out!%20-%20+https://heythemers.com/templates/buro/buro-google/single-project.html"><span
+                                class="fa fa-twitter"></span><span class="social-title">Twitter</span></a></li>
+                    <li><a target="_blank"
+                            href="https://www.facebook.com/sharer.php?u=https://heythemers.com/templates/buro/buro-google/single-project.html"><span
+                                class="fa fa-facebook"></span><span class="social-title">Facebook</span></a></li>
+                    <li><a target="_blank"
+                            href="https://pinterest.com/pin/create/button/?url=https://heythemers.com/templates/buro/buro-google/single-project.html"><span
+                                class="fa fa-pinterest"></span><span class="social-title">Pinterest</span></a></li>
+                    <li><a target="_blank"
+                            href="https://plus.google.com/share?url=https://heythemers.com/templates/buro/buro-google/single-project.html"><span
+                                class="fa fa-google-plus"></span><span class="social-title">G+</span></a></li>
+                    <li><a target="_blank"
+                            href="&#109;&#097;&#105;&#108;&#116;&#111;:&#104;&#101;&#121;&#064;&#100;&#101;&#109;&#111;&#046;&#099;&#111;&#109;"><span
+                                class="fa fa-envelope"></span><span class="social-title">Mail</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ./social modal box -->
 
 <!-- Main scripts -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.js"></script>
