@@ -19,9 +19,9 @@ Template Name: Contact
     <div class="container contact-form mar-btm-xlg">
         <div class="row">
             <div class="col-md-6 col-md-offset-6">
-                <form class="validate-form">
-                    <?php echo apply_shortcodes('[contact-form-7 id="dbd401d" title="Formulário de contato 1"]'); ?>
-                </form>
+
+                <?php echo apply_shortcodes('[contact-form-7 id="dbd401d" title="Formulário de contato 1"]'); ?>
+
                 <small id="msg-submit-form" class="form-success hidde">We will back to you as soon as possible.
                     Thanks!</small>
             </div>
@@ -46,9 +46,9 @@ Template Name: Contact
                 <h5>Stay tunned</h5>
                 <p class="feat-text highlight">Subscribe to our newsletter in order to stay updated about our new
                     projects.</p>
-                <form class="validate-news">
-                    <?php echo apply_shortcodes('[contact-form-7 id="b354011" title="Newsletter"]'); ?>
-                </form>
+
+                <?php echo apply_shortcodes('[contact-form-7 id="b354011" title="Newsletter"]'); ?>
+
                 <small>* we promise that we won´t spam you, never.</small>
                 <small id="msg-submit-news" class="form-success hidde">You have been succesfully subscribed to our
                     newsletter</small>
