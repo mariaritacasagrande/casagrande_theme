@@ -46,16 +46,14 @@
             <div class="modal-body">
                 <ul class="list-inline social-networks text-center">
                     <li><a target="_blank"
-                            href="https://twitter.com/intent/tweet?status=Check%20this%20out!%20-%20+https://heythemers.com/templates/buro/buro-google/single-project.html"><span
+                            href="https://twitter.com/intent/tweet?status=Check%20this%20out!%20-%20+<?php the_permalink() ?>"><span
                                 class="fa fa-twitter"></span><span class="social-title">Twitter</span></a></li>
-                    <li><a target="_blank"
-                            href="https://www.facebook.com/sharer.php?u=https://heythemers.com/templates/buro/buro-google/single-project.html"><span
+                    <li><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php the_permalink() ?>"><span
                                 class="fa fa-facebook"></span><span class="social-title">Facebook</span></a></li>
                     <li><a target="_blank"
-                            href="https://pinterest.com/pin/create/button/?url=https://heythemers.com/templates/buro/buro-google/single-project.html"><span
+                            href="https://pinterest.com/pin/create/button/?url=<?php the_permalink() ?>"><span
                                 class="fa fa-pinterest"></span><span class="social-title">Pinterest</span></a></li>
-                    <li><a target="_blank"
-                            href="https://plus.google.com/share?url=https://heythemers.com/templates/buro/buro-google/single-project.html"><span
+                    <li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink() ?>"><span
                                 class="fa fa-google-plus"></span><span class="social-title">G+</span></a></li>
                     <li><a target="_blank"
                             href="&#109;&#097;&#105;&#108;&#116;&#111;:&#104;&#101;&#121;&#064;&#100;&#101;&#109;&#111;&#046;&#099;&#111;&#109;"><span
