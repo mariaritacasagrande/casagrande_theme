@@ -50,6 +50,9 @@ function casagrande_hide_login_errors()
 }
 add_filter('login_errors', 'casagrande_hide_login_errors');
 
+//rss
+add_theme_support('automatic-feed-links');
+
 // adicionar imagens de destaque no rss
 
 function casagrande_featured_image_rss($content)
@@ -71,5 +74,24 @@ function casagrande_myme_types($mime_types)
     return $mime_types;
 }
 add_filter('upload_mimes', 'casagrande_myme_types', 1, 1);
+
+//load text domains
+
+load_theme_textdomain('myfirsttheme', get_template_directory() . '/languages');
+
+//feature post image
+
+add_theme_support('post-thumbnails');
+
+//post formats
+add_theme_support('post-formats', array('aside', 'gallery', 'quote', 'image', 'video'));
+
+//suport blocks
+
+add_theme_support('post-thumbnails');
+add_theme_support('responsive-embeds');
+add_theme_support('editor-styles');
+add_theme_support('html5', array('style', 'script'));
+add_theme_support('automatic-feed-links');
 
 ?>
