@@ -70,29 +70,26 @@
                         $prevID = $pages[$current - 1];
                         $nextID = $pages[$current + 1];
 
-
+                        echo '<div class="navigation">';
 
                         if (!empty($prevID)) {
-                            echo '<div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">';
+                            echo '<div class="alignleft">';
                             echo '<a href="';
                             echo get_permalink($prevID);
                             echo '"';
                             echo 'title="';
                             echo get_the_title($prevID);
-                            echo 'class="link prev-post"><span class="arrow left-arrow"></span>Older Posts
-                        </a>';
+                            echo '">Previous</a>';
                             echo "</div>";
                         }
                         if (!empty($nextID)) {
-                            echo '<div class="pag pag-next col-sm-4 col-xs-6 text-right">';
+                            echo '<div class="alignright">';
                             echo '<a href="';
                             echo get_permalink($nextID);
                             echo '"';
                             echo 'title="';
                             echo get_the_title($nextID);
-                            echo 'class="link add next-post">Newer Posts
-                            <span class="arrow right-arrow"></span>
-                        </a>';
+                            echo '">Next</a>';
                             echo "</div>";
                         }
                     }
