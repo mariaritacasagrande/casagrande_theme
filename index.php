@@ -60,13 +60,13 @@
                         </ul>
                     </div>
                     <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
-                        <a href="<?php previous_posts_url(); ?>" class="link prev-post">
-                            <span class="arrow left-arrow"></span>Older Posts
+                        <?php previous_posts_link('Older Posts'); ?>
+                        <span class="arrow left-arrow"></span>
                         </a>
                     </div>
                     <div class="pag pag-next col-sm-4 col-xs-6 text-right">
-                        <a href="<?php next_posts_url(); ?>" class="link add next-post">Newer Posts
-                            <span class="arrow right-arrow"></span>
+                        <?php next_posts_link('Newer Posts'); ?>
+                        <span class="arrow right-arrow"></span>
                         </a>
                     </div>
                 </div>
