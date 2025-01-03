@@ -32,7 +32,9 @@
                                     title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                             <p class="excerpt"><?php the_excerpt(); ?><span class="post-grad"></span></p>
                             <div class="meta">
-                                <em><a href="#">News</a> — <a href="#"><?php the_category(', '); ?></a></em>
+                                <em>
+                                    < href="#"><?php the_category(', '); ?>
+                                </em>
                                 <time><?php the_time('F jS, Y') ?></time>
                             </div>
                         </div>
