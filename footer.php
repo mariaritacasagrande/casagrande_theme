@@ -68,7 +68,7 @@
 <!-- Main scripts -->
 <script src="https://ritacasagrande.com/wp-content/themes/Casagrande/js/vendor/jquery.js"></script>
 <script src="https://ritacasagrande.com/wp-content/themes/Casagrande/js/main.js"></script>
-<script src="https://ritacasagrande.com/wp-content/themes/Casagrande/s/plugins.js"></script>
+<script src="https://ritacasagrande.com/wp-content/themes/Casagrande/js/plugins.js"></script>
 <script src="https://ritacasagrande.com/wp-content/themes/Casagrande/js/bootstrap.js"></script>
 <script>
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
