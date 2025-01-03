@@ -23,7 +23,7 @@ Template Name: About
             the_post(); ?>
             <article class="<?php post_class(); ?>" id="post-<?php the_ID(); ?>">
                 <?php if (!is_page()): ?>
-
+             <?php endwhile; ?>
 
                     <section class="entry-content">
                         <div class="container highlight">
@@ -77,7 +77,7 @@ Template Name: About
                     </section>
                 <?php endif; ?>
             </article>
-        <?php endwhile; ?>
+        
 
         <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
     </main>
