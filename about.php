@@ -46,7 +46,6 @@ Template Name: About
                                     <div class="row">
                                         <article class="col-lg-6 col-sm-12">
                                             <footer class="mar-btm-md">
-                                                <h4 class="mar-top-xs"><?php the_field('nome', $post->ID); ?></h4>
                                                 <small><?php the_field('cargo', $post->ID); ?></small>
                                                 <p class="mar-top-xs"><?php the_field('curriculo', $post->ID); ?></p>
                                             </footer>
