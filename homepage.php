@@ -53,7 +53,7 @@ Template Name: Homepage
                     <!-- 'data-filter' attributes allow you to join the item with the category -->
                     <!-- this category must be the same that previously within 'filter-nav' -->
                     <?php $query = new WP_Query([
-                        'post_type' => 'projects',
+                        'post_type' => 'project',
                         'nopaging' => true,
                         'posts_per_page' => '12',
                     ]); ?>
