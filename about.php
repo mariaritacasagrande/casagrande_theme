@@ -42,6 +42,12 @@ Template Name: About
                                 </div>
                                 <hr class="mar-top-sm">
                                 <h4 class="underline mar-btm-xs"><?php the_field('nome', $post->ID); ?></h4>
+                                <article class="col-lg-6 col-sm-12">
+                                    <footer class="mar-btm-md">
+                                        <small><?php the_field('cargo', $post->ID); ?></small>
+                                        <p class="mar-top-xs"><?php the_field('curriculo', $post->ID); ?></p>
+                                    </footer>
+                                </article>
                                 <div class="mar-top-xs mar-btm-lg">
                                     <div class="row">
                                         <article class="col-lg-6 col-sm-12">
