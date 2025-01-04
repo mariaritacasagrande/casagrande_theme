@@ -50,9 +50,9 @@ get_header(); ?>
                         <!-- Término verdadeiro do Loop -->
                     <?php endif; ?>
                 </article>
-                <aside class="blog-sidebar col-md-3 col-md-pull-8">
-                    <?php get_sidebar(); ?>
-                </aside><!-- /.blog-sidebar -->
+
+                <?php get_sidebar(); ?>
+                <!-- /.blog-sidebar -->
             </div>
 
             <!-- Pagination & action buttons -->
