@@ -43,7 +43,7 @@ Template Name: Contact
     <div class="container newsletter mar-btm-lg">
         <div class="row">
             <div class="col-md-6 col-md-offset-6">
-                <h5>Stay tunned</h5>
+                <h5><?php the_field('titulo_newsletter', $post->ID); ?></h5>
                 <p class="feat-text highlight"><?php the_field('newsletter_text', $post->ID); ?></p>
 
                 <?php echo apply_shortcodes('[contact-form-7 id="b354011" title="Newsletter"]'); ?>
