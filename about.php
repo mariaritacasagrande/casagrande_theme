@@ -36,19 +36,15 @@ Template Name: About
                             <div class="col-lg-6 col-sm-12 col-lg-offset-1">
                                 <div class="row">
                                     <img class="img-responsive full-width-img lazy col-sm-12"
-                                        src="<?php the_field('imagem_destaque', $post->ID); ?>" alt="Studio">
+                                        src="<?php the_field('imagem_destaque', $post->ID); ?>"
+                                        title="<?php the_field('nome', $post->ID); ?> | <?php the_field('cargo', $post->ID); ?>"
+                                        alt="Team Member">
                                 </div>
                                 <hr class="mar-top-sm">
-                                <h4 class="underline mar-btm-xs">The team</h4>
+                                <h4 class="underline mar-btm-xs"><?php the_field('nome', $post->ID); ?></h4>
                                 <div class="mar-top-xs mar-btm-lg">
                                     <div class="row">
-                                        <article class="col-sm-6 col-xs-12">
-                                            <header>
-                                                <img class="img-responsive full-width-img mar-btm-xs"
-                                                    src="<?php the_field('imagem_dev', $post->ID); ?>"
-                                                    title="<?php the_field('nome', $post->ID); ?> | <?php the_field('cargo', $post->ID); ?>"
-                                                    alt="Team Member">
-                                            </header>
+                                        <article class="col-lg-6 col-sm-12">
                                             <footer class="mar-btm-md">
                                                 <h4 class="mar-top-xs"><?php the_field('nome', $post->ID); ?></h4>
                                                 <small><?php the_field('cargo', $post->ID); ?></small>
@@ -60,12 +56,10 @@ Template Name: About
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-12">
                                             <hr class="mar-top-sm">
-                                            <h5 class="alt-font mar-btm-xs">Services</h5>
                                             <?php the_field('servicos', $post->ID); ?>
                                         </div>
                                         <div class="col-sm-6 col-xs-12 mar-btm-md">
                                             <hr class="mar-top-sm">
-                                            <h5 class="alt-font mar-btm-xs">Publications &amp; Recognitions</h5>
                                             <?php the_field('publicacoes_e_reconhecimento', $post->ID); ?>
                                         </div>
                                     </div>
