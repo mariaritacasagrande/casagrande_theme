@@ -31,11 +31,19 @@ if (!is_active_sidebar('sidebar-1')) {
       <li id="recent-posts" class="widget widget_recent_entries">
          <h3 class="widget_title">Recent Posts</h3>
          <ul>
-            <li><a href="#" class="inner-link">Büro wins Webby Award</a></li>
-            <li><a href="#" class="inner-link">New project for Assembled Agency</a></li>
-            <li><a href="#" class="inner-link">We have a new kid on the block</a></li>
-            <li><a href="#" class="inner-link">Hard work weekend at Büro</a></li>
-            <li><a href="#" class="inner-link">We are moving to a new building</a></li>
+            <?php
+            $recent_posts = wp_get_recent_posts(array(
+               'numberposts' => 5, // Number of recent posts thumbnails to display
+               'post_status' => 'publish' // Show only the published posts
+            ));
+            foreach ($recent_posts as $post_item): ?>
+               <li>
+                  <a class="inner-link href=" <?php echo get_permalink($post_item['ID']) ?>">
+                     <?php echo get_the_post_thumbnail($post_item['ID'], 'full'); ?>
+                  </a>
+               </li>
+            <?php endforeach; ?>
+
          </ul>
       </li>
 
