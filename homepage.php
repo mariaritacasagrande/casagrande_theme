@@ -63,8 +63,17 @@ Template Name: Homepage
 
                             <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
                                 <a href="<?php the_permalink() ?>">
-                                    <img src="<?php the_post_thumbnail('full'); ?>" alt="<?php the_title(); ?>"
-                                        class="img-responsive">
+
+                                    <?php
+
+
+                                    if (has_post_thumbnail(get_the_ID())) {
+                                        echo '<a href="' . get_permalink(get_the_ID()) . '" >';
+                                        echo get_the_post_thumbnail(get_the_ID(), 'archive_grid');
+                                        echo '</a>';
+                                    }
+                                    ?>
+
                                     <span class="caption"><?php the_title(); ?><span>—
                                             <?php the_category('- '); ?></span></span>
                                 </a>
