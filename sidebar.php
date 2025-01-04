@@ -39,7 +39,7 @@ if (!is_active_sidebar('sidebar-1')) {
             foreach ($recent_posts as $post_item): ?>
                <li>
                   <a class="inner-link href=" <?php echo get_permalink($post_item['ID']) ?>">
-                     <?php echo get_the_post_thumbnail($post_item['ID'], 'full'); ?>
+                     <?php echo get_the_post_title($post_item['ID']); ?>
                   </a>
                </li>
             <?php endforeach; ?>
