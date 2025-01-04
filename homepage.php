@@ -61,28 +61,18 @@ Template Name: Homepage
                         <?php while ($query->have_posts()):
                             $query->the_post(); ?>
 
-                            <?php static $count = 0;
-                            if ($count == "n") {
-                                break;
-                            } else { ?>
-
-
-
-                                <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
-                                    <a href="s<?php the_permalink() ?>">
-                                        <img src="<?php the_post_thumbnail(); ?>" alt="<?php the_title(); ?>" class="img-responsive"
-                                            width="672" height="672">
-                                        <span class="caption"><?php the_title(); ?><span>—
-                                                <?php the_category('- '); ?></span></span>
-                                    </a>
-                                </div>
-
-                                <?php $count++;
-                            } ?>
+                            <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
+                                <a href="s<?php the_permalink() ?>">
+                                    <img src="<?php the_post_thumbnail(); ?>" alt="<?php the_title(); ?>" class="img-responsive"
+                                        width="672" height="672">
+                                    <span class="caption"><?php the_title(); ?><span>—
+                                            <?php the_category('- '); ?></span></span>
+                                </a>
+                            </div>
 
                         <?php endwhile; ?>
                     <?php endif; ?>
-
+                    <?php wp_reset_postdata(); ?>
                 </div>
                 <div class="row btn-block">
                     <div class="grid-pag clearfix">
