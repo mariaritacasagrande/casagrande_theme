@@ -38,9 +38,6 @@
 </div>
 <!-- #/wrapper -->
 
-
-<span id="sidebar-bg"></span>
-
 <!-- social modal box -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -82,10 +79,6 @@
         document.getElementsByTagName("head")[0].appendChild(msViewportStyle)
     }
 </script>
-
-<!--Google Maps API.V3-->
-<script type="text/javascript"
-    src="//maps.googleapis.com/maps/api/js?key=AIzaSyCoBKcqNEb7_YQRec1y98lkent_nA5vOtA&amp;"></script>
 
 <!-- Google Analytics -->
 <script>
