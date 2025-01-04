@@ -82,7 +82,7 @@ Template Name: Homepage
 
                         <?php endwhile; ?>
                     <?php endif; ?>
-                    <?php wp_reset_postdata(); ?>
+
                 </div>
                 <div class="row btn-block">
                     <div class="grid-pag clearfix">
