@@ -41,40 +41,40 @@ Template Name: About
                                         alt="Team Member">
                                 </div>
                                 <hr class="mar-top-sm">
-                                <h4 class="underline mar-btm-xs"><?php the_field('nome', $post->ID); ?></h4>
-                                <div class="mar-top-xs mar-btm-lg">
+
+                                <div class="col-lg-6 col-sm-12 col-lg-offset-1">
                                     <div class="row">
-                                        <article class="col-lg-6 col-sm-12">
-                                            <footer class="mar-btm-md">
-                                                <small><?php the_field('cargo', $post->ID); ?></small>
-                                                <p class="mar-top-xs"><?php the_field('curriculo', $post->ID); ?></p>
-                                            </footer>
-                                        </article>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6 col-xs-12">
-                                            <hr class="mar-top-sm">
-                                            <?php the_field('servicos', $post->ID); ?>
-                                        </div>
-                                        <div class="col-sm-6 col-xs-12 mar-btm-md">
-                                            <hr class="mar-top-sm">
-                                            <?php the_field('publicacoes_e_reconhecimento', $post->ID); ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </section>
-
+                                        <div class="row">
+                                            <h4 class="underline mar-btm-xs"><?php the_field('nome', $post->ID); ?></h4>
+                                            <small><?php the_field('cargo', $post->ID); ?></small>
+                                            <p class="mar-top-xs"><?php the_field('curriculo', $post->ID); ?></p>
             </article>
-        <?php endwhile; ?>
-
-        <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
-    </main>
+    </div>
 
 
-    <?php get_footer(); ?>
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <hr class="mar-top-sm">
+            <?php the_field('servicos', $post->ID); ?>
+        </div>
+        <div class="col-sm-6 col-xs-12 mar-btm-md">
+            <hr class="mar-top-sm">
+            <?php the_field('publicacoes_e_reconhecimento', $post->ID); ?>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    </section>
+
+    </article>
+<?php endwhile; ?>
+
+<a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+</main>
+
+
+<?php get_footer(); ?>
