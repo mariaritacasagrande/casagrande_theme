@@ -52,7 +52,11 @@ Template Name: Homepage
                 <div class="row portfolio-list js-ajax-container">
                     <!-- 'data-filter' attributes allow you to join the item with the category -->
                     <!-- this category must be the same that previously within 'filter-nav' -->
-
+                    <?php $query = new WP_Query([
+                        'post_type' => 'projects',
+                        'nopaging' => true,
+                        'posts_per_page' => '12',
+                    ]); ?>
                     <?php
                     // if everything is in place and ready, let's start the loop
                     if (have_posts()):
