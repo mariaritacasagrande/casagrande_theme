@@ -65,15 +65,10 @@ Template Name: Homepage
                                 <a href="<?php the_permalink() ?>">
 
                                     <?php
+                                    if (has_post_thumbnail()) {
+                                        the_post_thumbnail('image_size', array('class' => 'img-responsive'));
 
-
-                                    if (has_post_thumbnail(get_the_ID())) {
-                                        echo '<a href="' . get_permalink(get_the_ID()) . '" >';
-                                        echo get_the_post_thumbnail(get_the_ID(), 'archive_grid');
-                                        echo '</a>';
-                                    }
-                                    ?>
-
+                                    } ?>
                                     <span class="caption"><?php the_title(); ?><span>—
                                             <?php the_category('- '); ?></span></span>
                                 </a>
