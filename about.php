@@ -44,7 +44,7 @@ Template Name: About
                                 <h4 class="underline mar-btm-xs"><?php the_field('nome', $post->ID); ?></h4>
                                 <article>
                                     <footer>
-                                        <small><?php the_field('cargo', $post->ID); ?></small>
+                                        <p><small><?php the_field('cargo', $post->ID); ?></small></p>
                                         <p class="mar-top-xs"><?php the_field('curriculo', $post->ID); ?></p>
                                     </footer>
                                 </article>
