@@ -457,11 +457,8 @@ body .js-ajax-holder .js-load-more {
 	padding-left: 30px;
 }
 
-
-.stack img {
-  max-width: 40px;
-  max-height: 30px;
-
+#gallery-1 img {
+  border: none;
 }
 
 
