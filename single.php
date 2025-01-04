@@ -137,76 +137,9 @@ get_header(); ?>
                                     <a href="#" class="pull-right reply">reply</a>
                                 </div>
                             </div>
-                            <div class="commentlist-item">
-                                <div class="comment byuser">
-                                    <div class="avatar-holder">
-                                        <img src="images/comment-avatar-03.png" height="33" width="33"
-                                            alt="image description" class="img-responsive">
-                                        <div class="holder">
-                                            <h2><a href="#">Rodriguo Leao</a></h2>
-                                            <time datetime="2016-10-21">21th Oct, 2016</time>
-                                        </div>
-                                    </div>
-                                    <div class="commentlist-holder">
-                                        <p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum
-                                            lacinia.
-                                            Sed non ipsum dui. Proin commodo sapien felis, iaculis bibendum <strong>sem
-                                                rutrum
-                                                sit amet</strong>. Nullam in magna a ipsum auctor convallis.sem eros id
-                                            sapien.
-                                            Proin scelerisque blandit eros non euismod. Etiam eu dictum magna.</p>
-                                        <a href="#" class="pull-right reply">reply</a>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
-                        <div class="commentlist-item">
-                            <div class="comment even">
-                                <div class="avatar-holder">
-                                    <img src="images/comment-avatar-02.png" height="33" width="33"
-                                        alt="image description" class="img-responsive">
-                                    <div class="holder">
-                                        <h2><a href="#">Chester Keaton</a></h2>
-                                        <time datetime="2016-10-21">21th Oct, 2016</time>
-                                    </div>
-                                </div>
-                                <div class="commentlist-holder">
-                                    <p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum
-                                        lacinia. Sed
-                                        non ipsum dui. Proin commodo sapien felis, iaculis bibendum sem rutrum sit amet.
-                                        Nullam
-                                        in magna a ipsum auctor convallis. Ut mollis orci sodales <strong>viverra
-                                            feugiat</strong>. Integer sed sem nec libero porttitor sagittis eget non
-                                        erat. Donec
-                                        venenatis dapibus ante vitae ullamcorper.</p>
-                                    <a href="#" class="pull-right reply">reply</a>
-                                </div>
-                            </div>
-                            <div class="commentlist-item">
-                                <div class="comment byuser">
-                                    <div class="avatar-holder">
-                                        <img src="images/comment-avatar-01.png" height="33" width="33"
-                                            alt="image description" class="img-responsive">
-                                        <div class="holder">
-                                            <h2><a href="#">Graham</a></h2>
-                                            <time datetime="2016-10-21">21th Oct, 2016</time>
-                                        </div>
-                                    </div>
-                                    <div class="commentlist-holder">
-                                        <p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum
-                                            lacinia.
-                                            Sed non ipsum dui. Proin commodo sapien felis, <strong>iaculis bibendum sem
-                                                rutrum
-                                                sit amet</strong>. Nullam in magna a ipsum auctor convallis. Ut mollis
-                                            orci
-                                            sodales viverra feugiat. Integer sed sem nec libero porttitor sagittis eget
-                                            non
-                                            erat.</p>
-                                        <a href="#" class="pull-right reply">reply</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
