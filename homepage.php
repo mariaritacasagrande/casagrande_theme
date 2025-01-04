@@ -62,12 +62,13 @@ Template Name: Homepage
                             $query->the_post(); ?>
 
                             <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
-                                <a href="<?php the_permalink() ?>">
-                                    <img src="<?php the_post_thumbnail(); ?>" width="455" height="640"
-                                        alt="<?php the_title(); ?>" class="img-responsive lazy">
-                                    <span class="caption"><?php the_title(); ?><span>—
-                                            <?php the_category('- '); ?></span></span>
-                                </a>
+                               <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                                <img src="<?php the_post_thumbnail(); ?>" width="455" height="640" alt="<?php the_title(); ?>"
+                                    class="img-responsive lazy">
+                                <div class="caption text-center text-lowercase">
+                                    <span class="holder"><i class="arrow right-arrow"></i></span>
+                                </div>
+                            </a>
                             </div>
 
                         <?php endwhile; ?>
