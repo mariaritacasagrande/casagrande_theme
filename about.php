@@ -49,7 +49,6 @@ Template Name: About
                                             title="<?php the_field('nome', $post->ID); ?> | <?php the_field('cargo', $post->ID); ?>"
                                             alt="Team Member">
                                     </div>
-
                                     <h4 class="underline mar-btm-xs"><?php the_field('nome', $post->ID); ?></h4>
                                     <div class="mar-top-xs mar-btm-lg">
                                         <div class="row">
