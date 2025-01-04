@@ -63,7 +63,8 @@ Template Name: Homepage
 
                             <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
                                 <a href="<?php the_permalink() ?>">
-                                    <?php the_post_thumbnail('full'); ?>
+                                    <img src="<?php the_post_thumbnail('full'); ?>" alt="<?php the_title(); ?>"
+                                        class="img-responsive">
                                     <span class="caption"><?php the_title(); ?><span>—
                                             <?php the_category('- '); ?></span></span>
                                 </a>
