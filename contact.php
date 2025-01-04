@@ -44,14 +44,13 @@ Template Name: Contact
         <div class="row">
             <div class="col-md-6 col-md-offset-6">
                 <h5>Stay tunned</h5>
-                <p class="feat-text highlight">Subscribe to our newsletter in order to stay updated about our new
-                    projects.</p>
+                <p class="feat-text highlight"><?php the_field('newsletter_text', $post->ID); ?></p>
 
                 <?php echo apply_shortcodes('[contact-form-7 id="b354011" title="Newsletter"]'); ?>
 
                 <small>* we promise that we won´t spam you, never.</small>
-                <small id="msg-submit-news" class="form-success hidde">You have been succesfully subscribed to our
-                    newsletter</small>
+                <small id="msg-submit-news"
+                    class="form-success hidde"><?php the_field('mensagem_de_spam', $post->ID); ?></small>
             </div>
         </div>
     </div>
