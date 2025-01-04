@@ -65,6 +65,7 @@ Template Name: Homepage
                                 <a href="<?php the_permalink() ?>">
                                     <img src="<?php the_post_thumbnail(); ?>" alt="<?php the_title(); ?>" class="img-responsive"
                                         width="672" height="672">
+
                                     <span class="caption"><?php the_title(); ?><span>—
                                             <?php the_category('- '); ?></span></span>
                                 </a>
