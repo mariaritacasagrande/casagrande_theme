@@ -57,11 +57,9 @@ Template Name: Homepage
                         'nopaging' => true,
                         'posts_per_page' => '12',
                     ]); ?>
-                    <?php
-                    // if everything is in place and ready, let's start the loop
-                    if (have_posts()):
-                        while (have_posts()):
-                            the_post(); ?>
+                    <?php if ($query->have_posts()): ?>
+                        <?php while ($query->have_posts()):
+                            $query->the_post(); ?>
 
                             <?php static $count = 0;
                             if ($count == "n") {
@@ -84,7 +82,7 @@ Template Name: Homepage
 
                         <?php endwhile; ?>
                     <?php endif; ?>
-
+                    <?php wp_reset_postdata(); ?>
                 </div>
                 <div class="row btn-block">
                     <div class="grid-pag clearfix">
