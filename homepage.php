@@ -62,9 +62,9 @@ Template Name: Homepage
                             $query->the_post(); ?>
 
                             <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
-                                <a href="s<?php the_permalink() ?>">
-                                    <img src="<?php the_post_thumbnail(); ?>" alt="<?php the_title(); ?>"
-                                        class="img-responsive">
+                                <a href="<?php the_permalink() ?>">
+                                    <img src="<?php the_post_thumbnail(); ?>" alt="<?php the_title(); ?>" class="img-responsive"
+                                        width=full height=full>
                                     <span class="caption"><?php the_title(); ?><span>—
                                             <?php the_category('- '); ?></span></span>
                                 </a>
