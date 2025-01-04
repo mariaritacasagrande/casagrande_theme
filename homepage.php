@@ -39,10 +39,8 @@ Template Name: Homepage
                     <!-- for example: -->
                     <!-- data-filter="branding" -->
                     <li class="active"><a href="#prtfl-anchor" data-filter="all">All</a></li>
-                    <li><a href="#prtfl-anchor" data-filter="branding">Branding</a></li>
+                    <li><a href="#prtfl-anchor" data-filter="branding">Printing</a></li>
                     <li><a href="#prtfl-anchor" data-filter="illustration">Illustration</a></li>
-                    <li><a href="#prtfl-anchor" data-filter="motion">Motion</a></li>
-                    <li><a href="#prtfl-anchor" data-filter="photography">Photography</a></li>
                     <li><a href="#" data-filter="web">Web</a></li>
                 </ul>
             </div>
