@@ -66,7 +66,7 @@ Template Name: Homepage
 
                                     <?php
                                     if (has_post_thumbnail()) {
-                                        the_post_thumbnail('image_size', array('class' => 'img-responsive'));
+                                        the_post_thumbnail('full', array('class' => 'img-responsive'));
 
                                     } ?>
                                     <span class="caption"><?php the_title(); ?><span>—
