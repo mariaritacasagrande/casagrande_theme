@@ -36,6 +36,7 @@
 </div>
 
 </div>
+<span id="sidebar-bg"></span>
 <!-- #/wrapper -->
 
 <!-- social modal box -->
@@ -79,6 +80,10 @@
         document.getElementsByTagName("head")[0].appendChild(msViewportStyle)
     }
 </script>
+
+<!--Google Maps API.V3-->
+<script type="text/javascript"
+    src="//maps.googleapis.com/maps/api/js?key=AIzaSyCoBKcqNEb7_YQRec1y98lkent_nA5vOtA&amp;"></script>
 
 <!-- Google Analytics -->
 <script>
