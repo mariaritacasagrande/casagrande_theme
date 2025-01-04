@@ -21,10 +21,12 @@ if (!is_active_sidebar('sidebar-1')) {
          </div>
       </li>
       <li id="search" class="widget widget_search">
-         <form method="get" id="searchform" action="#">
-            <input type="search" placeholder="Search" value="" name="s" id="s">
-            <button type="submit" form="searchform" name="submit"><i class="icon-zoom"></i></button>
+         <form action="/" method="get">
+            <label for="search">Search in <?php echo home_url('/'); ?></label>
+            <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
+            <input type="image" alt="Search" src="<?php bloginfo('template_url'); ?>/images/search.png" />
          </form>
+
       </li>
 
       <li id="recent-posts" class="widget widget_recent_entries">
