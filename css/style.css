@@ -456,6 +456,15 @@ body .js-ajax-holder .js-load-more {
 	padding-right: 30px;
 	padding-left: 30px;
 }
+
+
+.stack img {
+  max-width: 40px;
+  max-height: 30px;
+
+}
+
+
 .navbar { margin-bottom: 0; }
 #header {
 	background: rgba(255, 255, 255, 1);
