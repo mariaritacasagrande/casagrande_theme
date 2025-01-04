@@ -61,7 +61,7 @@ Template Name: Homepage
                         <?php while ($query->have_posts()):
                             $query->the_post(); ?>
 
-                            <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
+                            <div class="img-holder prjct-item" data-filter="<?php the_category(); ?>">
                                 <a href="<?php the_permalink() ?>">
 
                                     <?php
@@ -70,7 +70,7 @@ Template Name: Homepage
 
                                     } ?>
                                     <span class="caption"><?php the_title(); ?><span>—
-                                            <?php the_category('- '); ?></span></span>
+                                            <?php the_category(); ?></span></span>
                                 </a>
                             </div>
 
