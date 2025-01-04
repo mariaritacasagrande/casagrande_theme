@@ -64,7 +64,7 @@ Template Name: Homepage
                             <div class="img-holder prjct-item" data-filter="<?php the_category('- '); ?>">
                                 <a href="<?php the_permalink() ?>" rel="bookmark"
                                     title="Permanent Link to <?php the_title_attribute(); ?>">
-                                    <img src="<?php the_post_thumbnail(); ?>" alt="<?php the_title(); ?>"
+                                    <img src='<?php the_post_thumbnail(); ?>' alt="<?php the_title(); ?>"
                                         class="img-responsive lazy">
                                     <span class="caption"><?php the_title(); ?><span>—
                                             <?php the_category('- '); ?></span></span>
