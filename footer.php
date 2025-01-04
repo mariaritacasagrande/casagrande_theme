@@ -38,6 +38,9 @@
 </div>
 <!-- #/wrapper -->
 
+
+<span id="sidebar-bg"></span>
+
 <!-- social modal box -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
