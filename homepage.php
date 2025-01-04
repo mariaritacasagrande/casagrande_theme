@@ -61,16 +61,25 @@ Template Name: Homepage
                         <?php while ($query->have_posts()):
                             $query->the_post(); ?>
 
-                            <div class="img-holder prjct-item" data-filter="<?php the_category(); ?>">
-                                <a href="<?php the_permalink() ?>">
+                            <?php
+                            $categories = get_the_category();
+                            $cls = '';
 
+                            if (!empty($categories)) {
+                                foreach ($categories as $cat) {
+                                    $cls .= $cat->slug . ' ';
+                                }
+                            }
+                            ?>
+
+                            <div class="img-holder prjct-item" data-filter="<?php echo $cls; ?>">
+                                <a href="<?php the_permalink() ?>">
                                     <?php
                                     if (has_post_thumbnail()) {
                                         the_post_thumbnail('large', array('class' => 'img-responsive'));
 
                                     } ?>
-                                    <span class="caption"><?php the_title(); ?><span>—
-                                            <?php the_category(); ?></span></span>
+                                    <span class="caption"><?php the_title(); ?><span>—<?php echo $cls; ?></span></span>
                                 </a>
                             </div>
 
