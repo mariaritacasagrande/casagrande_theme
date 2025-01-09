@@ -14,6 +14,40 @@
 /* --------------------------------------------------------
  1. Embedded fonts styles
  ---------------------------------------------------------*/
+
+ @font-face {
+   font-family: 'neuzeit_groteskregular';
+   src: url('../fonts/neuzeit-grotesk-webfont.woff2') format('woff2'),
+     url('../fonts/neuzeit-grotesk-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+
+ }
+
+
+
+
+ @font-face {
+   font-family: 'neuzeit_groteskbold';
+   src: url('../fonts/neuzeit-grotesk-bold-webfont.woff2') format('woff2'),
+     url('../fonts/neuzeit-grotesk-bold-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+
+ }
+
+
+
+
+ @font-face {
+   font-family: 'neuzeit_grotesklight';
+   src: url('../fonts/neuzeit-grotesk-light-webfont.woff2') format('woff2'),
+     url('../fonts/neuzeit-grotesk-light-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+
+ }
+
 @font-face {
   font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
@@ -235,7 +269,7 @@ ul { margin-bottom: 45px; padding-left: 20px; }
 /* NOTE: blue emphasis default color -> #1106FF or rgb(17, 6, 255) */
 
 /* main font family & font color for body and main text */
-body { font-family: "Work Sans", "HelveticaNeue", helvetica, Arial, sans-serif !important; color: rgb(29, 29, 29); }
+body { font-family: "neuzeit_groteskregular", "HelveticaNeue", helvetica, Arial, sans-serif !important; color: rgb(29, 29, 29); }
 
 /* secondary font family */
 h1,
@@ -1256,7 +1290,7 @@ body.fltrs-fx-curtain .filter-nav.bye { left: 100%; opacity: 0; }
 }
 .portfolio-grid .caption span {
 	display: block;
-	font-family: serif;
+	font-family: sans-serif;
 	text-align: right;
 	line-height: 15px;
 	font-size: 15px;
