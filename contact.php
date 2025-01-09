@@ -48,7 +48,7 @@ Template Name: Contact
 
                 <?php echo apply_shortcodes('[contact-form-7 id="b354011" title="Newsletter"]'); ?>
 
-                <small>* we promise that we won´t spam you, never.</small>
+                <small>* prometo não enviar spam, NUNCA.</small>
                 <small id="msg-submit-news"
                     class="form-success hidde"><?php the_field('mensagem_de_spam', $post->ID); ?></small>
             </div>
