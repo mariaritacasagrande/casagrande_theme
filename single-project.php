@@ -87,8 +87,8 @@ get_header(); ?>
                     </div>
 
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
-                        <a href="#" class="link prev-post">
-                            <span class="arrow left-arrow"></span><?php previous_posts_link('Older Posts'); ?>
+                        <a href="<?php echo previous_posts_link('Older Posts'); ?>" class="link prev-post">
+                            <span class="arrow left-arrow"></span>
                         </a>
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
