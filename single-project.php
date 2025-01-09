@@ -63,7 +63,7 @@ get_header(); ?>
 
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
                         <a class="link prev-post">
-                            <span class="arrow left-arrow"></span>Wellington bar
+                            <span class="arrow left-arrow"></span><?php previous_post_link('%link'); ?>
                         </a>
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
