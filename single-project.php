@@ -63,7 +63,7 @@ get_header(); ?>
 
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
 
-                        <span class="arrow left-arrow"><?php previous_post_link(); ?></span>
+                        <span class="arrow left-arrow"></span><?php previous_post_link(); ?>
 
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
