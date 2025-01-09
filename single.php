@@ -51,7 +51,7 @@ get_header(); ?>
                     <?php endif; ?>
                 </article>
 
-
+                <?php get_sidebar(); ?>
                 <!-- /.blog-sidebar -->
             </div>
 
