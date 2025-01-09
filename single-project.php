@@ -64,7 +64,7 @@ get_header(); ?>
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
 
                         <a href="<?php echo get_permalink($prevID); ?>" class="link prev-post"
-                            title="<?php echo get_the_title($prevID); ?>">Previous</a>
+                            title="<?php echo get_the_title($prevID); ?>"><?php echo get_the_title($prevID); ?></a>
 
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
