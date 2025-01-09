@@ -50,7 +50,7 @@ Template Name: Contact
 
                 <small><?php the_field('mensagem_de_spam', $post->ID); ?></small>
                 <small id="msg-submit-news"
-                    class="form-success hidde"><?php the_field('mensagem_de_spam', $post->ID); ?></small>
+                    class="form-success hidde"><?php the_field('mensagem_de_sucesso', $post->ID); ?></small>
             </div>
         </div>
     </div>
