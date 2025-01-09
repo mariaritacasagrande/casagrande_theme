@@ -68,7 +68,7 @@ get_header(); ?>
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
                         <p class="link add next-post"><span class="arrow right-arrow"></span>
-                            <?php next_post_link(); ?></p>
+                            <?php next_post_link('%link'); ?></p>
                     </div>
 
                 </div>
