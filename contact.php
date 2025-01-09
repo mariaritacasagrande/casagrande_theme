@@ -23,7 +23,7 @@ Template Name: Contact
                 <?php echo apply_shortcodes('[contact-form-7 id="dbd401d" title="Formulário de contato 1"]'); ?>
 
                 <small id="msg-submit-form" class="form-success hidde">Responderei o mais rápido possível.
-                    Thanks!</small>
+                    Obrigada!</small>
             </div>
         </div>
     </div>
