@@ -67,7 +67,7 @@ get_header(); ?>
                         </a>
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
-                        <a href="#" class="link add next-post">New project for Adidas
+                        <a href="#" class="link add next-post"><?php next_post_link(); ?>
                             <span class="arrow right-arrow"></span>
                         </a>
                     </div>
