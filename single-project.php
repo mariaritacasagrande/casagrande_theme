@@ -62,14 +62,12 @@ get_header(); ?>
                     </div>
 
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
-                        <a href="#" class="link prev-post">
-                            <span class="arrow left-arrow"></span>Wellington bar
-                        </a>
+                        <span class="arrow left-arrow"></span><?php previous_posts_link('Older Posts'); ?></span>
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
-                        <a href="#" class="link add next-post">New project for Adidas
-                            <span class="arrow right-arrow"></span>
-                        </a>
+
+                        <span class="arrow right-arrow"></span><?php next_posts_link('Newer Posts'); ?>
+
                     </div>
 
                 </div>
