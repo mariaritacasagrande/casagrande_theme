@@ -71,14 +71,14 @@
                         <div class="link add next-post">
                             <span class="arrow right-arrow"></span><?php next_posts_link('Newer Posts'); ?>
                         </div>
-                        </di>
                     </div>
                 </div>
-                <!-- ./Pagination & action buttons -->
+            </div>
+            <!-- ./Pagination & action buttons -->
 
-            <?php endif; ?>
-            <!-- Go top button/arrow -->
-            <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+        <?php endif; ?>
+        <!-- Go top button/arrow -->
+        <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
 <?php get_footer(); ?>
