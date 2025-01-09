@@ -62,9 +62,10 @@ get_header(); ?>
                     </div>
 
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
-                        <a href="<?php echo previous_post_link(); ?>" class="link prev-post">
-                            <span class="arrow left-arrow"></span><?php echo get_the_title($prevID); ?>
-                        </a>
+
+                        <a href="<?php echo get_permalink($prevID); ?>" class="link prev-post"
+                            title="<?php echo get_the_title($prevID); ?>">Previous</a>
+
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
                         <a href="#" class="link add next-post">New project for Adidas
