@@ -28,7 +28,7 @@ get_header(); ?>
                                         <div class="meta">
                                             <?php the_time('Y') ?>
                                             <em>
-                                                <span><?php the_category(', '); ?></span> — <?php the_tags(', '); ?>
+                                                <span><?php the_category(', '); ?></span>
                                             </em>
                                         </div>
                                     </header>
