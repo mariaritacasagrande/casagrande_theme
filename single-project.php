@@ -26,10 +26,9 @@ get_header(); ?>
                                     <header class="header big-heading parallax">
                                         <h1><?php the_title(); ?></h1>
                                         <div class="meta">
-                                            <?php the_time('F jS, Y') ?>
+                                            <?php the_time('Y') ?>
                                             <em>
-                                                post written by <a href="#" class="author"><?php the_author_posts_link() ?></a>
-                                                <span>in <?php the_category(', '); ?></span> — <?php the_tags(', '); ?>
+                                                <span><?php the_category(', '); ?></span> — <?php the_tags(', '); ?>
                                             </em>
                                         </div>
                                     </header>
