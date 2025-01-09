@@ -56,18 +56,18 @@ get_header(); ?>
                 <div class="container links-section">
                     <div class="col-md-4 col-xs-12 col-md-push-4 clearfix text-center">
                         <ul class="list-inline links-holder">
-                            <li><a href="<a href=" <?php echo get_site_url(); ?>">Back</a></li>
+                            <li><a href="blog.html">Back</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#myModal">Share</a></li>
                         </ul>
                     </div>
 
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
-                        <a class="link prev-post"><?php previous_post_link('%link'); ?>
-                            <span class="arrow left-arrow"></span>
+                        <a href="#" class="link prev-post">
+                            <span class="arrow left-arrow"></span>Wellington bar
                         </a>
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
-                        <a class="link add next-post"><?php next_post_link('%link'); ?>
+                        <a href="#" class="link add next-post">New project for Adidas
                             <span class="arrow right-arrow"></span>
                         </a>
                     </div>
