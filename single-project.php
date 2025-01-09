@@ -62,13 +62,13 @@ get_header(); ?>
                     </div>
 
                     <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
-                        <div class="prev-post">
-                            <span class="arrow left-arrow"></span><?php previous_posts_link('Older Posts'); ?>
+                        <div class="link prev-post">
+                            <?php previous_posts_link('Older Posts'); ?> <span class="arrow left-arrow"></span>
                         </div>
 
                     </div>
                     <div class="pag pag-next col-sm-4 col-xs-6 text-right">
-                        <div class="next-post">
+                        <div class="link add next-post">
                             <span class="arrow right-arrow"></span><?php next_posts_link('Newer Posts'); ?>
                         </div>
                     </div>
