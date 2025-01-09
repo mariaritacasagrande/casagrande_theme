@@ -56,6 +56,31 @@ get_header(); ?>
             </div>
 
             <!-- Pagination & action buttons -->
+            <div class="container link-area">
+                <div class="row links-section">
+                    <div class="col-sm-4 col-xs-12 col-sm-push-4 clearfix text-center">
+                        <ul class="list-inline links-holder">
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#myModal">Share</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pag pag-prev col-sm-4 col-xs-6 col-sm-pull-4">
+                        <div class="link prev-post">
+                            <span class="arrow left-arrow"></span><?php previous_posts_link('Older Posts'); ?>
+                        </div>
+
+                    </div>
+                    <div class="pag pag-next col-sm-4 col-xs-6 text-right">
+                        <div class="link add next-post">
+                            <span class="arrow right-arrow"></span><?php next_posts_link('Newer Posts'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Pagination & action buttons -->
+
+            <!-- Pagination & action buttons -->
             <div class="container-fluid link-area">
                 <div class="container links-section">
                     <div class="col-md-4 col-xs-12 col-md-push-4 clearfix text-center">
