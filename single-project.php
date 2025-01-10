@@ -61,13 +61,13 @@ get_header(); ?>
                     </div>
 
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
-                        <span class="link prev-post"><?php previous_post_link('%link'); ?>
+                        <a class="link prev-post"><?php previous_post_link('%link'); ?>
                             <span class="arrow left-arrow"></span>
-                        </span>
+                        </a>
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
-                        <span class="link add next-post"><?php next_post_link('%link'); ?>
-                            <span class="arrow right-arrow"></span></span>
+                        <aclass="link add next-post"><?php next_post_link('%link'); ?>
+                            <span class="arrow right-arrow"></span></a>
 
                     </div>
 
