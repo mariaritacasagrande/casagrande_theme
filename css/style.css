@@ -3832,6 +3832,15 @@ this improves this issue. TODO */
   	right: 0;
   	left: 0;
   }
+
+    @media only screen and (max-width: 768px) {
+      .link-area .links-section .pag-prev a {
+        display:none;
+        position: absolute;
+        right: 0;
+        left: 0;
+      }
+    }
   .links-section .link .left-arrow { right: 75%; }
   .pag-next {
 		right: 5%;
