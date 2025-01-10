@@ -14,10 +14,10 @@
             </div>
             <div class="col-md-3">
                 <ul class="list-inline social-networks text-right">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-medium"></i></a></li>
+                    <li><a href="https://github.com/mariaritacasagrande"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://linkedin.com/in/mariarita-casagrande"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://dev.to/mariaritacasagrande"><i class="fa fa-dev"></i></a></li>
+
                 </ul>
             </div>
         </div>
@@ -47,7 +47,7 @@
                 <ul class="list-inline social-networks text-center">
                     <li><a target="_blank"
                             href="https://twitter.com/intent/tweet?status=Check%20this%20out!%20-%20+<?php the_permalink() ?>"><span
-                                class="fa fa-twitter"></span><span class="social-title">Twitter</span></a></li>
+                                class="fa fa-github"></span><span class="social-title">Twitter</span></a></li>
                     <li><a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php the_permalink() ?>"><span
                                 class="fa fa-facebook"></span><span class="social-title">Facebook</span></a></li>
                     <li><a target="_blank"
