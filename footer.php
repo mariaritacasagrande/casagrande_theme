@@ -16,7 +16,7 @@
                 <ul class="list-inline social-networks text-right">
                     <li><a href="https://github.com/mariaritacasagrande"><i class="fa fa-github"></i></a></li>
                     <li><a href="https://linkedin.com/in/mariarita-casagrande"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="https://dev.to/mariaritacasagrande"><i class="fa fa-dev"></i></a></li>
+                    <li><a href="https://dev.to/mariaritacasagrande"><i class="fa fa-code"></i></a></li>
 
                 </ul>
             </div>
