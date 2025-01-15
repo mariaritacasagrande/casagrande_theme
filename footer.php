@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-3">
                 <a class="show tel" href="https://w.app/YOH6Kj">+(55) 11 9 4891 0734</a>
-                <a href="mailto:contato@ritacasagrande.com">contato@ritacasagrande.com</a>
+                <a href="mailto:contato@ritacasagrande.com">mariaritao@casagrande.dev</a>
             </div>
             <div class="col-md-3">
                 <ul class="list-inline social-networks text-right">
