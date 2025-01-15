@@ -47,7 +47,7 @@
 
 
 
-            <!-- fim post -->
+            <!-- fim post e inicio de paginaçao-->
 
 
 
