@@ -83,6 +83,7 @@ Template Name: header_pt
                     </div>
                     <!-- Main navigation -->
                     <div class="collapse navbar-collapse" id="navbar">
+
                         <?php
                         $menus = wp_get_nav_menus(array('theme_location' => 'header-menu'));
                         foreach ($menus as $menu /** @var WP_Term $menu */) {
