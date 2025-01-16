@@ -77,7 +77,20 @@
 					</div>
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
-						<?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
+
+						<?php
+						$menus = wp_get_nav_menus(array('theme_location' => 'header-menu'));
+						foreach ($menus as $menu /** @var WP_Term $menu */) {
+							$menu_items = wp_get_nav_menu_items($menu->term_id);
+							if (!empty($menu_items)) {
+								echo '<ul class="nav navbar-nav">';
+								foreach ($menu_items as $menu_item) {
+									echo '<li><a href="' . $menu_item->url . '" data-title="' . $menu_item->attr_title . '"  data-subtitle="' . $menu_item->description . '">' . $menu_item->title . '</a></li>';
+								}
+								echo '</ul>';
+							}
+						}
+						?>
 					</div>
 				</nav> <!-- ./Main navigation -->
 			</div>
