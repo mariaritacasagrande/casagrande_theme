@@ -9,8 +9,10 @@
                 <address>Freguesia do Ó<br>São Paulo<br>Sp, Brasil</address>
             </div>
             <div class="col-md-3">
-                <a class="show tel" href="https://w.app/YOH6Kj">+(55) 11 9 4891 0734</a>
-                <a href="mailto:contato@ritacasagrande.com">mariaritao@casagrande.dev</a>
+                <a class="show tel"
+                    href="https://api.whatsapp.com/send?phone=5511948910734&text=Ol%C3%A1,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20...">+(55)
+                    11 9 4891 0734</a>
+                <a href="mailto:mariarita@casagrande.dev">mariarita@casagrande.dev</a>
             </div>
             <div class="col-md-3">
                 <ul class="list-inline social-networks text-right">
