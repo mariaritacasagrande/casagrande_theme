@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 	<meta charset="utf-8">
@@ -78,7 +78,7 @@
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
 						<?php
-						$menus = wp_get_nav_menus();
+						$menus = wp_get_nav_menus(array('theme_location' => 'header-menu'));
 						foreach ($menus as $menu /** @var WP_Term $menu */) {
 							$menu_items = wp_get_nav_menu_items($menu->term_id);
 							if (!empty($menu_items)) {
