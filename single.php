@@ -159,6 +159,7 @@ get_header(); ?>
             <!-- Go top button/arrow -->
             <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
-</main>
 
+        </div> <!-- Fecha a última <div> aberta no loop -->
+</main> <!-- Fecha <main id="main"> -->
 <?php get_footer(); ?>

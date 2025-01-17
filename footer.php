@@ -97,7 +97,7 @@
     ga('create', 'UA-XXXXXXX-X', 'auto');
     ga('send', 'pageview');
 </script>
-</div>
+
 <?php wp_footer(); ?>
 </body>
 
