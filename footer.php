@@ -36,7 +36,7 @@
 </div>
 
 </div>
-<span id="sidebar-bg"></span>
+
 <!-- #/wrapper -->
 
 <!-- social modal box -->
@@ -97,6 +97,7 @@
     ga('create', 'UA-XXXXXXX-X', 'auto');
     ga('send', 'pageview');
 </script>
+</div>
 <?php wp_footer(); ?>
 </body>
 
