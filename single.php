@@ -141,15 +141,6 @@ get_header(); ?>
                 <!-- lista de comentarios -->
 
                 <div class="col-md-7 col-md-8">
-                    echo '
-                    <pre>Antes do wp_list_comments</pre>';
-                    wp_list_comments(array(
-                    'style' => 'div',
-                    'short_ping' => true,
-                    'avatar_size' => 50,
-                    ));
-                    echo '
-                    <pre>Depois do wp_list_comments</pre>';
 
                     <div class="commentlist">
                         <?php if (have_comments()): ?>
