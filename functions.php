@@ -164,33 +164,4 @@ function casagrande_setup_theme()
 }
 add_action('after_setup_theme', 'casagrande_setup_theme');
 
-
-//recent posts numbers
-
-function custom_recent_posts_widget_output($output, $args, $instance)
-{
-    // Gera o contador de itens
-    global $post;
-    $recent_posts = wp_get_recent_posts([
-        'numberposts' => $instance['number'] ?? 5,
-        'post_status' => 'publish',
-    ]);
-
-    if (!empty($recent_posts)) {
-        $output = '<ul style="width: 272px;">';
-        $counter = 1;
-        foreach ($recent_posts as $recent) {
-            $output .= '<li>';
-            $output .= '<span class="wdgt-counter">' . $counter . '</span>';
-            $output .= '<a href="' . get_permalink($recent['ID']) . '" class="inner-link">' . esc_html($recent['post_title']) . '</a>';
-            $output .= '</li>';
-            $counter++;
-        }
-        $output .= '</ul>';
-    }
-
-    return $output;
-}
-add_filter('widget_posts_args', 'custom_recent_posts_widget_output', 10, 3);
-
 ?>
