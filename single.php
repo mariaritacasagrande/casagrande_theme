@@ -4,7 +4,7 @@
  * Template Post Type: post
  */
 get_header(); ?>
-
+<div class="main-container"></div>
 <main id="main" class="container">
     <div id="the-post">
         <?php if (have_posts()): ?>
