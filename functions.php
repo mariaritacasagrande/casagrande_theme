@@ -164,4 +164,29 @@ function casagrande_setup_theme()
 }
 add_action('after_setup_theme', 'casagrande_setup_theme');
 
+
+
+function add_numbers_to_recent_posts($widget_output, $widget_args, $instance)
+{
+    if (!empty($widget_args['id']) && $widget_args['id'] === 'recent-posts') { // Substitua 'recent-posts-2' pelo ID do widget na sua sidebar
+        $dom = new DOMDocument();
+        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $widget_output); // Carrega o HTML do widget
+
+        $list_items = $dom->getElementsByTagName('li');
+        $counter = 1;
+
+        foreach ($list_items as $item) {
+            $span = $dom->createElement('span', $counter);
+            $span->setAttribute('class', 'wdgt-counter'); // Adiciona a classe para estilos
+            $item->insertBefore($span, $item->firstChild); // Insere o número antes do título
+            $counter++;
+        }
+
+        $widget_output = $dom->saveHTML();
+    }
+
+    return $widget_output;
+}
+
+add_filter('widget_output', 'add_numbers_to_recent_posts', 10, 3);
 ?>
