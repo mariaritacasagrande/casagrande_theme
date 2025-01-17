@@ -38,14 +38,13 @@ Template Name: Homepage
                     <!-- just by adding 'data-filter' and your category as value -->
                     <!-- for example: -->
                     <!-- data-filter="branding" -->
-                    <li class="active"><a href="#prtfl-anchor" data-filter="all">All</a></li>
+
                     <ul class="filter-nav">
                         <li class="active"><a href="#prtfl-anchor"
                                 data-filter="all"><?php _e('All', 'casagrande'); ?></a></li>
                         <li><a href="#prtfl-anchor" data-filter="printing"><?php _e('Printing', 'casagrande'); ?></a>
                         </li>
-                        <li><a href="#prtfl-anchor"
-                                data-filter="illustration"><?php _e('Illustration', 'casagrande'); ?></a></li>
+                        <!-- <li><a href="#prtfl-anchor" data-filter="illustration"><?php _e('Illustration', 'casagrande'); ?></a></li> -->
                         <li><a href="#prtfl-anchor" data-filter="web"><?php _e('Web', 'casagrande'); ?></a></li>
                     </ul>
                 </ul>
