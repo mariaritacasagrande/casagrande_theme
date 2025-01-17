@@ -77,8 +77,10 @@
 					</div>
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
+
+						<?php custom_multilingual_menu(); // Call your custom function to display the correct menu based on language ?>
 						<?php
-						$menus = wp_get_nav_menus();
+						$menus = custom_multilingual_menu();
 						foreach ($menus as $menu /** @var WP_Term $menu */) {
 							$menu_items = wp_get_nav_menu_items($menu->term_id);
 							if (!empty($menu_items)) {
