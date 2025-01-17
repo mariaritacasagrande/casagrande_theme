@@ -51,19 +51,7 @@
 <!-- from one or another. Both filters could cause unexpected behaviors -->
 
 
-<body class="<?php
-if (is_single()) {
-	echo 'blog-left-sidebar single-post big-heading top-page compact-menu-enabled';
-} else {
-	echo 'portfolio-page fltrs-fx-fade fltrs-scale';
-}
-?>" data-page="<?php
-if (is_single()) {
-	echo 'singleBlogPage';
-} else {
-	echo 'portfolio';
-}
-?>">
+<body class="blog-left-sidebar single-post big-heading" data-page="singleBlogPage">
 
 	<?php if (is_single()) {
 		echo 'Este é um post único.';
