@@ -77,6 +77,12 @@
 					</div>
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
+
+						<?php $nav = cr_get_menu_items('navigation_menu') ?>
+						<?php foreach ($nav as $link): ?>
+							<a href="<?= $link->url ?>"><?= $link->title ?></a>
+						<?php endforeach; ?>
+
 						<?php
 						$menus = wp_get_nav_menus(array('theme_location' => 'header-menu'));
 						foreach ($menus as $menu /** @var WP_Term $menu */) {
