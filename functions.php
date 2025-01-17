@@ -37,6 +37,22 @@ class Custom_Nav_Walker extends Walker_Nav_Menu
     }
 }
 
+//habilita blog-sidebar
+
+function casagrande_register_sidebar()
+{
+    register_sidebar(array(
+        'name' => __('Blog Sidebar', 'casagrande'),
+        'id' => 'blog-sidebar',
+        'description' => __('Widgets for the blog sidebar', 'casagrande'),
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget_title">',
+        'after_title' => '</h3>',
+    ));
+}
+add_action('widgets_init', 'casagrande_register_sidebar');
+
 
 // habilitar Widgets
 function casagrande_widgets_init()

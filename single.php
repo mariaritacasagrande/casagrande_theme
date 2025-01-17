@@ -51,7 +51,19 @@ get_header(); ?>
                     <?php endif; ?>
                 </article>
 
-                <?php get_sidebar(); ?>
+                <aside class="blog-sidebar col-md-3 col-md-pull-8">
+                    <ul class="list-unstyled">
+                        <?php if (is_active_sidebar('blog-sidebar')): ?>
+                            <?php dynamic_sidebar('blog-sidebar'); ?>
+                        <?php else: ?>
+                            <li class="widget">
+                                <h3 class="widget_title"><?php _e('Example Widget', 'casagrande'); ?></h3>
+                                <p><?php _e('Add widgets to this area from the WordPress admin panel.', 'casagrande'); ?>
+                                </p>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </aside>
                 <!-- /.blog-sidebar -->
             </div>
 
