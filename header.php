@@ -76,21 +76,19 @@
 						</div>
 					</div>
 					<!-- Main navigation -->
+
+
 					<div class="collapse navbar-collapse" id="navbar">
 
 						<?php
-						$menus = wp_get_custom_multilingual_menu();
-						foreach ($menus as $menu /** @var WP_Term $menu */) {
-							$menu_items = wp_get_custom_multilingual_menu_items($menu->term_id);
-							if (!empty($menu_items)) {
-								echo '<ul class="nav navbar-nav">';
-								foreach ($menu_items as $menu_item) {
-									echo '<li><a href="' . $menu_item->url . '" data-title="' . $menu_item->attr_title . '"  data-subtitle="' . $menu_item->description . '">' . $menu_item->title . '</a></li>';
-								}
-								echo '</ul>';
-							}
-						}
+						$args = array(
+							'theme_location' => 'top',
+							'menu_class' => 'menu vertical medium-horizontal expanded medium-text-center'
+						);
 						?>
+						<?php wp_nav_menu($args); ?>
+
+
 					</div>
 				</nav> <!-- ./Main navigation -->
 			</div>
