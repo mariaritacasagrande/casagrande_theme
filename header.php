@@ -80,7 +80,7 @@
 						<?php
 						$menus = wp_get_nav_menus(array('theme_location' => 'header-menu'));
 						foreach ($menus as $menu /** @var WP_Term $menu */) {
-							$menu_items = wp_get_nav_menu_items($menu->term_id);
+							$menu_items = wp_get_nav_menu_items($menu->term_id) && $options['menu_choice'];
 							if (!empty($menu_items)) {
 								echo '<ul class="nav navbar-nav">';
 								foreach ($menu_items as $menu_item) {
