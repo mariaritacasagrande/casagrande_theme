@@ -165,28 +165,41 @@ function casagrande_setup_theme()
 add_action('after_setup_theme', 'casagrande_setup_theme');
 
 
+// numeração recent posts
 
-function add_numbers_to_recent_posts($widget_output, $widget_args, $instance)
+function custom_recent_posts_widget_output($args)
 {
-    if (!empty($widget_args['id']) && $widget_args['id'] === 'recent-posts') { // Substitua 'recent-posts-2' pelo ID do widget na sua sidebar
-        $dom = new DOMDocument();
-        @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $widget_output); // Carrega o HTML do widget
+    // Captura o output original
+    ob_start();
+    the_widget('WP_Widget_Recent_Posts', array(), $args);
+    $output = ob_get_clean();
 
-        $list_items = $dom->getElementsByTagName('li');
+    // Modifica a saída adicionando números e classes customizadas
+    $dom = new DOMDocument();
+    @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $output); // Garante suporte a UTF-8
+
+    $ul = $dom->getElementsByTagName('ul')->item(0);
+    if ($ul) {
+        $lis = $ul->getElementsByTagName('li');
         $counter = 1;
+        foreach ($lis as $li) {
+            // Cria o span com a classe e número
+            $span = $dom->createElement('span', $counter++);
+            $span->setAttribute('class', 'wdgt-counter');
 
-        foreach ($list_items as $item) {
-            $span = $dom->createElement('span', $counter);
-            $span->setAttribute('class', 'wdgt-counter'); // Adiciona a classe para estilos
-            $item->insertBefore($span, $item->firstChild); // Insere o número antes do título
-            $counter++;
+            // Insere o span antes do link
+            $link = $li->getElementsByTagName('a')->item(0);
+            if ($link) {
+                $li->insertBefore($span, $link);
+            }
         }
-
-        $widget_output = $dom->saveHTML();
     }
 
-    return $widget_output;
+    // Retorna o novo HTML
+    return $dom->saveHTML();
 }
 
-add_filter('widget_output', 'add_numbers_to_recent_posts', 10, 3);
+// Filtro para aplicar a customização
+add_filter('widget_output', 'custom_recent_posts_widget_output', 10, 1);
+
 ?>
