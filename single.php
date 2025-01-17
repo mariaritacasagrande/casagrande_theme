@@ -134,37 +134,58 @@ get_header(); ?>
                         <?php else: ?>
                             <p><?php _e('Comments are closed for this post.', 'casagrande'); ?></p>
                         <?php endif; ?>
-                        </div>
-                        </div>
-                <div class="col-md-7 col-md-8">
-                    <div class="commentlist">
-                        <div class="commentlist-item">
-                            <div class="comment even">
-                                <div class="avatar-holder">
-                                    <img src="images/comment-avatar-01.png" height="33" width="33"
-                                        alt="image description" class="img-responsive">
-                                    <div class="holder">
-                                        <h2><a href="#">Graham</a></h2>
-                                        <time datetime="2016-10-21">21th Oct, 2016</time>
-                                    </div>
-                                </div>
-                                <div class="commentlist-holder">
-                                    <p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum
-                                        lacinia. Sed
-                                        non ipsum dui. Proin commodo sapien felis, iaculis bibendum sem rutrum sit amet.
-                                        <strong>Nullam in magna</strong> a ipsum auctor convallis. Ut mollis orci
-                                        sodales
-                                        viverra feugiat. Integer sed sem nec libero porttitor sagittis eget non erat. <a
-                                            href="#">Donec venenatis dapibus</a> ante vitae ullamcorper.
-                                    </p>
-                                    <a href="#" class="pull-right reply">reply</a>
-                                </div>
-                            </div>
-
-                        </div>
-
                     </div>
                 </div>
+                <div class="col-md-7 col-md-8">
+                    <div class="commentlist">
+                        <?php if (have_comments()): ?>
+                            <?php
+                            // Configuração personalizada para a listagem de comentários
+                            wp_list_comments(array(
+                                'style' => 'div',
+                                'short_ping' => true,
+                                'avatar_size' => 50,
+                                'callback' => function ($comment, $args, $depth) {
+                                    // Callback personalizado para exibir os comentários
+                                    $GLOBALS['comment'] = $comment;
+                                    ?>
+                                <div class="commentlist-item">
+                                    <div class="comment <?php echo ($depth % 2 === 0) ? 'even' : 'odd'; ?>">
+                                        <div class="avatar-holder">
+                                            <?php echo get_avatar($comment, $args['avatar_size'], '', '', array('class' => 'img-responsive')); ?>
+                                            <div class="holder">
+                                                <h2><?php echo get_comment_author_link(); ?></h2>
+                                                <time datetime="<?php echo get_comment_time('c'); ?>">
+                                                    <?php echo get_comment_date(); ?>
+                                                </time>
+                                            </div>
+                                        </div>
+                                        <div class="commentlist-holder">
+                                            <?php if ($comment->comment_approved == '0'): ?>
+                                                <p><em><?php _e('Your comment is awaiting moderation.', 'casagrande'); ?></em></p>
+                                            <?php endif; ?>
+                                            <p><?php comment_text(); ?></p>
+                                            <?php
+                                                comment_reply_link(array_merge($args, array(
+                                                    'reply_text' => __('reply', 'casagrande'),
+                                                    'depth' => $depth,
+                                                    'max_depth' => $args['max_depth'],
+                                                    'class' => 'pull-right reply',
+                                                )));
+                                                ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                                }
+                            ));
+                            ?>
+                        <?php else: ?>
+                            <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
             </div>
             <!-- ./Comments -->
 
