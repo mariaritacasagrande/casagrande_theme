@@ -101,3 +101,33 @@
 </body>
 
 </html>
+
+
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div><a href="<?php echo home_url(); ?>">Büro<br>Design Atelier</a></div>
+            </div>
+            <div class="col-md-3">
+                <address>20 Oak Street<br>Building 31<br>Manchester, UK</address>
+            </div>
+            <div class="col-md-3">
+                <a href="tel:+34609331754">+(34) 609 33 17 54</a>
+                <a href="mailto:hey@buro.com">hey@buro.com</a>
+            </div>
+            <div class="col-md-3">
+                <ul class="list-inline social-networks text-right">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-medium"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<?php wp_footer(); ?>
+</body>
+</html>
