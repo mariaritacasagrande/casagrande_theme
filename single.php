@@ -94,77 +94,7 @@ get_header(); ?>
             <!-- ./Pagination & action buttons -->
 
             <!-- Comments -->
-            <div class="container comments-section">
-                <div class="col-md-5">
-                    <div class="comments-col">
-                        <div class="heading-block">
-                            <h4><?php _e('Let us know your thoughts about this topic', 'casagrande'); ?></h4>
-                            <span><?php printf(_n('%s Comment', '%s Comments', get_comments_number(), 'casagrande'), get_comments_number()); ?></span>
-                        </div>
-                        <?php if (comments_open()): ?>
-                            <?php
-                            $comment_form_args = array(
-                                'title_reply' => '',
-                                'label_submit' => __('Send', 'casagrande'),
-                                'comment_field' => '
-                        <div class="input-row">
-                            <label for="comment">' . __('Comment', 'casagrande') . '</label>
-                            <textarea id="comment" name="comment" cols="30" rows="10" placeholder="' . __('Join the conversation', 'casagrande') . '" class="form-control required-field"></textarea>
-                        </div>',
-                                'fields' => array(
-                                    'author' => '
-                            <div class="input-row">
-                                <label for="author">' . __('Name', 'casagrande') . '</label>
-                                <input id="author" name="author" type="text" placeholder="' . __('Your Name', 'casagrande') . '" class="form-control required-field" />
-                            </div>',
-                                    'email' => '
-                            <div class="input-row">
-                                <label for="email">' . __('Email', 'casagrande') . '</label>
-                                <input id="email" name="email" type="email" placeholder="' . __('Enter your e-mail', 'casagrande') . '" class="form-control required-email" />
-                            </div>',
-                                ),
-                                'submit_button' => '
-                        <div id="submit-btn">
-                            <input name="%1$s" type="submit" id="%2$s" value="%4$s" />
-                            <i class="arrow right-arrow"></i>
-                        </div>',
-                            );
-                            comment_form($comment_form_args);
-                            ?>
-                        <?php else: ?>
-                            <p><?php _e('Comments are closed for this post.', 'casagrande'); ?></p>
-                        <?php endif; ?>
-                    </div>
-                
-
-
-                <!-- lista de comentarios -->
-
-                <div class="col-md-7 col-md-8">
-
-                    <div class="commentlist">
-                        <?php if (have_comments()): ?>
-                            <?php
-                            // Exibe a lista de comentários
-                            wp_list_comments(array(
-                                'style' => 'div',
-                                'short_ping' => true,
-                                'avatar_size' => 50,
-                            ));
-                            ?>
-                        <?php else: ?>
-                            <!-- Mensagem se não houver comentários -->
-                            <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
-                        <?php endif; ?>
-                    </div>
-                </div>
-
-
-
-
-                <!-- ./lista de comentarios -->
-
-            </div>
+            
             <!-- ./Comments -->
 
             <!-- Go top button/arrow -->
