@@ -64,6 +64,14 @@ if (is_single()) {
 	echo 'portfolio';
 }
 ?>">
+
+	<?php if (is_single()) {
+		echo 'Este é um post único.';
+	} else {
+		echo 'Esta não é uma página de post único.';
+	} ?>
+
+
 	<!-- Preloader -->
 	<div id="preloader">
 		<span class="preloader-ani"></span>
