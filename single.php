@@ -50,7 +50,7 @@ get_header(); ?>
                         <!-- Término verdadeiro do Loop -->
                     <?php endif; ?>
                 </article>
-
+                <!-- sidebar -->
                 <aside class="blog-sidebar col-md-3 col-md-pull-8">
                     <ul class="list-unstyled">
                         <?php if (is_active_sidebar('blog-sidebar')): ?>
@@ -64,10 +64,9 @@ get_header(); ?>
                         <?php endif; ?>
                     </ul>
                 </aside>
+
                 <!-- /.blog-sidebar -->
             </div>
-
-
 
             <!-- Pagination & action buttons -->
             <div class="container-fluid link-area">
@@ -99,62 +98,65 @@ get_header(); ?>
                 <div class="col-md-5">
                     <div class="comments-col">
                         <div class="heading-block">
-                            <h4><?php _e('Let us know your thoughts about this topic', 'casagrande'); ?></h4>
-                            <span><?php printf(_n('%s Comment', '%s Comments', get_comments_number(), 'casagrande'), get_comments_number()); ?></span>
+                            <h4>Let us know your thoughts about this topic</h4>
+                            <span>7 Comments</span>
                         </div>
-                        <?php if (comments_open()): ?>
-                            <?php
-                            $comment_form_args = array(
-                                'title_reply' => '',
-                                'label_submit' => __('Send', 'casagrande'),
-                                'comment_field' => '
-                        <div class="input-row">
-                            <label for="comment">' . __('Comment', 'casagrande') . '</label>
-                            <textarea id="comment" name="comment" cols="30" rows="10" placeholder="' . __('Join the conversation', 'casagrande') . '" class="form-control required-field"></textarea>
-                        </div>',
-                                'fields' => array(
-                                    'author' => '
-                            <div class="input-row">
-                                <label for="author">' . __('Name', 'casagrande') . '</label>
-                                <input id="author" name="author" type="text" placeholder="' . __('Your Name', 'casagrande') . '" class="form-control required-field" />
-                            </div>',
-                                    'email' => '
-                            <div class="input-row">
-                                <label for="email">' . __('Email', 'casagrande') . '</label>
-                                <input id="email" name="email" type="email" placeholder="' . __('Enter your e-mail', 'casagrande') . '" class="form-control required-email" />
-                            </div>',
-                                ),
-                                'submit_button' => '
-                        <div id="submit-btn">
-                            <input name="%1$s" type="submit" id="%2$s" value="%4$s" />
-                            <i class="arrow right-arrow"></i>
-                        </div>',
-                            );
-                            comment_form($comment_form_args);
-                            ?>
-                        <?php else: ?>
-                            <p><?php _e('Comments are closed for this post.', 'casagrande'); ?></p>
-                        <?php endif; ?>
+                        <form action="#" class="comments-form validate-form">
+                            <fieldset>
+                                <div class="input-row">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" placeholder="Your Name"
+                                        class="form-control required-field">
+                                </div>
+                                <div class="input-row">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="Enter your e-mail"
+                                        class="form-control required-email">
+                                </div>
+                                <div class="input-row">
+                                    <label for="comment">Comment</label>
+                                    <textarea cols="30" rows="10" id="comment" placeholder="Join the conversation"
+                                        class="form-control required-field"></textarea>
+                                </div>
+                                <div id="submit-btn">
+                                    <input type="submit" value="send">
+                                    <i class="arrow right-arrow"></i>
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
-
                 <div class="col-md-7 col-md-8">
                     <div class="commentlist">
-                        <?php if (have_comments()): ?>
-                            <?php wp_list_comments(array(
-                                'style' => 'div',
-                                'short_ping' => true,
-                                'avatar_size' => 50,
-                                'callback' => 'custom_comment_callback', // Crie uma função personalizada se desejar
-                            )); ?>
-                        <?php else: ?>
-                            <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
-                        <?php endif; ?>
+                        <div class="commentlist-item">
+                            <div class="comment even">
+                                <div class="avatar-holder">
+                                    <img src="images/comment-avatar-01.png" height="33" width="33"
+                                        alt="image description" class="img-responsive">
+                                    <div class="holder">
+                                        <h2><a href="#">Graham</a></h2>
+                                        <time datetime="2016-10-21">21th Oct, 2016</time>
+                                    </div>
+                                </div>
+                                <div class="commentlist-holder">
+                                    <p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum
+                                        lacinia. Sed
+                                        non ipsum dui. Proin commodo sapien felis, iaculis bibendum sem rutrum sit amet.
+                                        <strong>Nullam in magna</strong> a ipsum auctor convallis. Ut mollis orci
+                                        sodales
+                                        viverra feugiat. Integer sed sem nec libero porttitor sagittis eget non erat. <a
+                                            href="#">Donec venenatis dapibus</a> ante vitae ullamcorper.
+                                    </p>
+                                    <a href="#" class="pull-right reply">reply</a>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
             <!-- ./Comments -->
-
 
             <!-- Go top button/arrow -->
             <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
