@@ -244,11 +244,26 @@ add_filter('widget_categories_args', 'exclude_categories_from_list');
 add_filter('widget_categories_dropdown_args', 'exclude_categories_from_list'); // Para dropdowns
 
 //callback dos coments
-wp_list_comments(array(
-    'style' => 'div',
-    'short_ping' => true,
-    'avatar_size' => 50,
-));
+function custom_comments_callback($comment, $args, $depth)
+{
+    ?>
+        <div class="comment" id="comment-<?php comment_ID(); ?>">
+            <div class="comment-meta">
+                <?php echo get_avatar($comment, 50); ?>
+                <div class="comment-author"><?php echo get_comment_author_link(); ?></div>
+                <div class="comment-date"><?php echo get_comment_date(); ?></div>
+            </div>
+            <div class="comment-content"><?php comment_text(); ?></div>
+            <?php
+            comment_reply_link(array_merge($args, array(
+                'reply_text' => __('Reply', 'casagrande'),
+                'depth' => $depth,
+                'max_depth' => $args['max_depth'],
+            )));
+            ?>
+        </div>
+        <?php
+}
 
 
 ?>
