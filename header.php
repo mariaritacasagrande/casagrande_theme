@@ -77,13 +77,19 @@
 					</div>
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
-
-						<?php $nav = cr_get_menu_items('navigation_menu') ?>
-						<?php foreach ($nav as $link): ?>
-							<a href="<?= $link->url ?>"><?= $link->title ?></a>
-						<?php endforeach; ?>
-
-
+						<?php
+						$menus = wp_get_nav_menus(array('theme_location' => 'primary'));
+						foreach ($menus as $menu /** @var WP_Term $menu */) {
+							$menu_items = wp_get_nav_menu_items($menu->term_id);
+							if (!empty($menu_items)) {
+								echo '<ul class="nav navbar-nav">';
+								foreach ($menu_items as $menu_item) {
+									echo '<li><a href="' . $menu_item->url . '" data-title="' . $menu_item->attr_title . '"  data-subtitle="' . $menu_item->description . '">' . $menu_item->title . '</a></li>';
+								}
+								echo '</ul>';
+							}
+						}
+						?>
 					</div>
 				</nav> <!-- ./Main navigation -->
 			</div>

@@ -9,17 +9,6 @@ function casagrande_register_nav_menus()
 }
 add_action('after_setup_theme', 'casagrande_register_nav_menus');
 
-
-
-function cr_get_menu_items($menu_location)
-{
-    $locations = get_nav_menu_locations();
-    $menu = get_term($locations[$menu_location], 'nav_menu');
-    return wp_get_nav_menu_items($menu->term_id);
-}
-
-
-
 // habilitar Widgets
 function casagrande_widgets_init()
 {
