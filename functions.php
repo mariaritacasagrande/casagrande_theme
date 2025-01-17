@@ -243,4 +243,41 @@ function exclude_categories_from_list($args)
 add_filter('widget_categories_args', 'exclude_categories_from_list');
 add_filter('widget_categories_dropdown_args', 'exclude_categories_from_list'); // Para dropdowns
 
+//callback dos coments
+
+function custom_comments_callback($comment, $args, $depth)
+{
+    // Variável global para o comentário
+    $GLOBALS['comment'] = $comment;
+    ?>
+    <div class="commentlist-item">
+        <div class="comment <?php echo ($depth % 2 === 0) ? 'even' : 'odd'; ?>">
+            <div class="avatar-holder">
+                <?php echo get_avatar($comment, 50, '', '', array('class' => 'img-responsive')); ?>
+                <div class="holder">
+                    <h2><?php echo get_comment_author_link(); ?></h2>
+                    <time datetime="<?php echo get_comment_time('c'); ?>">
+                        <?php echo get_comment_date(); ?>
+                    </time>
+                </div>
+            </div>
+            <div class="commentlist-holder">
+                <?php if ($comment->comment_approved == '0'): ?>
+                    <p><em><?php _e('Your comment is awaiting moderation.', 'casagrande'); ?></em></p>
+                <?php endif; ?>
+                <p><?php comment_text(); ?></p>
+                <?php
+                comment_reply_link(array_merge($args, array(
+                    'reply_text' => __('reply', 'casagrande'),
+                    'depth' => $depth,
+                    'max_depth' => $args['max_depth'],
+                    'class' => 'pull-right reply',
+                )));
+                ?>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+
 ?>
