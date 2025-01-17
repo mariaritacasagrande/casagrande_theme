@@ -167,39 +167,50 @@ add_action('after_setup_theme', 'casagrande_setup_theme');
 
 // numeração recent posts
 
-function custom_recent_posts_widget_output($args)
+class Custom_Recent_Posts_Widget extends WP_Widget_Recent_Posts
 {
-    // Captura o output original
-    ob_start();
-    the_widget('WP_Widget_Recent_Posts', array(), $args);
-    $output = ob_get_clean();
-
-    // Modifica a saída adicionando números e classes customizadas
-    $dom = new DOMDocument();
-    @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $output); // Garante suporte a UTF-8
-
-    $ul = $dom->getElementsByTagName('ul')->item(0);
-    if ($ul) {
-        $lis = $ul->getElementsByTagName('li');
-        $counter = 1;
-        foreach ($lis as $li) {
-            // Cria o span com a classe e número
-            $span = $dom->createElement('span', $counter++);
-            $span->setAttribute('class', 'wdgt-counter');
-
-            // Insere o span antes do link
-            $link = $li->getElementsByTagName('a')->item(0);
-            if ($link) {
-                $li->insertBefore($span, $link);
-            }
+    public function widget($args, $instance)
+    {
+        // Saída inicial do widget
+        $output = $args['before_widget'];
+        if (!empty($instance['title'])) {
+            $output .= $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
         }
-    }
 
-    // Retorna o novo HTML
-    return $dom->saveHTML();
+        // Query dos posts recentes
+        $query_args = [
+            'posts_per_page' => !empty($instance['number']) ? absint($instance['number']) : 5,
+            'post_status' => 'publish',
+        ];
+        $recent_posts = new WP_Query($query_args);
+
+        if ($recent_posts->have_posts()) {
+            $output .= '<ul style="width: 312px;">';
+            $counter = 1; // Contador para os números
+            while ($recent_posts->have_posts()) {
+                $recent_posts->the_post();
+                $output .= '<li><span class="wdgt-counter">' . $counter . '</span>';
+                $output .= '<a href="' . esc_url(get_permalink()) . '" class="inner-link">' . get_the_title() . '</a></li>';
+                $counter++;
+            }
+            $output .= '</ul>';
+        }
+
+        wp_reset_postdata();
+
+        $output .= $args['after_widget'];
+
+        // Exibe o widget
+        echo $output;
+    }
 }
 
-// Filtro para aplicar a customização
-add_filter('widget_output', 'custom_recent_posts_widget_output', 10, 1);
+// Registra o widget personalizado
+function register_custom_recent_posts_widget()
+{
+    unregister_widget('WP_Widget_Recent_Posts'); // Remove o widget padrão
+    register_widget('Custom_Recent_Posts_Widget');
+}
+add_action('widgets_init', 'register_custom_recent_posts_widget');
 
 ?>
