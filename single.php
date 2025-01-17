@@ -151,7 +151,8 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
 
-            
+            </div>
+            </div>
             <!-- ./Comments -->
 
             <!-- Go top button/arrow -->
