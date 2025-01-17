@@ -149,14 +149,14 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-
-            <!-- ./Comments -->
-
-
-            <!-- Go top button/arrow -->
-            <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+        </div>
+        <!-- ./Comments -->
 
 
-        </div> <!-- Fecha a última <div> aberta no loop -->
+        <!-- Go top button/arrow -->
+        <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+
+
+    </div> <!-- Fecha a última <div> aberta no loop -->
 </main> <!-- Fecha <main id="main"> -->
 <?php get_footer(); ?>
