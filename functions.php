@@ -244,26 +244,43 @@ add_filter('widget_categories_args', 'exclude_categories_from_list');
 add_filter('widget_categories_dropdown_args', 'exclude_categories_from_list'); // Para dropdowns
 
 //callback dos coments
-function custom_comments_callback($comment, $args, $depth)
+function meu_callback_comentarios($comment, $args, $depth)
 {
     ?>
-        <div class="comment" id="comment-<?php comment_ID(); ?>">
-            <div class="comment-meta">
-                <?php echo get_avatar($comment, 50); ?>
-                <div class="comment-author"><?php echo get_comment_author_link(); ?></div>
-                <div class="comment-date"><?php echo get_comment_date(); ?></div>
+    <div class="commentlist-item">
+        <div <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+            <div class="avatar-holder">
+                <?php
+                // Substitua '33' se quiser outro tamanho
+                echo get_avatar($comment, 33);
+                ?>
+                <div class="holder">
+                    <h2>
+                        <?php
+                        // Autor do comentário com link (se houver)
+                        printf('<a href="%s">%s</a>', get_comment_author_url(), get_comment_author());
+                        ?>
+                    </h2>
+                    <time datetime="<?php echo get_comment_date('Y-m-d'); ?>">
+                        <?php echo get_comment_date('jS M, Y'); ?>
+                    </time>
+                </div>
             </div>
-            <div class="comment-content"><?php comment_text(); ?></div>
-            <?php
-            comment_reply_link(array_merge($args, array(
-                'reply_text' => __('Reply', 'casagrande'),
-                'depth' => $depth,
-                'max_depth' => $args['max_depth'],
-            )));
-            ?>
+            <div class="commentlist-holder">
+                <?php comment_text(); ?>
+                <?php
+                comment_reply_link(array_merge($args, array(
+                    'reply_text' => 'reply',
+                    'depth' => $depth,
+                    'max_depth' => $args['max_depth']
+                )));
+                ?>
+            </div>
         </div>
-        <?php
+    </div>
+    <?php
 }
+
 
 
 ?>

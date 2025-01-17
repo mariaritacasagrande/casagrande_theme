@@ -92,102 +92,69 @@ get_header(); ?>
             </div>
             <!-- ./Links de navegação -->
 
-			<!-- Comments -->
-			<div class="container comments-section">
-				<div class="col-md-5">
-					<div class="comments-col">
-						<div class="heading-block">
-							<h4>Let us know your thoughts about this topic</h4>
-							<span>7 Comments</span>
-						</div>
-						<form action="#" class="comments-form validate-form">
-							<fieldset>
-								<div class="input-row">
-									<label for="name">Name</label>
-									<input type="text" id="name" placeholder="Your Name" class="form-control required-field">
-								</div>
-								<div class="input-row">
-									<label for="email">Email</label>
-									<input type="email" id="email" placeholder="Enter your e-mail" class="form-control required-email">
-								</div>
-								<div class="input-row">
-									<label for="comment">Comment</label>
-									<textarea cols="30" rows="10" id="comment" placeholder="Join the conversation" class="form-control required-field"></textarea>
-								</div>
-								<div id="submit-btn">
-									<input type="submit" value="send">
-									<i class="arrow right-arrow"></i>
-								</div>
-							</fieldset>
-						</form>
-					</div>
-				</div>
-				<div class="col-md-7 col-md-8">
-					<div class="commentlist">
-						<div class="commentlist-item">
-							<div class="comment even">
-								<div class="avatar-holder">
-									<img src="images/comment-avatar-01.png" height="33" width="33" alt="image description" class="img-responsive">
-									<div class="holder">
-										<h2><a href="#">Graham</a></h2>
-										<time datetime="2016-10-21">21th Oct, 2016</time>
-									</div>
-								</div>
-								<div class="commentlist-holder">
-									<p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum lacinia. Sed non ipsum dui. Proin commodo sapien felis, iaculis bibendum sem rutrum sit amet. <strong>Nullam in magna</strong> a ipsum auctor convallis. Ut mollis orci sodales viverra feugiat. Integer sed sem nec libero porttitor sagittis eget non erat. <a href="#">Donec venenatis dapibus</a> ante vitae ullamcorper.</p>
-									<a href="#" class="pull-right reply">reply</a>
-								</div>
-							</div>
-							<div class="commentlist-item">
-								<div class="comment byuser">
-									<div class="avatar-holder">
-										<img src="images/comment-avatar-03.png" height="33" width="33" alt="image description" class="img-responsive">
-										<div class="holder">
-											<h2><a href="#">Rodriguo Leao</a></h2>
-											<time datetime="2016-10-21">21th Oct, 2016</time>
-										</div>
-									</div>
-									<div class="commentlist-holder">
-										<p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum lacinia. Sed non ipsum dui. Proin commodo sapien felis, iaculis bibendum <strong>sem rutrum sit amet</strong>. Nullam in magna a ipsum auctor convallis.sem eros id sapien. Proin scelerisque blandit eros non euismod. Etiam eu dictum magna.</p>
-										<a href="#" class="pull-right reply">reply</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="commentlist-item">
-							<div class="comment even">
-								<div class="avatar-holder">
-									<img src="images/comment-avatar-02.png" height="33" width="33" alt="image description" class="img-responsive">
-									<div class="holder">
-										<h2><a href="#">Chester Keaton</a></h2>
-										<time datetime="2016-10-21">21th Oct, 2016</time>
-									</div>
-								</div>
-								<div class="commentlist-holder">
-									<p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum lacinia. Sed non ipsum dui. Proin commodo sapien felis, iaculis bibendum sem rutrum sit amet. Nullam in magna a ipsum auctor convallis. Ut mollis orci sodales <strong>viverra feugiat</strong>. Integer sed sem nec libero porttitor sagittis eget non erat. Donec venenatis dapibus ante vitae ullamcorper.</p>
-									<a href="#" class="pull-right reply">reply</a>
-								</div>
-							</div>
-							<div class="commentlist-item">
-								<div class="comment byuser">
-									<div class="avatar-holder">
-										<img src="images/comment-avatar-01.png" height="33" width="33" alt="image description" class="img-responsive">
-										<div class="holder">
-											<h2><a href="#">Graham</a></h2>
-											<time datetime="2016-10-21">21th Oct, 2016</time>
-										</div>
-									</div>
-									<div class="commentlist-holder">
-										<p>Praesent vel pharetra ligula. Nullam tempor dolor interdum libero vestibulum lacinia. Sed non ipsum dui. Proin commodo sapien felis, <strong>iaculis bibendum sem rutrum sit amet</strong>. Nullam in magna a ipsum auctor convallis. Ut mollis orci sodales viverra feugiat. Integer sed sem nec libero porttitor sagittis eget non erat.</p>
-										<a href="#" class="pull-right reply">reply</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- ./Comments -->
+            <!-- Comments -->
+            <div class="container comments-section">
+                <div class="col-md-5">
+                    <div class="comments-col">
+                        <div class="heading-block">
+                            <h4>Let us know your thoughts about this topic</h4>
+                            <span>7 Comments</span>
+                        </div>
+                        <form action="<?php echo site_url('/wp-comments-post.php'); ?>" method="post" id="commentform"
+                            class="comments-form validate-form">
+                            <fieldset>
+                                <div class="input-row">
+                                    <label for="author">Name</label>
+                                    <input type="text" name="author" id="author" placeholder="Your Name"
+                                        class="form-control required-field" required>
+                                </div>
+
+                                <div class="input-row">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="Enter your e-mail"
+                                        class="form-control required-email" required>
+                                </div>
+
+                                <div class="input-row">
+                                    <label for="comment">Comment</label>
+                                    <textarea name="comment" id="comment" cols="30" rows="10"
+                                        placeholder="Join the conversation" class="form-control required-field"
+                                        required></textarea>
+                                </div>
+
+                                <!-- Campos obrigatórios para o WP saber em qual post salvar -->
+                                <input type="hidden" name="comment_post_ID" value="<?php echo get_the_ID(); ?>" />
+                                <?php
+                                // Gera campos hidden para segurança e integração
+                                comment_id_fields(get_the_ID());
+
+                                // Importante para permitir plugins/honeypot/nonce
+                                do_action('comment_form', get_the_ID());
+                                ?>
+
+                                <div id="submit-btn">
+                                    <input type="submit" value="send">
+                                    <i class="arrow right-arrow"></i>
+                                </div>
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-8">
+                    <div class="commentlist">
+    <?php
+    wp_list_comments(array(
+        'style'       => 'div',
+        'short_ping'  => true,
+        'avatar_size' => 33,
+        'callback'    => 'meu_callback_comentarios',
+    ));
+    ?>
+</div>
+                </div>
+            </div>
+            <!-- ./Comments -->
 
             <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
     </main><!-- Fecha #main -->
