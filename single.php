@@ -141,35 +141,33 @@ get_header(); ?>
                 <!-- lista de comentarios -->
 
                 <div class="col-md-7 col-md-8">
-                    <?php
-                    $comments = get_comments(array(
-                        'post_id' => get_the_ID(),
-                        'status' => 'approve',
+                    echo '
+                    <pre>Antes do wp_list_comments</pre>';
+                    wp_list_comments(array(
+                    'style' => 'div',
+                    'short_ping' => true,
+                    'avatar_size' => 50,
                     ));
-                    echo '<pre>';
-                    print_r($comments);
-                    echo '</pre>';
-                    ?>
+                    echo '
+                    <pre>Depois do wp_list_comments</pre>';
 
                     <div class="commentlist">
                         <?php if (have_comments()): ?>
-                            <h3><?php printf(_n('%1$s Comment', '%1$s Comments', get_comments_number(), 'casagrande'), number_format_i18n(get_comments_number())); ?>
-                            </h3>
-                            <div class="comments-wrapper">
-                                <?php
-                                wp_list_comments(array(
-                                    'style' => 'div',
-                                    'short_ping' => true,
-                                    'avatar_size' => 50,
-                                    'callback' => 'custom_comments_callback', // Certifique-se de que esta função existe
-                                ));
-                                ?>
-                            </div>
+                            <?php
+                            // Exibe a lista de comentários
+                            wp_list_comments(array(
+                                'style' => 'div',
+                                'short_ping' => true,
+                                'avatar_size' => 50,
+                            ));
+                            ?>
                         <?php else: ?>
+                            <!-- Mensagem se não houver comentários -->
                             <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
+
 
 
 
