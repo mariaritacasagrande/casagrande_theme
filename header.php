@@ -78,11 +78,10 @@
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
 
-
 						<?php
-						$menus = get_custom_multilingual_menu();
+						$menus = wp_get_custom_multilingual_menu();
 						foreach ($menus as $menu /** @var WP_Term $menu */) {
-							$menu_items = wp_get_nav_menu_items($menu->term_id);
+							$menu_items = wp_get_custom_multilingual_menu_items($menu->term_id);
 							if (!empty($menu_items)) {
 								echo '<ul class="nav navbar-nav">';
 								foreach ($menu_items as $menu_item) {
