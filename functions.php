@@ -147,18 +147,4 @@ function casagrande_setup_theme()
 }
 add_action('after_setup_theme', 'casagrande_setup_theme');
 
-function casagrande_enqueue_scripts()
-{
-    // Estilos
-    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), null, 'all');
-    wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array('bootstrap'), null, 'all');
-
-    // Scripts
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), null, true);
-    wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'), null, true);
-}
-add_action('wp_enqueue_scripts', 'casagrande_enqueue_scripts');
-
-
 ?>
