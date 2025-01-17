@@ -51,11 +51,9 @@ get_header(); ?>
                     <?php endif; ?>
                 </article>
 
-                <?php get_sidebar(); ?>
+
                 <!-- /.blog-sidebar -->
             </div>
-
-
 
             <!-- Pagination & action buttons -->
             <div class="container-fluid link-area">
