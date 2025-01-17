@@ -9,19 +9,6 @@ function casagrande_register_nav_menus()
 }
 add_action('after_setup_theme', 'casagrande_register_nav_menus');
 
-
-add_theme_support('menus');
-//Create Nav Menu
-if (function_exists('register_nav_menus')) {
-    register_nav_menus(array(
-        'por' => 'Menu PT',
-        'eng' => 'Menu EN',
-
-    ));
-}
-
-
-
 // habilitar Widgets
 function casagrande_widgets_init()
 {
