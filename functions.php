@@ -1,4 +1,21 @@
 <?php
+
+// Registrar estilos e scripts
+function casagrande_enqueue_scripts()
+{
+    // Registrar estilos
+    wp_enqueue_style('casagrande-style', get_stylesheet_uri());
+    wp_enqueue_style('casagrande-custom', get_template_directory_uri() . '/assets/css/custom.css', array(), '1.0', 'all');
+
+    // Registrar scripts
+    wp_enqueue_script('casagrande-script', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'casagrande_enqueue_scripts');
+
+// Suporte a títulos dinâmicos
+add_theme_support('title-tag');
+
+
 // menus
 function casagrande_register_nav_menus()
 {
