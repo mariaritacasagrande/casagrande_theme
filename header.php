@@ -79,68 +79,20 @@
 
 
 					<!-- Main navigation -->
-					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
-						<ul class="nav navbar-nav">
-							<?php
-							// Obter o menu principal configurado no idioma atual
-							$current_language = pll_current_language(); // Idioma atual como 'pt' ou 'en'
-							$locations = get_nav_menu_locations(); // Recupera os locais de menu registrados
-							$menu_name = 'primary'; // Nome do local do menu
-							
-							// Obter o ID do menu associado ao local 'primary'
-							if (isset($locations[$menu_name])) {
-								$menu_id = $locations[$menu_name];
+						<?php
+						// Obter o idioma atual
+						$current_language = pll_current_language();
 
-								// Traduzir o menu para o idioma atual
-								$menu_id = pll_get_post($menu_id, $current_language); // Obtém a versão traduzida do menu
-							
-								// Recuperar itens do menu
-								if ($menu_id) {
-									$menu_items = wp_get_nav_menu_items($menu_id);
-
-									// Organizar os itens do menu hierarquicamente
-									$menu_tree = [];
-									foreach ($menu_items as $menu_item) {
-										if (!$menu_item->menu_item_parent) {
-											$menu_tree[$menu_item->ID] = [
-												'item' => $menu_item,
-												'children' => []
-											];
-										} else {
-											$menu_tree[$menu_item->menu_item_parent]['children'][] = $menu_item;
-										}
-									}
-
-									// Gerar a estrutura HTML do menu
-									foreach ($menu_tree as $menu) {
-										$item = $menu['item'];
-										$children = $menu['children'];
-
-										echo '<li class="' . (empty($children) ? '' : 'dropdown') . '">';
-										echo '<a href="' . esc_url($item->url) . '" data-title="' . esc_attr($item->title) . '" data-subtitle="' . esc_attr($item->description) . '">';
-										echo esc_html($item->title);
-										echo '</a>';
-
-										// Submenu
-										if (!empty($children)) {
-											echo '<ul class="dropdown-menu" role="menu">';
-											foreach ($children as $child) {
-												echo '<li><a href="' . esc_url($child->url) . '" title="' . esc_attr($child->attr_title) . '">' . esc_html($child->title) . '</a></li>';
-											}
-											echo '</ul>';
-										}
-
-										echo '</li>';
-									}
-								} else {
-									echo '<li>No menu available for this language.</li>';
-								}
-							} else {
-								echo '<li>No menu location found.</li>';
-							}
-							?>
-						</ul>
+						// Exibir o menu baseado no idioma atual
+						wp_nav_menu(array(
+							'theme_location' => 'primary', // Local do menu
+							'menu' => $current_language,   // Configuração do idioma
+							'container' => false,
+							'menu_class' => 'nav navbar-nav',
+							'fallback_cb' => false
+						));
+						?>
 					</div>
 
 					<!-- ./Main navigation -->
