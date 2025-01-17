@@ -142,21 +142,7 @@ get_header(); ?>
 
                 <div class="col-md-7 col-md-8">
 
-                    <div class="commentlist">
-                        <?php if (have_comments()): ?>
-                            <?php
-                            // Exibe a lista de comentários
-                            wp_list_comments(array(
-                                'style' => 'div',
-                                'short_ping' => true,
-                                'avatar_size' => 50,
-                            ));
-                            ?>
-                        <?php else: ?>
-                            <!-- Mensagem se não houver comentários -->
-                            <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
-                        <?php endif; ?>
-                    </div>
+
                 </div>
 
 
