@@ -143,15 +143,17 @@ get_header(); ?>
                 </div>
                 <div class="col-md-7 col-md-8">
                     <div class="commentlist">
-    <?php
-    wp_list_comments(array(
-        'style'       => 'div',
-        'short_ping'  => true,
-        'avatar_size' => 33,
-        'callback'    => 'meu_callback_comentarios',
-    ));
-    ?>
-</div>
+                        <div class="commentlist">
+                            <?php
+                            wp_list_comments(array(
+                                'style' => 'div',
+                                'short_ping' => true,
+                                'avatar_size' => 50,
+
+                            ));
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- ./Comments -->
