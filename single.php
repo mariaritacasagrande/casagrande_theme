@@ -135,7 +135,7 @@ get_header(); ?>
                             <p><?php _e('Comments are closed for this post.', 'casagrande'); ?></p>
                         <?php endif; ?>
                     </div>
-                </div>
+                
 
 
                 <!-- lista de comentarios -->
@@ -168,7 +168,7 @@ get_header(); ?>
             <!-- ./Comments -->
 
             <!-- Go top button/arrow -->
-           
+            <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
 
