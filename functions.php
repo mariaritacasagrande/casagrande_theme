@@ -213,6 +213,8 @@ function register_custom_recent_posts_widget()
 }
 add_action('widgets_init', 'register_custom_recent_posts_widget');
 
+
+//seta das categorias
 function add_arrow_to_categories($output)
 {
     // Adiciona o ícone de seta ao final de cada link de categoria
@@ -220,5 +222,20 @@ function add_arrow_to_categories($output)
     return $output;
 }
 add_filter('wp_list_categories', 'add_arrow_to_categories');
+
+//exclui categorias das listagens
+
+function exclude_categories_from_list($args)
+{
+    // IDs das categorias que você deseja excluir
+    $exclude_ids = array(25, 23, 3, 4, 5, 21); // Substitua pelos IDs reais das categorias "Web" e "Printing"
+
+    // Adiciona as exclusões aos argumentos do widget
+    $args['exclude'] = implode(',', $exclude_ids);
+
+    return $args;
+}
+add_filter('widget_categories_args', 'exclude_categories_from_list');
+add_filter('widget_categories_dropdown_args', 'exclude_categories_from_list'); // Para dropdowns
 
 ?>
