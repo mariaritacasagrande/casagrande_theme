@@ -9,6 +9,35 @@ function casagrande_register_nav_menus()
 }
 add_action('after_setup_theme', 'casagrande_register_nav_menus');
 
+//walker
+
+class Custom_Nav_Walker extends Walker_Nav_Menu
+{
+    // Início do item do menu
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
+        $classes = empty($item->classes) ? [] : (array) $item->classes;
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+        $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+        $output .= '<li' . $class_names . '>';
+
+        // Adicionar atributos personalizados
+        $attributes = !empty($item->url) ? ' href="' . esc_url($item->url) . '"' : '';
+        $attributes .= !empty($item->attr_title) ? ' data-title="' . esc_attr($item->attr_title) . '"' : '';
+        $attributes .= !empty($item->description) ? ' data-subtitle="' . esc_attr($item->description) . '"' : '';
+
+        $item_output = $args->before;
+        $item_output .= '<a' . $attributes . '>';
+        $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+        $item_output .= '</a>';
+        $item_output .= $args->after;
+
+        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+    }
+}
+
+
 // habilitar Widgets
 function casagrande_widgets_init()
 {

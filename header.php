@@ -81,19 +81,16 @@
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
 						<?php
-						// Obter o idioma atual
-						$current_language = pll_current_language();
-
-						// Exibir o menu baseado no idioma atual
 						wp_nav_menu(array(
 							'theme_location' => 'primary', // Local do menu
-							'menu' => $current_language,   // Configuração do idioma
 							'container' => false,
 							'menu_class' => 'nav navbar-nav',
-							'fallback_cb' => false
+							'fallback_cb' => false,
+							'walker' => new Custom_Nav_Walker(), // Adiciona o Walker personalizado
 						));
 						?>
 					</div>
+
 
 					<!-- ./Main navigation -->
 
