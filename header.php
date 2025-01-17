@@ -50,16 +50,19 @@
 <!-- notice that in case you want to add any effect, you will need to choose -->
 <!-- from one or another. Both filters could cause unexpected behaviors -->
 
-
-<body class="blog-left-sidebar single-post big-heading" data-page="singleBlogPage">
-
-	<?php if (is_single()) {
-		echo 'Este é um post único.';
-	} else {
-		echo 'Esta não é uma página de post único.';
-	} ?>
-
-
+<body class="<?php
+if (is_single()) {
+	echo 'blog-left-sidebar single-post big-heading top-page compact-menu-enabled';
+} else {
+	echo 'portfolio-page fltrs-fx-fade fltrs-scale';
+}
+?>" data-page="<?php
+if (is_single()) {
+	echo 'singleBlogPage';
+} else {
+	echo 'portfolio';
+}
+?>">
 	<!-- Preloader -->
 	<div id="preloader">
 		<span class="preloader-ani"></span>
