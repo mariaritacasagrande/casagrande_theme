@@ -247,10 +247,8 @@ add_filter('widget_categories_dropdown_args', 'exclude_categories_from_list'); /
 
 function custom_comments_callback($comment, $args, $depth)
 {
-    // Variável global para o comentário
-    $GLOBALS['comment'] = $comment;
     ?>
-    <div class="commentlist-item">
+    <div class="commentlist-item" id="comment-<?php comment_ID(); ?>">
         <div class="comment <?php echo ($depth % 2 === 0) ? 'even' : 'odd'; ?>">
             <div class="avatar-holder">
                 <?php echo get_avatar($comment, 50, '', '', array('class' => 'img-responsive')); ?>
@@ -268,7 +266,7 @@ function custom_comments_callback($comment, $args, $depth)
                 <p><?php comment_text(); ?></p>
                 <?php
                 comment_reply_link(array_merge($args, array(
-                    'reply_text' => __('reply', 'casagrande'),
+                    'reply_text' => __('Reply', 'casagrande'),
                     'depth' => $depth,
                     'max_depth' => $args['max_depth'],
                     'class' => 'pull-right reply',
