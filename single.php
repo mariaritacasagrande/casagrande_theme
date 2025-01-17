@@ -163,7 +163,7 @@ get_header(); ?>
                                     'style' => 'div',
                                     'short_ping' => true,
                                     'avatar_size' => 50,
-                                    'callback' => 'custom_comments_callback',
+                                    'callback' => 'custom_comments_callback', // Certifique-se de que esta função existe
                                 ));
                                 ?>
                             </div>
@@ -172,6 +172,7 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
                 </div>
+
 
 
                 <!-- ./lista de comentarios -->
