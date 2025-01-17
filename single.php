@@ -140,18 +140,6 @@ get_header(); ?>
 
                 <!-- lista de comentarios -->
 
-                <?php
-                $comments = get_comments(array(
-                    'post_id' => get_the_ID(),
-                    'status' => 'approve',
-                ));
-                echo '<pre>';
-                print_r($comments);
-                echo '</pre>';
-                ?>
-
-
-
                 <div class="col-md-7 col-md-8">
                     <div class="commentlist">
                         <?php if (have_comments()): ?>
