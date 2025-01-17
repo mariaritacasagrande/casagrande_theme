@@ -5,19 +5,21 @@
  */
 get_header(); ?>
 
-<div class="main-container">
-    <main id="main">
+<div class="main-container"><!-- Abre .main-container -->
+
+    <main id="main"><!-- Abre main -->
+
         <?php if (have_posts()):
             while (have_posts()):
                 the_post(); ?>
 
                 <?php if (in_category('3')): ?>
-                    <div class="post-cat-three">
+                    <div class="post-cat-three"><!-- Abre .post-cat-three -->
                     <?php else: ?>
-                        <div class="post">
+                        <div class="post"><!-- Abre .post -->
                         <?php endif; ?>
 
-                        <div id="the-post" class="container">
+                        <div id="the-post" class="container"><!-- Abre .container -->
                             <article class="post-main">
                                 <div class="post-entry">
                                     <div class="heading-section">
@@ -28,11 +30,12 @@ get_header(); ?>
                                                 <em>
                                                     post written by
                                                     <a href="#" class="author"><?php the_author_posts_link(); ?></a>
-                                                    <span>in <?php the_category(', '); ?></span> — <?php the_tags(', '); ?>
+                                                    <span>in <?php the_category(', '); ?></span> — <?php the_tags('', ', '); ?>
                                                 </em>
                                             </div>
                                         </header>
                                     </div>
+
                                     <div class="post-body col-md-8 col-md-push-4">
                                         <?php the_content(); ?>
                                     </div>
@@ -53,14 +56,14 @@ get_header(); ?>
                                     <?php endif; ?>
                                 </ul>
                             </aside>
-                        </div>
+                        </div><!-- Fecha .container -->
                     </div><!-- Fecha .post-cat-three OU .post -->
 
                 <?php endwhile; else: ?>
                 <p>Sorry, no posts matched your criteria.</p>
             <?php endif; ?>
 
-            <!-- Links de navegação / Pagination & action buttons -->
+            <!-- Área de navegação / botões -->
             <div class="container-fluid link-area">
                 <div class="container links-section">
                     <div class="col-md-4 col-xs-12 col-md-push-4 clearfix text-center">
@@ -84,7 +87,7 @@ get_header(); ?>
 
             <!-- Seção de comentários -->
             <div class="container comments-section">
-                <div class="col-md-5">
+                <div class="col-md-5"><!-- Coluna do formulário -->
                     <div class="comments-col">
                         <div class="heading-block">
                             <h4><?php _e('Let us know your thoughts about this topic', 'casagrande'); ?></h4>
@@ -97,7 +100,8 @@ get_header(); ?>
                                 ?>
                             </span>
                         </div>
-                        <?php if (comments_open()):
+                        <?php
+                        if (comments_open()):
                             $comment_form_args = array(
                                 'title_reply' => '',
                                 'label_submit' => __('Send', 'casagrande'),
@@ -125,14 +129,15 @@ get_header(); ?>
                                 </div>',
                             );
                             comment_form($comment_form_args);
-                        else: ?>
-                            <p><?php _e('Comments are closed for this post.', 'casagrande'); ?></p>
-                        <?php endif; ?>
+                        else:
+                            echo '<p>' . __('Comments are closed for this post.', 'casagrande') . '</p>';
+                        endif;
+                        ?>
                     </div>
-                </div>
+                </div><!-- /col-md-5 -->
 
-                <!-- Lista de comentários -->
-                <div class="col-md-7 col-md-8">
+                <!-- Ajuste importante: remover "col-md-8" duplicado -->
+                <div class="col-md-7"><!-- Coluna da listagem de comentários -->
                     <div class="commentlist">
                         <?php if (have_comments()): ?>
                             <h3>
@@ -145,6 +150,7 @@ get_header(); ?>
                             </h3>
                             <div class="comments-wrapper">
                                 <?php
+                                // Verifique se a função custom_comments_callback existe em seu functions.php
                                 wp_list_comments(array(
                                     'style' => 'div',
                                     'short_ping' => true,
@@ -157,12 +163,13 @@ get_header(); ?>
                             <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
                         <?php endif; ?>
                     </div>
-                </div>
+                </div><!-- /col-md-7 -->
             </div>
-            <!-- ./Seção de comentários -->
+            <!-- ./Comments -->
 
             <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
-    </main>
-</div>
+    </main><!-- Fecha #main -->
+
+</div><!-- Fecha .main-container -->
 
 <?php get_footer(); ?>
