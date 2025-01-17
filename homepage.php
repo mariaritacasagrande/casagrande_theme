@@ -34,34 +34,20 @@ Template Name: Homepage
                     </a>
                 </div>
                 <ul class="filter-nav">
-                    <?php
-                    // Obter todas as categorias de postagens
-                    $categories = get_categories(array(
-                        'orderby' => 'name', // Ordena por nome
-                        'order' => 'ASC',    // Ordem crescente
-                    ));
-
-                    // Verifica se existem categorias
-                    if (!empty($categories)) {
-                        // Adiciona a opção "All"
-                        echo '<li class="active"><a href="#prtfl-anchor" data-filter="all">' . __('All', 'your-text-domain') . '</a></li>';
-
-                        // Lista as categorias
-                        foreach ($categories as $category) {
-                            // Obter o slug da categoria
-                            $category_slug = $category->slug;
-
-                            // Traduzir o nome da categoria (Polylang cuida disso automaticamente, se configurado)
-                            $category_name = pll__($category->name); // pll__ traduz o nome da categoria para o idioma ativo
-                    
-                            // Gera o item do filtro
-                            echo '<li><a href="#prtfl-anchor" data-filter="' . esc_attr($category_slug) . '">' . esc_html($category_name) . '</a></li>';
-                        }
-                    } else {
-                        // Caso não haja categorias, exibe uma mensagem ou oculta o filtro
-                        echo '<li>' . __('No categories found', 'your-text-domain') . '</li>';
-                    }
-                    ?>
+                    <!-- you can setup your filter categories in a very easy way -->
+                    <!-- just by adding 'data-filter' and your category as value -->
+                    <!-- for example: -->
+                    <!-- data-filter="branding" -->
+                    <li class="active"><a href="#prtfl-anchor" data-filter="all">All</a></li>
+                    <ul class="filter-nav">
+                        <li class="active"><a href="#prtfl-anchor"
+                                data-filter="all"><?php _e('All', 'casagrande'); ?></a></li>
+                        <li><a href="#prtfl-anchor" data-filter="printing"><?php _e('Printing', 'casagrande'); ?></a>
+                        </li>
+                        <li><a href="#prtfl-anchor"
+                                data-filter="illustration"><?php _e('Illustration', 'casagrande'); ?></a></li>
+                        <li><a href="#prtfl-anchor" data-filter="web"><?php _e('Web', 'casagrande'); ?></a></li>
+                    </ul>
                 </ul>
             </div>
             <!-- Set here the columns number: 'cols-2' is the default value -->
