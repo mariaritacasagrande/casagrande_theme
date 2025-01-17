@@ -5,24 +5,20 @@
  */
 get_header(); ?>
 
-<div class="main-container"><!-- Abre .main-container -->
-
-    <main id="main"><!-- Abre main -->
-
-        <?php if (have_posts()): ?>
-            <?php while (have_posts()):
+<div class="main-container">
+    <main id="main">
+        <?php if (have_posts()):
+            while (have_posts()):
                 the_post(); ?>
 
-                <!-- Verifica se está na categoria 3 para escolher a classe -->
                 <?php if (in_category('3')): ?>
-                    <div class="post-cat-three"><!-- Abre .post-cat-three -->
+                    <div class="post-cat-three">
                     <?php else: ?>
-                        <div class="post"><!-- Abre .post -->
+                        <div class="post">
                         <?php endif; ?>
 
-                        <div id="the-post" class="container"><!-- Abre #the-post .container -->
-
-                            <article class="post-main"><!-- Abre article -->
+                        <div id="the-post" class="container">
+                            <article class="post-main">
                                 <div class="post-entry">
                                     <div class="heading-section">
                                         <header class="header big-heading parallax">
@@ -31,25 +27,19 @@ get_header(); ?>
                                                 <?php the_time('F jS, Y'); ?>
                                                 <em>
                                                     post written by
-                                                    <a href="#" class="author">
-                                                        <?php the_author_posts_link(); ?>
-                                                    </a>
-                                                    <span>in <?php the_category(', '); ?></span>
-                                                    — <?php the_tags('', ', '); ?>
+                                                    <a href="#" class="author"><?php the_author_posts_link(); ?></a>
+                                                    <span>in <?php the_category(', '); ?></span> — <?php the_tags(', '); ?>
                                                 </em>
                                             </div>
                                         </header>
                                     </div>
-
-                                    <!-- Conteúdo principal do post -->
                                     <div class="post-body col-md-8 col-md-push-4">
                                         <?php the_content(); ?>
                                     </div>
+                                </div>
+                            </article>
 
-                                </div><!-- Fecha .post-entry -->
-                            </article><!-- Fecha article .post-main -->
-
-                            <!-- Sidebar (continua dentro da mesma .container) -->
+                            <!-- Sidebar -->
                             <aside class="blog-sidebar col-md-3 col-md-pull-8">
                                 <ul class="list-unstyled">
                                     <?php if (is_active_sidebar('blog-sidebar')): ?>
@@ -63,17 +53,14 @@ get_header(); ?>
                                     <?php endif; ?>
                                 </ul>
                             </aside>
-                            <!-- /.blog-sidebar -->
-
-                        </div><!-- Fecha #the-post .container -->
+                        </div>
                     </div><!-- Fecha .post-cat-three OU .post -->
 
-                <?php endwhile; ?>
-            <?php else: ?>
+                <?php endwhile; else: ?>
                 <p>Sorry, no posts matched your criteria.</p>
             <?php endif; ?>
 
-            <!-- Links de navegação / Paginação -->
+            <!-- Links de navegação / Pagination & action buttons -->
             <div class="container-fluid link-area">
                 <div class="container links-section">
                     <div class="col-md-4 col-xs-12 col-md-push-4 clearfix text-center">
@@ -82,7 +69,6 @@ get_header(); ?>
                             <li><a href="#" data-toggle="modal" data-target="#myModal">Share</a></li>
                         </ul>
                     </div>
-
                     <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
                         <a href="#" class="link prev-post">
                             <span class="arrow left-arrow"></span>Wellington bar
@@ -90,13 +76,11 @@ get_header(); ?>
                     </div>
                     <div class="pag pag-next col-md-4 col-xs-6 text-right">
                         <a href="#" class="link add next-post">
-                            New project for Adidas
-                            <span class="arrow right-arrow"></span>
+                            New project for Adidas <span class="arrow right-arrow"></span>
                         </a>
                     </div>
                 </div>
             </div>
-            <!-- ./Pagination & action buttons -->
 
             <!-- Seção de comentários -->
             <div class="container comments-section">
@@ -113,9 +97,7 @@ get_header(); ?>
                                 ?>
                             </span>
                         </div>
-
-                        <?php if (comments_open()): ?>
-                            <?php
+                        <?php if (comments_open()):
                             $comment_form_args = array(
                                 'title_reply' => '',
                                 'label_submit' => __('Send', 'casagrande'),
@@ -143,8 +125,7 @@ get_header(); ?>
                                 </div>',
                             );
                             comment_form($comment_form_args);
-                            ?>
-                        <?php else: ?>
+                        else: ?>
                             <p><?php _e('Comments are closed for this post.', 'casagrande'); ?></p>
                         <?php endif; ?>
                     </div>
@@ -168,7 +149,7 @@ get_header(); ?>
                                     'style' => 'div',
                                     'short_ping' => true,
                                     'avatar_size' => 50,
-                                    'callback' => 'custom_comments_callback', // Verifique se a função existe
+                                    'callback' => 'custom_comments_callback',
                                 ));
                                 ?>
                             </div>
@@ -177,14 +158,11 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
                 </div>
-                <!-- ./Lista de comentários -->
             </div>
             <!-- ./Seção de comentários -->
 
-            <!-- Botão de voltar ao topo -->
             <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
-    </main><!-- Fecha main -->
-
-</div><!-- Fecha .main-container -->
+    </main>
+</div>
 
 <?php get_footer(); ?>
