@@ -76,22 +76,63 @@
 						</div>
 					</div>
 					<!-- Main navigation -->
+					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
-						<?php
-						$menus = wp_get_nav_menus(array('theme_location' => 'primary'));
-						foreach ($menus as $menu /** @var WP_Term $menu */) {
-							$menu_items = wp_get_nav_menu_items($menu->term_id);
-							if (!empty($menu_items)) {
-								echo '<ul class="nav navbar-nav">';
+						<ul class="nav navbar-nav">
+							<?php
+							// Obter o idioma atual
+							$current_language = pll_current_language(); // Retorna o idioma atual como 'en', 'pt', etc.
+							
+							// Obter o menu registrado no local 'primary' para o idioma atual
+							$menu_name = 'primary'; // Nome do local do menu
+							$menu_id = pll_get_nav_menu($menu_name, $current_language); // Obter o ID do menu para o idioma
+							
+							// Verificar se o menu foi encontrado
+							if ($menu_id) {
+								$menu_items = wp_get_nav_menu_items($menu_id);
+
+								// Organizar os itens do menu hierarquicamente
+								$menu_tree = [];
 								foreach ($menu_items as $menu_item) {
-									echo '<li><a href="' . $menu_item->url . '" data-title="' . $menu_item->attr_title . '"  data-subtitle="' . $menu_item->description . '">' . $menu_item->title . '</a></li>';
+									if (!$menu_item->menu_item_parent) {
+										$menu_tree[$menu_item->ID] = [
+											'item' => $menu_item,
+											'children' => []
+										];
+									} else {
+										$menu_tree[$menu_item->menu_item_parent]['children'][] = $menu_item;
+									}
 								}
-								echo '</ul>';
+
+								// Gerar a estrutura HTML do menu
+								foreach ($menu_tree as $menu) {
+									$item = $menu['item'];
+									$children = $menu['children'];
+
+									echo '<li class="' . (empty($children) ? '' : 'dropdown') . '">';
+									echo '<a href="' . esc_url($item->url) . '" data-title="' . esc_attr($item->title) . '" data-subtitle="' . esc_attr($item->description) . '">';
+									echo esc_html($item->title);
+									echo '</a>';
+
+									// Submenu
+									if (!empty($children)) {
+										echo '<ul class="dropdown-menu" role="menu">';
+										foreach ($children as $child) {
+											echo '<li><a href="' . esc_url($child->url) . '" title="' . esc_attr($child->attr_title) . '">' . esc_html($child->title) . '</a></li>';
+										}
+										echo '</ul>';
+									}
+
+									echo '</li>';
+								}
+							} else {
+								// Exibe uma mensagem se não houver menu configurado para o idioma atual
+								echo '<li>No menu available for this language.</li>';
 							}
-						}
-						?>
+							?>
+						</ul>
 					</div>
-				</nav> <!-- ./Main navigation -->
+					<!-- ./Main navigation -->
 			</div>
 
 		</header>
