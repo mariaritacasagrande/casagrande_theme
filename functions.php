@@ -244,7 +244,6 @@ add_filter('widget_categories_args', 'exclude_categories_from_list');
 add_filter('widget_categories_dropdown_args', 'exclude_categories_from_list'); // Para dropdowns
 
 //callback dos coments
-
 function custom_comments_callback($comment, $args, $depth)
 {
     ?>
@@ -277,6 +276,7 @@ function custom_comments_callback($comment, $args, $depth)
     </div>
     <?php
 }
+
 
 
 
