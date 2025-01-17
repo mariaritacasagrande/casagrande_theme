@@ -5,6 +5,7 @@ function casagrande_enqueue_scripts()
 {
     // Estilos principais
     wp_enqueue_style('casagrande-style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('casagrande-css-style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
     wp_enqueue_style('casagrande-bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '1.0', 'all');
 
 
