@@ -125,4 +125,11 @@ add_theme_support('automatic-feed-links');
 
 //prev-next
 
+function casagrande_setup_theme()
+{
+    // Carregar o text domain para traduções
+    load_theme_textdomain('casagrande', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'casagrande_setup_theme');
+
 ?>
