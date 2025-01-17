@@ -9,30 +9,6 @@ function casagrande_register_nav_menus()
 }
 add_action('after_setup_theme', 'casagrande_register_nav_menus');
 
-
-function custom_multilingual_menu()
-{
-    $current_language = pll_current_language(); // Assuming you're using Polylang
-
-    if ($current_language == 'en') {
-        wp_nav_menu(array('theme_location' => 'menu-en')); // English Menu
-    } elseif ($current_language == 'pt') {
-        wp_nav_menu(array('theme_location' => 'menu-it')); // Portuguese Menu
-    }
-    }
-
-
-function extendable_register_menus()
-{
-    register_nav_menus(array(
-        'menu-en' => __('Menu EN', 'extendable'),
-        'menu-pt' => __('Menu PT', 'extendable'),
-        
-    ));
-}
-add_action('init', 'extendable_register_menus');
-
-
 // habilitar Widgets
 function casagrande_widgets_init()
 {
