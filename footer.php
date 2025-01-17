@@ -24,7 +24,7 @@
     </div>
 </footer>
 <!-- ./Footer area -->
-</div>
+
 <!-- ./main-container -->
 
 <!-- Overlays and menu hover titles -->
