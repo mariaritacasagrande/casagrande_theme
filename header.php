@@ -75,7 +75,9 @@
 									height="69" alt="Maria Rita Casagrande - Full Stack Developer"></a>
 						</div>
 					</div>
-					<!-- Main navigation -->
+
+
+
 					<!-- Main navigation -->
 					<div class="collapse navbar-collapse" id="navbar">
 						<ul class="nav navbar-nav">
@@ -132,7 +134,13 @@
 							?>
 						</ul>
 					</div>
-					<!-- ./Main navigation -->
+
+
+
+
+
+
+				</nav> <!-- ./Main navigation -->
 			</div>
 
 		</header>
