@@ -213,4 +213,12 @@ function register_custom_recent_posts_widget()
 }
 add_action('widgets_init', 'register_custom_recent_posts_widget');
 
+function add_arrow_to_categories($output)
+{
+    // Adiciona o ícone de seta ao final de cada link de categoria
+    $output = preg_replace('/(<a.*?<\/a>)/i', '$1<i class="arrow right-arrow"></i>', $output);
+    return $output;
+}
+add_filter('wp_list_categories', 'add_arrow_to_categories');
+
 ?>
