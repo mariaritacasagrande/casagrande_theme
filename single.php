@@ -134,11 +134,20 @@ get_header(); ?>
                         <?php else: ?>
                             <p><?php _e('Comments are closed for this post.', 'casagrande'); ?></p>
                         <?php endif; ?>
-                        </div>
-                        </div>
+                    </div>
+                </div>
                 <div class="col-md-7 col-md-8">
-    <div class="commentlist">
-        <?php if (have_comments()): ?>
+                    <?php
+                    $comments = get_comments(array(
+                        'post_id' => get_the_ID(),
+                        'status' => 'approve'
+                    ));
+                    echo '<pre>';
+                    print_r($comments);
+                    echo '</pre>';
+                    ?>
+                    <div class="commentlist">
+                        <?php if (have_comments()): ?>
                             <h3><?php printf(_n('%1$s Comment', '%1$s Comments', get_comments_number(), 'casagrande'), number_format_i18n(get_comments_number())); ?>
                             </h3>
                             <div class="comments-wrapper">
@@ -147,7 +156,7 @@ get_header(); ?>
                                     'style' => 'div',
                                     'short_ping' => true,
                                     'avatar_size' => 50,
-                                    'callback' => 'custom_comments_callback', // Certifique-se de que essa função está registrada corretamente.
+                                    'callback' => 'custom_comments_callback', // Certifique-se de que esta função está definida no functions.php.
                                 ));
                                 ?>
                             </div>
@@ -156,6 +165,7 @@ get_header(); ?>
                         <?php endif; ?>
                     </div>
                 </div>
+
 
             </div>
             <!-- ./Comments -->
