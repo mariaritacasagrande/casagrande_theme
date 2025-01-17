@@ -134,24 +134,29 @@ get_header(); ?>
                         <?php else: ?>
                             <p><?php _e('Comments are closed for this post.', 'casagrande'); ?></p>
                         <?php endif; ?>
-                    </div>
-                </div>
+                        </div>
+                        </div>
                 <div class="col-md-7 col-md-8">
     <div class="commentlist">
         <?php if (have_comments()): ?>
-                            <?php
-                            wp_list_comments(array(
-                                'style' => 'div',
-                                'short_ping' => true,
-                                'callback' => 'custom_comments_callback', // Define o callback personalizado
-                            ));
-                            ?>
+                            <h3><?php printf(_n('%1$s Comment', '%1$s Comments', get_comments_number(), 'casagrande'), number_format_i18n(get_comments_number())); ?>
+                            </h3>
+                            <div class="comments-wrapper">
+                                <?php
+                                wp_list_comments(array(
+                                    'style' => 'div',
+                                    'short_ping' => true,
+                                    'avatar_size' => 50,
+                                    'callback' => 'custom_comments_callback', // Certifique-se de que essa função está registrada corretamente.
+                                ));
+                                ?>
+                            </div>
                         <?php else: ?>
                             <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
                         <?php endif; ?>
                     </div>
+                </div>
 
-            </div>
             </div>
             <!-- ./Comments -->
 
