@@ -162,7 +162,7 @@ get_header(); ?>
                                                     </a>
                                                 </h2>
                                                 <time datetime="<?php echo get_comment_date('Y-m-d', $comment); ?>">
-                                                    <?php echo get_comment_date('jS M, Y', $comment); ?>
+                                                    <?php echo get_comment_date('j M, Y', $comment); ?>
                                                 </time>
                                             </div>
                                         </div>
