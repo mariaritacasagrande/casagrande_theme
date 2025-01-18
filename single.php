@@ -13,9 +13,7 @@ get_header(); ?>
         while (have_posts()):
             the_post(); ?>
 
-            <!-- O código a seguir testa se o post atual pertence à categoria 3 -->
-            <!-- Se pertence, a classe css da DIV será definida como "post-cat-three". -->
-            <!-- Se não, a classe da DIV será definida como "post". -->
+
             <?php if (in_category('3')) { ?>
                 <div class="post-cat-three">
                 <?php } else { ?>
@@ -40,11 +38,10 @@ get_header(); ?>
                                     <?php the_content(); ?>
                                 </div>
                             </div>
-                            <!-- Termina o Loop (mas repare no "else" - veja próxima linha) -->
+
                         <?php endwhile; else: ?>
 
-                        <!-- O primeiro IF testou para ver se havia posts a serem mostrados -->
-                        <!-- Este ELSE diz ao WordPress o que fazer se não houver nenhum -->
+                        >
                         <p>Sorry, no posts matched your criteria.</p>
 
                         <!-- Término verdadeiro do Loop -->

@@ -43,13 +43,6 @@
 	<?php wp_head(); ?>
 </head>
 
-<!-- Body classes:  -->
-<!-- "fltrs-scale": adds the scale effect when filtering grid items -->
-<!-- "fltrs-fx-fade" adds the semi-transparent overlay when filtering -->
-<!-- "fltrs-fx-curtain" adds the curtain effect overlay when filtering -->
-<!-- notice that in case you want to add any effect, you will need to choose -->
-<!-- from one or another. Both filters could cause unexpected behaviors -->
-
 <body class="<?php if (is_single()) {
 	echo 'blog-left-sidebar single-post big-heading top-page compact-menu-enabled';
 } else {
@@ -76,9 +69,7 @@
 							data-toggle="collapse" class="navbar-toggle collapsed" type="button"><span></span></button>
 						<!-- Logo -->
 						<div class="logo">
-							<!-- When you will add your own logo, make sure to add your logo´s width and height sizes -->
-							<!-- Adding retina/HDPi support is so easy as adding a double sized image within the srcset attribute with the '2x' descriptor. -->
-							<!-- The src attribute will display the regular size logo -->
+
 							<a href="<?php echo get_site_url(); ?>"><img
 									srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
 									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="45"
@@ -89,11 +80,11 @@
 					<div class="collapse navbar-collapse" id="navbar">
 						<?php
 						wp_nav_menu(array(
-							'theme_location' => 'primary', // Local do menu
+							'theme_location' => 'primary', // 
 							'container' => false,
 							'menu_class' => 'nav navbar-nav',
 							'fallback_cb' => false,
-							'walker' => new Custom_Nav_Walker(), // Adiciona o Walker personalizado
+							'walker' => new Custom_Nav_Walker(),
 						));
 						?>
 					</div>
