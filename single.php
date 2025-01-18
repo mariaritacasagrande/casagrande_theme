@@ -71,8 +71,9 @@ get_header(); ?>
                 <div class="container links-section">
                     <div class="col-md-4 col-xs-12 col-md-push-4 clearfix text-center">
                         <ul class="list-inline links-holder">
-                            <li><a href="blog.html">Back</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#myModal">Share</a></li>
+                            <li><a href="blog.html"><?php _e('Back', 'casagrande'); ?></a></li>
+                            <li><a href="#" data-toggle="modal"
+                                    data-target="#myModal"><?php _e('Share', 'casagrande'); ?></a></li>
                         </ul>
                     </div>
 
