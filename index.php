@@ -22,13 +22,13 @@
                         <a href="<?php the_permalink(); ?>" rel="bookmark"
                             title="Permanent Link to <?php the_title_attribute(); ?>">
                             <?php
-                            // Exibe a imagem destacada, se houver
+                            // Exibe a imagem destacada
                             if (has_post_thumbnail()) {
                                 the_post_thumbnail(
                                     'full',
                                     array(
                                         'class' => 'img-responsive lazy',
-                                        'alt' => get_the_title(),
+                                        'alt' => esc_attr(get_the_title()),
                                         'width' => 455,
                                         'height' => 640
                                     )
