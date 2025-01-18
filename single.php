@@ -28,8 +28,10 @@ get_header(); ?>
                                         <div class="meta">
                                             <?php the_time('F jS, Y') ?>
                                             <em>
-                                                post written by <a href="#" class="author"><?php the_author_posts_link() ?></a>
-                                                <span>in <?php the_category(', '); ?></span> — <?php the_tags(', '); ?>
+                                                <?php _e('post written by', 'casagrande'); ?> <a href="#"
+                                                    class="author"><?php the_author_posts_link() ?></a>
+                                                <span><?php _e('in', 'casagrande'); ?>         <?php the_category(', '); ?></span> —
+                                                <?php the_tags(', '); ?>
                                             </em>
                                         </div>
                                     </header>
