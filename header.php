@@ -43,23 +43,26 @@
 	<?php wp_head(); ?>
 </head>
 
-<body class="blog-left-sidebar single-post big-heading" data-page="singleBlogPage"></body>
+<?php
+// Definimos variáveis "padrão"
+$body_class = 'portfolio-page fltrs-fx-fade fltrs-scale';
+$data_page = 'portfolio';
 
-<body class="<?php
+// Se for single de post do blog
 if (is_singular('post')) {
-	// Se for SINGLE de post (blog):
-	echo 'blog-left-sidebar single-post big-heading top-page compact-menu-enabled';
-} else {
-	// Para tudo que não seja post do blog (inclusive single-project)
-	echo 'portfolio-page fltrs-fx-fade fltrs-scale';
+	$body_class = 'blog-left-sidebar single-post big-heading top-page compact-menu-enabled';
+	$data_page = 'singleBlogPage';
+
+	// Se for single de project (seu CPT de portfólio)
+} elseif (is_singular('project')) {
+	$body_class = 'portfolio-single';
+	$data_page = 'singleProjectPage';
 }
-?>" data-page="<?php
-if (is_singular('post')) {
-	echo 'singleBlogPage';
-} else {
-	echo 'portfolio';
-}
-?>">
+// Se não for nenhuma das opções acima, mantém o padrão.
+
+?>
+
+<body class="<?php echo esc_attr($body_class); ?>" data-page="<?php echo esc_attr($data_page); ?>">
 	<!-- Preloader -->
 	<div id="preloader">
 		<span class="preloader-ani"></span>
