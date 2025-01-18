@@ -18,10 +18,10 @@
 
                     <article class="post-article col-sm-4 col-xs-12">
                         <div class="img-holder">
-                            <a href="<?php the_permalink() ?>" rel="bookmark"
+                            <a href="<?php the_permalink(); ?>" rel="bookmark"
                                 title="Permanent Link to <?php the_title_attribute(); ?>">
-                                <img src="<?php the_post_thumbnail(); ?>" width="455" height="640" alt="<?php the_title(); ?>"
-                                    class="img-responsive lazy">
+                                <img src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" width="455" height="640"
+                                    alt="<?php the_title_attribute(); ?>" class="img-responsive lazy">
                                 <div class="caption text-center text-lowercase">
                                     <span class="holder"><i class="arrow right-arrow"></i></span>
                                 </div>
