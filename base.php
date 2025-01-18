@@ -27,7 +27,7 @@ Template Name: Base
                                     <header class="header big-heading parallax">
                                         <h1><?php the_title(); ?></h1>
                                         <div class="meta">
-                                            <?php the_time('Y') ?>
+
                                             <em>
                                                 <span><?php the_category(', '); ?></span>
                                             </em>
