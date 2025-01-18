@@ -140,16 +140,17 @@ get_header(); ?>
 
                 <div class="col-md-7 col-md-8">
                     <div class="commentlist">
-                        <?php if (have_comments()): ?>
-                            <?php wp_list_comments(array(
-                                'style' => 'div',
-                                'short_ping' => true,
-                                'avatar_size' => 50,
-                                'callback' => 'custom_comment_callback', // Crie uma função personalizada se desejar
-                            )); ?>
-                        <?php else: ?>
-                            <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
-                        <?php endif; ?>
+                        <?php $comment_args = array(
+                                    'comment_notes_after' => '',
+                                    'title_reply' => 'Have something to say?'
+                                )
+                                    ?>
+                                <?php foreach (get_comments($comment_args) as $comment): ?>
+                                    <div>
+                                        <?php echo $comment->comment_author; ?> said:
+                                        "<?php echo $comment->comment_content; ?>".
+                                    </div>
+                                <?php endforeach; ?>
                     </div>
                 </div>
             </div>
