@@ -40,14 +40,18 @@ get_header(); ?>
                     </p>
 
                     <!-- Replicamos a estrutura do sidebar exatamente -->
-                    <li id="search" class="widget widget_search">
-                        <form method="get" id="searchform" action="https://casagrande.dev/pt/">
-                            <input type="search" placeholder="Search" value="" name="s" id="s">
-                            <button type="submit" form="searchform" name="submit">
-                                <i class="icon-zoom"></i>
-                            </button>
-                        </form>
-                    </li>
+                    <div class="" blog-sidebar col-md-3 col-md-pull-8 fixed-position">
+                        <ul class="list-unstyled" style="width: 198px;">
+                            <li id="search" class="widget widget_search">
+                                <form method="get" id="searchform" action="https://casagrande.dev/pt/">
+                                    <input type="search" placeholder="Search" value="" name="s" id="s">
+                                    <button type="submit" form="searchform" name="submit">
+                                        <i class="icon-zoom"></i>
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
