@@ -184,7 +184,7 @@ get_header(); ?>
                                 <!-- Mensagem quando não existem comentários -->
 
                                 <div class="commentlist-item">
-                                    < <div class="commentlist-holder">
+                                    <div class="commentlist-holder">
                                         <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?>
                                         </p>
 
