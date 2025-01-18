@@ -143,16 +143,16 @@ get_header(); ?>
                 </div>
                 <div class="col-md-7 col-md-8">
                     <div class="commentlist">
-                        <div class="commentlist">
-
-
-                            <ol class="commentlist">
-                                <?php wp_list_comments(); ?>
-                            </ol>
 
 
 
-                        </div>
+                        <ol class="commentlist">
+                            <?php wp_list_comments(); ?>
+                        </ol>
+
+
+
+
                     </div>
                 </div>
             </div>
