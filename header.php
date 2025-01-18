@@ -6,19 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="description" content="Maria Rita Casagrande - Full Stack Developer">
-	<!-- Twitter Cards -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@ritacasagrande" />
-	<meta name="twitter:creator" content="@ritacasagrande" />
-	<!-- Open Graph | Facebook & Google Plus -->
-	<meta property="og:title" content="Maria Rita Casagrande - Full Stack Developer">
-	<meta property="og:url" content="https://ritacasagrande.com">
-	<meta property="og:description" content="Maria Rita Casagrande - Full Stack Developer">
-	<meta property="og:image"
-		content="https://image-tf.s3.envato.com/files/194471742/screenshots/00-buro-cover-tf.__large_preview.png">
-	<meta property="og:image:width" content="600">
-	<meta property="og:image:height" content="315">
-	<meta property="og:type" content="website">
 
 	<title>Maria Rita Casagrande - Full Stack Developer</title>
 
@@ -34,6 +21,8 @@
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700%7CWork+Sans:200,400,300,500'
 		rel='stylesheet' type='text/css'>
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+		type='text/css'>
 	<!-- Main styles -->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css" type="text/css"
 		media="all" />
