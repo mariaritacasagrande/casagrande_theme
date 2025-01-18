@@ -43,12 +43,16 @@
 	<?php wp_head(); ?>
 </head>
 
-<body class="<?php if (is_single()) {
+<body class="<?php
+if (is_singular('post')) {
+	// Se for SINGLE de post (blog):
 	echo 'blog-left-sidebar single-post big-heading top-page compact-menu-enabled';
 } else {
+	// Para tudo que não seja post do blog (inclusive single-project)
 	echo 'portfolio-page fltrs-fx-fade fltrs-scale';
 }
-?>" data-page="<?php if (is_single()) {
+?>" data-page="<?php
+if (is_singular('post')) {
 	echo 'singleBlogPage';
 } else {
 	echo 'portfolio';
