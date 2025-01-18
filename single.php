@@ -146,9 +146,9 @@ get_header(); ?>
 
 
 
-                        <ol class="commentlist">
-                            <?php wp_list_comments(); ?>
-                        </ol>
+
+                        <?php wp_list_comments(); ?>
+
 
 
 
