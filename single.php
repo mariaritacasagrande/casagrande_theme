@@ -143,42 +143,51 @@ get_header(); ?>
                     <div class="commentlist">
 
                         <?php
-                        // Antes do foreach:
+                        // Antes do loop, defina $comment_args para buscar comentários do post atual
                         $comment_args = array(
                             'post_id' => get_the_ID(),
                             'status' => 'approve',
                         );
                         $comments = get_comments($comment_args);
                         ?>
+
                         <div class="commentlist-item">
-
-                            <?php foreach (get_comments($comment_args) as $comment): ?>
-
-
+                            <?php foreach ($comments as $comment): ?>
                                 <div class="comment even">
                                     <div class="avatar-holder">
-                                        <?php echo get_avatar($comment, 33); ?>
+                                        <!-- Seta o avatar real do usuário -->
+                                        <?php
+                                        // 33 é o tamanho (px) do avatar
+                                        // 'class' => 'img-responsive' para manter o mesmo estilo do seu snippet
+                                        echo get_avatar($comment, 33, '', '', array('class' => 'img-responsive'));
+                                        ?>
                                         <div class="holder">
-                                            <h2><?php echo $comment->comment_author; ?></h2>
+                                            <!-- Autor -->
+                                            <h2>
+                                                <!-- Aqui você pode usar get_comment_author_url() para linkar ao site do autor, se houver -->
+                                                <a href="<?php echo esc_url(get_comment_author_url($comment)); ?>">
+                                                    <?php echo esc_html($comment->comment_author); ?>
+                                                </a>
+                                            </h2>
 
+                                            <!-- Data do comentário -->
+                                            <!-- datetime no formato '2023-10-05', e exibição do tipo '5th Oct, 2023' -->
+                                            <time datetime="<?php echo get_comment_date('Y-m-d', $comment); ?>">
+                                                <?php echo get_comment_date('jS M, Y', $comment); ?>
+                                            </time>
                                         </div>
                                     </div>
-                                    <div class="commentlist-holder">
-                                        <?php echo $comment->comment_content; ?>
 
+                                    <div class="commentlist-holder">
+                                        <!-- Texto do comentário -->
+                                        <p><?php echo wp_kses_post($comment->comment_content); ?></p>
+
+                                        <!-- Link de reply (estático). Se quiser funcional, use comment_reply_link() -->
+                                        <a href="#" class="pull-right reply">reply</a>
                                     </div>
                                 </div>
-
                             <?php endforeach; ?>
-
-
                         </div>
-
-
-
-
-
-
 
 
 
