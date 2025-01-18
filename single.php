@@ -96,7 +96,7 @@ get_header(); ?>
                 <div class="col-md-5">
                     <div class="comments-col">
                         <div class="heading-block">
-                            <h4><?php _e('Let us know your thoughts about this topic', 'casagrande'); ?></h4>
+                            <h4><?php _e('Let me know your thoughts about this topic', 'casagrande'); ?></h4>
                             <span><?php printf(_n('%s Comment', '%s Comments', get_comments_number(), 'casagrande'), get_comments_number()); ?></span>
                         </div>
                         <?php if (comments_open()): ?>
@@ -188,17 +188,17 @@ get_header(); ?>
                                         <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?>
                                         </p>
 
+                                    </div>
                                 </div>
-                            </div>
-                        <?php endif; ?>
-                    </div><!-- /.commentlist-item -->
-                </div><!-- /.commentlist -->
-            </div><!-- /.col-md-7 col-md-8 -->
+                            <?php endif; ?>
+                        </div><!-- /.commentlist-item -->
+                    </div><!-- /.commentlist -->
+                </div><!-- /.col-md-7 col-md-8 -->
 
-            <!-- ./Comments -->
-            <div class="intro"></div>
-            <!-- Go top button/arrow -->
-            <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+                <!-- ./Comments -->
+                <div class="intro"></div>
+                <!-- Go top button/arrow -->
+                <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
 
