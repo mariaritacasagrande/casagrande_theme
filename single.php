@@ -145,7 +145,12 @@ get_header(); ?>
                     <div class="commentlist">
                         <div class="commentlist">
 
-                            <?php wp_list_comments(); ?>
+
+                            <ol class="commentlist">
+                                <?php wp_list_comments(); ?>
+                            </ol>
+
+
 
                         </div>
                     </div>
