@@ -146,17 +146,20 @@ get_header(); ?>
                     <div class="commentlist">
                         <div class="commentlist">
 
-                            <?php $comment_args = array(
-                                'comment_notes_after' => '',
-                                'title_reply' => 'Have something to say?'
-                            )
-                                ?>
-                            <?php foreach (get_comments($comment_args) as $comment): ?>
-                                <div>
-                                    <?php echo $comment->comment_author; ?> said:
-                                    "<?php echo $comment->comment_content; ?>".
-                                </div>
-                            <?php endforeach; ?>
+
+                            <ol class="commentlist">
+                                <?php $comment_args = array(
+                                    'comment_notes_after' => '',
+                                    'title_reply' => 'Have something to say?'
+                                )
+                                    ?>
+                                <?php foreach (get_comments($comment_args) as $comment): ?>
+                                    <div>
+                                        <?php echo $comment->comment_author; ?> said:
+                                        "<?php echo $comment->comment_content; ?>".
+                                    </div>
+                                <?php endforeach; ?>
+                            </ol>
 
 
 
