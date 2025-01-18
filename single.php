@@ -135,14 +135,12 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <div class="col-md-7 col-md-8">
 
+            </div>
+            <!-- ./Comments -->
 
-                </div>
-                <!-- ./Comments -->
-
-                <!-- Go top button/arrow -->
-                <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+            <!-- Go top button/arrow -->
+            <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
 
