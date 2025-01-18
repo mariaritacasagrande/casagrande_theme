@@ -12,8 +12,8 @@
         if (have_posts()):
             while (have_posts()):
                 the_post();
-                // Interrompe o loop se o contador atingir 9
-                if ($count >= 9)
+                // Interrompe o loop se o contador atingir 6
+                if ($count >= 6)
                     break;
                 ?>
 
@@ -22,6 +22,7 @@
                         <a href="<?php the_permalink(); ?>" rel="bookmark"
                             title="Permanent Link to <?php the_title_attribute(); ?>">
                             <?php
+                            // Exibe a imagem destacada, se houver
                             if (has_post_thumbnail()) {
                                 the_post_thumbnail(
                                     'full',
@@ -34,11 +35,13 @@
                                 );
                             }
                             ?>
+                            <!-- Captions para o hover -->
                             <div class="caption text-center text-lowercase">
                                 <span class="holder"><i class="arrow right-arrow"></i></span>
                             </div>
                         </a>
                     </div>
+                    <!-- Título, texto e meta informações -->
                     <div class="text">
                         <h2><a href="<?php the_permalink(); ?>" rel="bookmark"
                                 title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -47,7 +50,7 @@
                             <em>
                                 <?php the_category('- '); ?>
                             </em>
-                            <time><?php the_time('F jS, Y'); ?></time>
+                            <time><?php the_time('F j, Y'); ?></time>
                         </div>
                     </div>
                 </article>
@@ -58,7 +61,6 @@
             endwhile;
         endif;
         ?>
-
         <!-- fim post e inicio de paginaçao -->
 
         <!-- Pagination & action buttons -->
