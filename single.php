@@ -144,9 +144,18 @@ get_header(); ?>
                 <div class="col-md-7 col-md-8">
                     <div class="commentlist">
                         <div class="commentlist">
+
+                            <?php
+                            $comments = get_comments(array('post_id' => get_the_id()));
+                            ?>
+                            <ol class="commentlist">
+                                <?php wp_list_comments(); ?>
+                            </ol>
+
+
                             <?php
                             wp_list_comments();
-                             ?>
+                            ?>
                         </div>
                     </div>
                 </div>
