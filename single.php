@@ -189,10 +189,11 @@ get_header(); ?>
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <!-- ./Comments -->
+                </div>
+                <!-- ./Comments -->
 
-                    <!-- Go top button/arrow -->
-                    <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+                <!-- Go top button/arrow -->
+                <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
 
