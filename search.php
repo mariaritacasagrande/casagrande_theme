@@ -39,16 +39,15 @@ get_header(); ?>
                         <?php _e('No results found. Try a different search?', 'casagrande'); ?>
                     </p>
 
-                    <!-- Exibe o mesmo formulário da lateral, adaptando o <li> para <div> -->
-                    <div id="search" class="widget widget_search" style="margin-top: 10px;">
-                        <form method="get" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
-                            <input type="search" placeholder="Search" value="<?php echo esc_attr(get_search_query()); ?>"
-                                name="s" id="s">
+                    <!-- Replicamos a estrutura do sidebar exatamente -->
+                    <li id="search" class="widget widget_search">
+                        <form method="get" id="searchform" action="https://casagrande.dev/pt/">
+                            <input type="search" placeholder="Search" value="" name="s" id="s">
                             <button type="submit" form="searchform" name="submit">
                                 <i class="icon-zoom"></i>
                             </button>
                         </form>
-                    </div>
+                    </li>
                 <?php endif; ?>
             </div>
         </div>
