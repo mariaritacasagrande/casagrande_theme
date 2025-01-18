@@ -26,7 +26,7 @@ get_header(); ?>
                                     <header class="header big-heading parallax">
                                         <h1><?php the_title(); ?></h1>
                                         <div class="meta">
-                                            <?php the_time('F jS, Y') ?>
+                                            <?php the_time('F j, Y'); ?>
                                             <em>
                                                 <?php _e('post written by', 'casagrande'); ?> <a href="#"
                                                     class="author"><?php the_author_posts_link() ?></a>
