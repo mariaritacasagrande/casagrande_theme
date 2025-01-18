@@ -145,12 +145,8 @@ get_header(); ?>
                     <div class="commentlist">
                         <div class="commentlist">
                             <?php
-                            wp_list_comments(array(
-                                'short_ping' => true,
-                                'avatar_size' => 50,
-
-                            ));
-                            ?>
+                            wp_list_comments();
+                             ?>
                         </div>
                     </div>
                 </div>
