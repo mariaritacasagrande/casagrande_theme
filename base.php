@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Base
+*/
+?>
+
 <?php get_header(); ?>
 
 <!-- Main content -->
@@ -76,4 +82,6 @@
             <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
+
+
 <?php get_footer(); ?>
