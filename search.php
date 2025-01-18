@@ -40,7 +40,7 @@ get_header(); ?>
                     </p>
 
                     <!-- Replicamos a estrutura do sidebar exatamente -->
-                    <div class="blog-sidebar">
+                    <div class="blog-sidebar col-md-3 col-md-pull-6 fixed-position">
                         <ul class="list-unstyled" style="width: 198px;">
                             <li id="search" class="widget widget_search">
                                 <form method="get" id="searchform" action="https://casagrande.dev/pt/">
