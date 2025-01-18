@@ -137,58 +137,7 @@ get_header(); ?>
 
                 <div class="col-md-7 col-md-8">
 
-                    <div class="commentlist">
 
-                        <?php
-                        // Antes do foreach: buscar comentários aprovados do post atual
-                        $comment_args = array(
-                            'post_id' => get_the_ID(),
-                            'status' => 'approve',
-                        );
-
-                        // Pega os comentários
-                        $comments = get_comments($comment_args);
-                        ?>
-
-                        <div class="commentlist-item">
-                            <?php foreach ($comments as $comment): ?>
-                                <div class="comment even">
-                                    <div class="avatar-holder">
-                                        <?php echo get_avatar($comment, 33, '', '', array('class' => 'img-responsive')); ?>
-                                        <div class="holder">
-                                            <h2>
-                                                <a href="<?php echo esc_url(get_comment_author_url($comment)); ?>">
-                                                    <?php echo esc_html($comment->comment_author); ?>
-                                                </a>
-                                            </h2>
-                                            <time datetime="<?php echo get_comment_date('Y-m-d', $comment); ?>">
-                                                <?php echo get_comment_date('jS M, Y', $comment); ?>
-                                            </time>
-                                        </div>
-                                    </div>
-
-                                    <div class="commentlist-holder">
-                                        <p><?php echo wp_kses_post($comment->comment_content); ?></p>
-
-                                        <?php
-                                        // Gerar link de resposta ao comentário:
-                                        // - 'depth' = nível do comentário (se não soubermos, use 1 para a raiz)
-                                        // - 'max_depth' = quantos níveis encadeados você quer (ex.: 5)
-                                        $reply_args = array(
-                                            'reply_text' => 'reply',        // texto do link
-                                            'depth' => 1,              // se não sabe a profundidade real, inicie com 1
-                                            'max_depth' => 5,              // limite de "aninhamento"
-                                            'comment' => $comment->comment_ID,
-                                            'post_id' => get_the_ID(),
-                                            'class' => 'pull-right reply',
-                                        );
-                                        comment_reply_link($reply_args);
-                                        ?>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
                 </div>
                 <!-- ./Comments -->
 
