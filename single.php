@@ -141,6 +141,7 @@ get_header(); ?>
                 <div class="col-md-7 col-md-8">
 
                     <div class="commentlist">
+
                         <?php
                         // Antes do foreach:
                         $comment_args = array(
@@ -149,22 +150,30 @@ get_header(); ?>
                         );
                         $comments = get_comments($comment_args);
                         ?>
-
                         <div class="commentlist-item">
-                            <?php foreach ($comments as $comment): ?>
+
+                            <?php foreach (get_comments($comment_args) as $comment): ?>
+
+
                                 <div class="comment even">
                                     <div class="avatar-holder">
                                         <?php echo get_avatar($comment, 33); ?>
                                         <div class="holder">
                                             <h2><?php echo $comment->comment_author; ?></h2>
+
                                         </div>
                                     </div>
                                     <div class="commentlist-holder">
                                         <?php echo $comment->comment_content; ?>
+
                                     </div>
                                 </div>
+
                             <?php endforeach; ?>
+
+
                         </div>
+
 
 
 
