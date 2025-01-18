@@ -1,13 +1,12 @@
 <?php
 /**
  * search.php
- * Template de resultados de busca, exibindo formulário de busca
- * com o mesmo estilo do widget lateral.
+ * Template de resultados de pesquisa com "No results found" + formulário custom
  */
+
 get_header(); ?>
 
 <main id="main" class="container mar-btm-xlg">
-
     <div class="row heading-section">
         <div class="intro">
             <div class="col-sm-6 col-sm-offset-6">
@@ -17,7 +16,9 @@ get_header(); ?>
                     printf(__('Results for: %s', 'casagrande'), get_search_query());
                     ?>
                 </h1>
+
                 <?php if (have_posts()): ?>
+                    <!-- Se existirem posts correspondentes à pesquisa -->
                     <p>
                         <?php
                         global $wp_query;
@@ -33,27 +34,27 @@ get_header(); ?>
                         ?>
                     </p>
                 <?php else: ?>
+                    <!-- Se NÃO houver resultados -->
                     <p>
                         <?php _e('No results found. Try a different search?', 'casagrande'); ?>
                     </p>
-                <?php endif; ?>
 
-                <!-- Aqui insira o formulário com o mesmo estilo do widget "lateral" -->
-                <div id="search" class="widget widget_search" style="margin-top:20px;">
-                    <form method="get" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
-                        <input type="search" placeholder="Search" value="<?php echo esc_attr(get_search_query()); ?>"
-                            name="s" id="s" />
-                        <button type="submit" form="searchform" name="submit">
-                            <i class="icon-zoom"></i>
-                        </button>
-                    </form>
-                </div>
-                <!-- /formulário estilizado como o widget -->
+                    <!-- Exibe o mesmo formulário da lateral, adaptando o <li> para <div> -->
+                    <div id="search" class="widget widget_search" style="margin-top: 10px;">
+                        <form method="get" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
+                            <input type="search" placeholder="Search" value="<?php echo esc_attr(get_search_query()); ?>"
+                                name="s" id="s">
+                            <button type="submit" form="searchform" name="submit">
+                                <i class="icon-zoom"></i>
+                            </button>
+                        </form>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
 
-    <!-- Loop de resultados da busca -->
+    <!-- Loop de resultados, caso existam -->
     <div class="search-results-list row">
         <div class="col-sm-12">
             <?php if (have_posts()): ?>
@@ -79,12 +80,9 @@ get_header(); ?>
                     ));
                     ?>
                 </div>
-            <?php else: ?>
-                <p><?php _e('No results found.', 'casagrande'); ?></p>
             <?php endif; ?>
         </div>
     </div><!-- /.search-results-list -->
-
 </main>
 
 <?php get_footer(); ?>
