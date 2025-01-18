@@ -145,11 +145,9 @@ get_header(); ?>
                     <div class="commentlist">
                         <div class="commentlist">
 
-                            <?php
-                            $comments = get_comments(array('post_id' => get_the_id()));
-                            ?>
+                            <?php wp_list_comments(); ?>
                             <ol class="commentlist">
-                                <?php wp_list_comments(); ?>
+
                             </ol>
 
 
