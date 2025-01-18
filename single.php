@@ -157,7 +157,7 @@ get_header(); ?>
                 </div>
             </div>
             <!-- ./Comments -->
-            <?php wp_list_comments(); ?>
+
             <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
     </main><!-- Fecha #main -->
 
