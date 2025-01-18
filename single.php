@@ -140,12 +140,51 @@ get_header(); ?>
 
                 <div class="col-md-7 col-md-8">
 
-                </div>
-                <!-- ./Comments -->
+                    <div class="commentlist">
+                        <?php
+                        // Antes do foreach:
+                        $comment_args = array(
+                            'post_id' => get_the_ID(),
+                            'status' => 'approve',
+                        );
+                        $comments = get_comments($comment_args);
+                        ?>
+
+                        <div class="commentlist-item">
+                            <?php foreach ($comments as $comment): ?>
+                                <div class="comment even">
+                                    <div class="avatar-holder">
+                                        <?php echo get_avatar($comment, 33); ?>
+                                        <div class="holder">
+                                            <h2><?php echo $comment->comment_author; ?></h2>
+                                        </div>
+                                    </div>
+                                    <div class="commentlist-holder">
+                                        <?php echo $comment->comment_content; ?>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
 
 
-                <!-- Go top button/arrow -->
-                <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <!-- ./Comments -->
+
+
+                    <!-- Go top button/arrow -->
+                    <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
 
