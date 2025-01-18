@@ -50,35 +50,17 @@
 <!-- notice that in case you want to add any effect, you will need to choose -->
 <!-- from one or another. Both filters could cause unexpected behaviors -->
 
-<?php
-// Valores padrão (caso nada mais seja detectado)
-$body_class = 'portfolio-page fltrs-fx-fade fltrs-scale';
-$data_page = 'portfolio';
-
-// 1) Single de post do Blog
-if (is_singular('post')) {
-	$body_class = 'blog-left-sidebar single-post big-heading';
-	$data_page = 'singleBlogPage';
-
-	// 2) Página do blog (listagem) - se estiver usando a página "blog" para mostrar posts
-} elseif (is_page('blog')) {
-	$body_class = 'blog blog-page';
-	$data_page = 'blogPage';
-
-	// 3) Single de Project (CPT) - se seu post type se chama "project"
-} elseif (is_singular('project')) {
-	$body_class = 'portfolio-single';
-	$data_page = 'singleProjectPage';
-
-	// 4) Página "about"
-} elseif (is_page('about')) {
-	$body_class = 'about';
-	$data_page = 'regular';
+<body class="<?php if (is_single()) {
+	echo 'blog-left-sidebar single-post big-heading top-page compact-menu-enabled';
+} else {
+	echo 'portfolio-page fltrs-fx-fade fltrs-scale';
 }
-
-?>
-
-<body class="<?php echo esc_attr($body_class); ?>" data-page="<?php echo esc_attr($data_page); ?>">
+?>" data-page="<?php if (is_single()) {
+	echo 'singleBlogPage';
+} else {
+	echo 'portfolio';
+}
+?>">
 	<!-- Preloader -->
 	<div id="preloader">
 		<span class="preloader-ani"></span>
