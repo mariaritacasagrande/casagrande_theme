@@ -139,37 +139,13 @@ get_header(); ?>
                 </div>
 
                 <div class="col-md-7 col-md-8">
-                    <div class="commentlist">
-                        <div class="commentlist-item">
 
-                            <?php foreach (get_comments($comment_args) as $comment): ?>
-
-
-                                <div class="comment even">
-                                    <div class="avatar-holder">
-                                        <img src="images/comment-avatar-01.png" height="33" width="33"
-                                            alt="image description" class="img-responsive">
-                                        <div class="holder">
-                                            <h2><?php echo $comment->comment_author; ?></h2>
-
-                                        </div>
-                                    </div>
-                                    <div class="commentlist-holder">
-                                        <?php echo $comment->comment_content; ?>
-
-                                    </div>
-                                </div>
-
-                            <?php endforeach; ?>
+                </div>
+                <!-- ./Comments -->
 
 
-                        </div>
-                    </div>
-                    <!-- ./Comments -->
-
-
-                    <!-- Go top button/arrow -->
-                    <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+                <!-- Go top button/arrow -->
+                <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
 
