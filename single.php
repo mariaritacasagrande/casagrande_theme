@@ -182,7 +182,12 @@ get_header(); ?>
                                 <?php endforeach; ?>
                             <?php else: ?>
                                 <!-- Mensagem quando não existem comentários -->
-                                <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?></p>
+                                <div class="commentlist-holder">
+                                    <p><?php _e('No comments yet. Be the first to share your thoughts!', 'casagrande'); ?>
+                                    </p>
+
+                                </div>
+
                             <?php endif; ?>
                         </div><!-- /.commentlist-item -->
                     </div><!-- /.commentlist -->
