@@ -10215,12 +10215,12 @@ ul {
 }
 
 body {
-    font-family: "Work Sans",HelveticaNeue,helvetica,Arial,sans-serif!important;
+    font-family: "neuzeit_groteskregular",HelveticaNeue,helvetica,Arial,sans-serif!important;
     color: #1d1d1d
 }
 
 .alt-font,.avatar-holder .holder time,.blog-sidebar input,.claim,.comments-section span,.filter-nav li a,.header .meta>em,.heading-section small,.media-container .caption .holder,.portfolio-grid .caption span,.slider-module .carousel-inner .carousel-caption span,.testimonial-title,figcaption,h1,h2,h3,h4 {
-    font-family: lora,times,serif
+    font-family: neuzeit_groteskregular,times,serif
 }
 
 ::-moz-selection {
