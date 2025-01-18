@@ -143,11 +143,13 @@ get_header(); ?>
                     <div class="commentlist">
 
                         <?php
-                        // Antes do loop, defina $comment_args para buscar comentários do post atual
+                        // Antes do foreach: buscar comentários aprovados do post atual
                         $comment_args = array(
                             'post_id' => get_the_ID(),
                             'status' => 'approve',
                         );
+
+                        // Pega os comentários
                         $comments = get_comments($comment_args);
                         ?>
 
@@ -155,23 +157,13 @@ get_header(); ?>
                             <?php foreach ($comments as $comment): ?>
                                 <div class="comment even">
                                     <div class="avatar-holder">
-                                        <!-- Seta o avatar real do usuário -->
-                                        <?php
-                                        // 33 é o tamanho (px) do avatar
-                                        // 'class' => 'img-responsive' para manter o mesmo estilo do seu snippet
-                                        echo get_avatar($comment, 33, '', '', array('class' => 'img-responsive'));
-                                        ?>
+                                        <?php echo get_avatar($comment, 33, '', '', array('class' => 'img-responsive')); ?>
                                         <div class="holder">
-                                            <!-- Autor -->
                                             <h2>
-                                                <!-- Aqui você pode usar get_comment_author_url() para linkar ao site do autor, se houver -->
                                                 <a href="<?php echo esc_url(get_comment_author_url($comment)); ?>">
                                                     <?php echo esc_html($comment->comment_author); ?>
                                                 </a>
                                             </h2>
-
-                                            <!-- Data do comentário -->
-                                            <!-- datetime no formato '2023-10-05', e exibição do tipo '5th Oct, 2023' -->
                                             <time datetime="<?php echo get_comment_date('Y-m-d', $comment); ?>">
                                                 <?php echo get_comment_date('jS M, Y', $comment); ?>
                                             </time>
@@ -179,11 +171,22 @@ get_header(); ?>
                                     </div>
 
                                     <div class="commentlist-holder">
-                                        <!-- Texto do comentário -->
                                         <p><?php echo wp_kses_post($comment->comment_content); ?></p>
 
-                                        <!-- Link de reply (estático). Se quiser funcional, use comment_reply_link() -->
-                                        <a href="#" class="pull-right reply">reply</a>
+                                        <?php
+                                        // Gerar link de resposta ao comentário:
+                                        // - 'depth' = nível do comentário (se não soubermos, use 1 para a raiz)
+                                        // - 'max_depth' = quantos níveis encadeados você quer (ex.: 5)
+                                        $reply_args = array(
+                                            'reply_text' => 'reply',        // texto do link
+                                            'depth' => 1,              // se não sabe a profundidade real, inicie com 1
+                                            'max_depth' => 5,              // limite de "aninhamento"
+                                            'comment' => $comment->comment_ID,
+                                            'post_id' => get_the_ID(),
+                                            'class' => 'pull-right reply',
+                                        );
+                                        comment_reply_link($reply_args);
+                                        ?>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
