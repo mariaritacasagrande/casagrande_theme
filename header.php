@@ -45,42 +45,56 @@
 
 <body class="blog-left-sidebar single-post big-heading" data-page="singleBlogPage"></body>
 
+<body class="<?php
+if (is_singular('post')) {
+	// Se for SINGLE de post (blog):
+	echo 'blog-left-sidebar single-post big-heading top-page compact-menu-enabled';
+} else {
+	// Para tudo que não seja post do blog (inclusive single-project)
+	echo 'portfolio-page fltrs-fx-fade fltrs-scale';
+}
+?>" data-page="<?php
+if (is_singular('post')) {
+	echo 'singleBlogPage';
+} else {
+	echo 'portfolio';
+}
+?>">
+	<!-- Preloader -->
+	<div id="preloader">
+		<span class="preloader-ani"></span>
+	</div>
 
-<!-- Preloader -->
-<div id="preloader">
-	<span class="preloader-ani"></span>
-</div>
+	<div id="wrapper">
+		<!-- Head, logo & navigation -->
+		<header id="header" class="container-fluid">
+			<div class="container">
+				<nav class="navbar">
+					<div class="navbar-header">
+						<button aria-controls="navbar" aria-expanded="false" data-target="#navbar"
+							data-toggle="collapse" class="navbar-toggle collapsed" type="button"><span></span></button>
+						<!-- Logo -->
+						<div class="logo">
 
-<div id="wrapper">
-	<!-- Head, logo & navigation -->
-	<header id="header" class="container-fluid">
-		<div class="container">
-			<nav class="navbar">
-				<div class="navbar-header">
-					<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
-						class="navbar-toggle collapsed" type="button"><span></span></button>
-					<!-- Logo -->
-					<div class="logo">
-
-						<a href="<?php echo get_site_url(); ?>"><img
-								srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
-								src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="45" height="69"
-								alt="Maria Rita Casagrande - Full Stack Developer"></a>
+							<a href="<?php echo get_site_url(); ?>"><img
+									srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
+									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="45"
+									height="69" alt="Maria Rita Casagrande - Full Stack Developer"></a>
+						</div>
 					</div>
-				</div>
-				<!-- Main navigation -->
-				<div class="collapse navbar-collapse" id="navbar">
-					<?php
-					wp_nav_menu(array(
-						'theme_location' => 'primary', // 
-						'container' => false,
-						'menu_class' => 'nav navbar-nav',
-						'fallback_cb' => false,
-						'walker' => new Custom_Nav_Walker(),
-					));
-					?>
-				</div>
-			</nav> <!-- ./Main navigation -->
-		</div>
+					<!-- Main navigation -->
+					<div class="collapse navbar-collapse" id="navbar">
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'primary', // 
+							'container' => false,
+							'menu_class' => 'nav navbar-nav',
+							'fallback_cb' => false,
+							'walker' => new Custom_Nav_Walker(),
+						));
+						?>
+					</div>
+				</nav> <!-- ./Main navigation -->
+			</div>
 
-	</header>
+		</header>
