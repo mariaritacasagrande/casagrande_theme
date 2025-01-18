@@ -140,7 +140,7 @@ get_header(); ?>
 
                 <div class="col-md-7 col-md-8">
                     <div class="commentlist">
-                        <div>
+                        <ol class="commentlist">
                             <?php $comment_args = array(
                                 'comment_notes_after' => '',
                                 'title_reply' => 'Have something to say?'
@@ -152,15 +152,14 @@ get_header(); ?>
                                     "<?php echo $comment->comment_content; ?>".
                                 </div>
                             <?php endforeach; ?>
-                        </div>
+                        </ol>
                     </div>
                 </div>
-            </div>
-            <!-- ./Comments -->
+                <!-- ./Comments -->
 
 
-            <!-- Go top button/arrow -->
-            <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
+                <!-- Go top button/arrow -->
+                <a href="#wrapper" class="btn-top go js-link"><i class="arrow right-arrow"></i></a>
 
 </main>
 
