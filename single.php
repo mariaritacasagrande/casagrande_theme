@@ -142,14 +142,21 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="col-md-7 col-md-8">
-                    <?php wp_list_comments(); ?>
+
                     <div class="commentlist">
                         <div class="commentlist">
 
-
-                            <ol class="commentlist">
-
-                            </ol>
+                            <?php $comment_args = array(
+                                'comment_notes_after' => '',
+                                'title_reply' => 'Have something to say?'
+                            )
+                                ?>
+                            <?php foreach (get_comments($comment_args) as $comment): ?>
+                                <div>
+                                    <?php echo $comment->comment_author; ?> said:
+                                    "<?php echo $comment->comment_content; ?>".
+                                </div>
+                            <?php endforeach; ?>
 
 
 
