@@ -20,37 +20,26 @@
                         <div class="img-holder">
 
                             <div class="img-holder">
-                                <a href="single-post.html">
-                                    <img src="images/blog-feat-img/img12.jpg" width="455" height="640" alt="image description"
-                                        class="img-responsive lazy">
+                                <a href="<?php the_permalink(); ?>">
+                                    <img src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" width="455" height="640"
+                                        alt="image description" class="img-responsive lazy">
                                     <div class="caption text-center text-lowercase">
                                         <span class="holder"><i class="arrow right-arrow"></i></span>
                                     </div>
                                 </a>
                             </div>
 
-
-
-                            <a href="<?php the_permalink(); ?>" rel="bookmark"
-                                title="Permanent Link to <?php the_title_attribute(); ?>">
-                                <img src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" width="455" height="640"
-                                    alt="<?php the_title_attribute(); ?>" class="img-responsive lazy">
-                                <div class="caption text-center text-lowercase">
-                                    <span class="holder"><i class="arrow right-arrow"></i></span>
+                            <div class="text">
+                                <h2><a href="<?php the_permalink() ?>" rel="bookmark"
+                                        title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                                <p class="excerpt"><?php the_excerpt(); ?><span class="post-grad"></span></p>
+                                <div class="meta">
+                                    <em>
+                                        <?php the_category('- '); ?>
+                                    </em>
+                                    <time><?php the_time('F j, Y') ?></time>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h2><a href="<?php the_permalink() ?>" rel="bookmark"
-                                    title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-                            <p class="excerpt"><?php the_excerpt(); ?><span class="post-grad"></span></p>
-                            <div class="meta">
-                                <em>
-                                    <?php the_category('- '); ?>
-                                </em>
-                                <time><?php the_time('F j, Y') ?></time>
                             </div>
-                        </div>
                     </article>
 
                     <?php $count++;
