@@ -18,6 +18,19 @@
 
                     <article class="post-article col-sm-4 col-xs-12">
                         <div class="img-holder">
+
+                            <div class="img-holder">
+                                <a href="single-post.html">
+                                    <img src="images/blog-feat-img/img12.jpg" width="455" height="640" alt="image description"
+                                        class="img-responsive lazy">
+                                    <div class="caption text-center text-lowercase">
+                                        <span class="holder"><i class="arrow right-arrow"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+
+
+
                             <a href="<?php the_permalink(); ?>" rel="bookmark"
                                 title="Permanent Link to <?php the_title_attribute(); ?>">
                                 <img src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" width="455" height="640"
@@ -35,7 +48,7 @@
                                 <em>
                                     <?php the_category('- '); ?>
                                 </em>
-                                <time><?php the_time('F jS, Y') ?></time>
+                                <time><?php the_time('F j, Y') ?></time>
                             </div>
                         </div>
                     </article>
