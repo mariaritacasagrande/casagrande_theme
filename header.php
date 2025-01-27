@@ -70,7 +70,7 @@ if (is_singular('post')) {
 
 							<a href="<?php echo get_site_url(); ?>"><img
 									srcset="<?php echo get_template_directory_uri(); ?>/images/logo@2x.png 2x"
-									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="45"
+									src="<?php echo get_template_directory_uri(); ?>/images/logo.png" width="69"
 									height="69" alt="Maria Rita Casagrande - Full Stack Developer"></a>
 						</div>
 					</div>
