@@ -61,31 +61,31 @@ get_header(); ?>
 
 
 
-    <!-- Pagination & action buttons -->
-    <div class="container-fluid link-area">
-        <div class="container links-section">
-            <div class="col-md-4 col-xs-12 col-md-push-4 clearfix text-center">
-                <ul class="list-inline links-holder">
-                    <li><a href="blog.html"><?php _e('Back', 'casagrande'); ?></a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal"><?php _e('Share', 'casagrande'); ?></a>
-                    </li>
-                </ul>
-            </div>
+     <!-- Pagination & action buttons -->
+            <div class="container-fluid link-area">
+                <div class="container links-section">
+                    <div class="col-md-4 col-xs-12 col-md-push-4 clearfix text-center">
+                        <ul class="list-inline links-holder">
+                            <li><a href="<?php echo get_site_url(); ?>"><?php _e('Back', 'casagrande'); ?></a></li>
+                            <li><a href="#" data-toggle="modal"
+                                    data-target="#myModal"><?php _e('Share', 'casagrande'); ?></a></li>
+                        </ul>
+                    </div>
 
-            <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
-                <a href="#" class="link prev-post">
-                    <span class="arrow left-arrow"></span>Wellington bar
-                </a>
-            </div>
-            <div class="pag pag-next col-md-4 col-xs-6 text-right">
-                <a href="#" class="link add next-post">New project for Adidas
-                    <span class="arrow right-arrow"></span>
-                </a>
-            </div>
+                    <div class="pag pag-prev col-md-4 col-xs-6 col-md-pull-4">
+                        <span class="link prev-post"><?php previous_post_link('%link'); ?>
+                            <span class="arrow left-arrow"></span>
+                        </span>
+                    </div>
+                    <div class="pag pag-next col-md-4 col-xs-6 text-right">
+                        <span class="link add next-post"><?php next_post_link('%link'); ?>
+                            <span class="arrow right-arrow"></span></span>
 
-        </div>
-    </div>
-    <!-- ./Pagination & action buttons -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- ./Pagination & action buttons -->
 
     <!-- Comments -->
     <div class="container comments-section">
