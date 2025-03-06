@@ -551,9 +551,9 @@ jQuery(document).ready(function ($) {
 						map.setMapTypeId('map_style');
 						var myLatlng = new google.maps.LatLng(-23.501556001565184, -46.69854068803276);
 						var image = new google.maps.MarkerImage(
-							'https://casagrande.dev/wp-content/uploads/2025/01/map-logo.png',
+							'../images/map-logo.png',
 							new google.maps.Size(58, 65),
-							new google.maps.Point(0, 0),
+							new google.maps.Point(58, 65),
 							new google.maps.Point(24, 62)
 						);
 
