@@ -336,349 +336,350 @@ jQuery(document).ready(function ($) {
 					}
 				},
 				// set Google Maps when it is in use
-				setMap: function () {
-					var map;
-					function initialize() {
-						var styles = [
-							{
-								"featureType": "all",
-								"elementType": "labels.text.fill",
-								"stylers": [
-									{
-										"saturation": 36
-									},
-									{
-										"color": "#333333"
-									},
-									{
-										"lightness": 40
-									}
-								]
-							},
-							{
-								"featureType": "all",
-								"elementType": "labels.text.stroke",
-								"stylers": [
-									{
-										"visibility": "on"
-									},
-									{
-										"color": "#ffffff"
-									},
-									{
-										"lightness": 16
-									}
-								]
-							},
-							{
-								"featureType": "all",
-								"elementType": "labels.icon",
-								"stylers": [
-									{
-										"visibility": "off"
-									}
-								]
-							},
-							{
-								"featureType": "administrative",
-								"elementType": "geometry.fill",
-								"stylers": [
-									{
-										"color": "#fefefe"
-									},
-									{
-										"lightness": 20
-									}
-								]
-							},
-							{
-								"featureType": "administrative",
-								"elementType": "geometry.stroke",
-								"stylers": [
-									{
-										"color": "#fefefe"
-									},
-									{
-										"lightness": 17
-									},
-									{
-										"weight": 1.2
-									}
-								]
-							},
-							{
-								"featureType": "administrative.locality",
-								"elementType": "labels.text",
-								"stylers": [
-									{
-										"color": "#8d8d8d"
-									},
-									{
-										"weight": "0.35"
-									}
-								]
-							},
-							{
-								"featureType": "landscape",
-								"elementType": "geometry",
-								"stylers": [
-									{
-										"color": "#f5f5f5"
-									},
-									{
-										"lightness": 20
-									}
-								]
-							},
-							{
-								"featureType": "poi",
-								"elementType": "geometry",
-								"stylers": [
-									{
-										"color": "#f5f5f5"
-									},
-									{
-										"lightness": 21
-									}
-								]
-							},
-							{
-								"featureType": "poi.park",
-								"elementType": "geometry",
-								"stylers": [
-									{
-										"color": "#dedede"
-									},
-									{
-										"lightness": 21
-									}
-								]
-							},
-							{
-								"featureType": "road.highway",
-								"elementType": "geometry.fill",
-								"stylers": [
-									{
-										"color": "#ffffff"
-									},
-									{
-										"lightness": 17
-									}
-								]
-							},
-							{
-								"featureType": "road.highway",
-								"elementType": "geometry.stroke",
-								"stylers": [
-									{
-										"color": "#ffffff"
-									},
-									{
-										"lightness": 29
-									},
-									{
-										"weight": 0.2
-									}
-								]
-							},
-							{
-								"featureType": "road.arterial",
-								"elementType": "geometry",
-								"stylers": [
-									{
-										"color": "#ffffff"
-									},
-									{
-										"lightness": 18
-									}
-								]
-							},
-							{
-								"featureType": "road.local",
-								"elementType": "geometry",
-								"stylers": [
-									{
-										"color": "#ffffff"
-									},
-									{
-										"lightness": 16
-									}
-								]
-							},
-							{
-								"featureType": "transit",
-								"elementType": "geometry",
-								"stylers": [
-									{
-										"color": "#f2f2f2"
-									},
-									{
-										"lightness": 19
-									}
-								]
-							},
-							{
-								"featureType": "water",
-								"elementType": "geometry",
-								"stylers": [
-									{
-										"color": "#e9e9e9"
-									},
-									{
-										"lightness": 17
-									}
-								]
-							}
-						];
-						//add here your location via latitude and longitud
-						var styledMap = new google.maps.StyledMapType(styles, { name: "Styled Map" });
-						var latlng = new google.maps.LatLng(-23.501556001565184, -46.69854068803276);
-						var mapOptions = {
-							zoom: 13,
-							center: latlng,
-							mapTypeId: google.maps.MapTypeId.ROADMAP,
-							navigationControl: false,
-							streetViewControl: false,
-							mapTypeControl: false,
-							scaleControl: false,
-							scrollwheel: false,
-							disableDefaultUI: true,
-							draggable: !("ontouchend" in document)
-						};
-						//add here your location via latitude and longitud for your map poi/image   
-						map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-						map.mapTypes.set('map_style', styledMap);
-						map.setMapTypeId('map_style');
-						var myLatlng = new google.maps.LatLng(-23.501556001565184, -46.69854068803276);
-						var image = new google.maps.MarkerImage(
-							'../images/map-logo.png',
-							new google.maps.Size(58, 65),
-							new google.maps.Point(58, 65),
-							new google.maps.Point(24, 62)
-						);
+			setMap : function(){
+                var map;
+                function initialize() {
+                var styles=[
+				    {
+				        "featureType": "all",
+				        "elementType": "labels.text.fill",
+				        "stylers": [
+				            {
+				                "saturation": 36
+				            },
+				            {
+				                "color": "#333333"
+				            },
+				            {
+				                "lightness": 40
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "all",
+				        "elementType": "labels.text.stroke",
+				        "stylers": [
+				            {
+				                "visibility": "on"
+				            },
+				            {
+				                "color": "#ffffff"
+				            },
+				            {
+				                "lightness": 16
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "all",
+				        "elementType": "labels.icon",
+				        "stylers": [
+				            {
+				                "visibility": "off"
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "administrative",
+				        "elementType": "geometry.fill",
+				        "stylers": [
+				            {
+				                "color": "#fefefe"
+				            },
+				            {
+				                "lightness": 20
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "administrative",
+				        "elementType": "geometry.stroke",
+				        "stylers": [
+				            {
+				                "color": "#fefefe"
+				            },
+				            {
+				                "lightness": 17
+				            },
+				            {
+				                "weight": 1.2
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "administrative.locality",
+				        "elementType": "labels.text",
+				        "stylers": [
+				            {
+				                "color": "#8d8d8d"
+				            },
+				            {
+				                "weight": "0.35"
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "landscape",
+				        "elementType": "geometry",
+				        "stylers": [
+				            {
+				                "color": "#f5f5f5"
+				            },
+				            {
+				                "lightness": 20
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "poi",
+				        "elementType": "geometry",
+				        "stylers": [
+				            {
+				                "color": "#f5f5f5"
+				            },
+				            {
+				                "lightness": 21
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "poi.park",
+				        "elementType": "geometry",
+				        "stylers": [
+				            {
+				                "color": "#dedede"
+				            },
+				            {
+				                "lightness": 21
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "road.highway",
+				        "elementType": "geometry.fill",
+				        "stylers": [
+				            {
+				                "color": "#ffffff"
+				            },
+				            {
+				                "lightness": 17
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "road.highway",
+				        "elementType": "geometry.stroke",
+				        "stylers": [
+				            {
+				                "color": "#ffffff"
+				            },
+				            {
+				                "lightness": 29
+				            },
+				            {
+				                "weight": 0.2
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "road.arterial",
+				        "elementType": "geometry",
+				        "stylers": [
+				            {
+				                "color": "#ffffff"
+				            },
+				            {
+				                "lightness": 18
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "road.local",
+				        "elementType": "geometry",
+				        "stylers": [
+				            {
+				                "color": "#ffffff"
+				            },
+				            {
+				                "lightness": 16
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "transit",
+				        "elementType": "geometry",
+				        "stylers": [
+				            {
+				                "color": "#f2f2f2"
+				            },
+				            {
+				                "lightness": 19
+				            }
+				        ]
+				    },
+				    {
+				        "featureType": "water",
+				        "elementType": "geometry",
+				        "stylers": [
+				            {
+				                "color": "#e9e9e9"
+				            },
+				            {
+				                "lightness": 17
+				            }
+				        ]
+				    }
+				];
+                    //add here your location via latitude and longitud
+                    var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
+                    var latlng = new google.maps.LatLng(-23.501556001565184, -46.69854068803276);
+                    var mapOptions = {
+                        zoom: 13,
+                        center: latlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        navigationControl: false,
+                        streetViewControl: false,
+                        mapTypeControl: false,
+                        scaleControl: false,
+                        scrollwheel: false,
+                        disableDefaultUI: true,
+                        draggable: !("ontouchend" in document)
+                    };
+                    //add here your location via latitude and longitud for your map poi/image   
+                    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                    map.mapTypes.set('map_style', styledMap);
+                    map.setMapTypeId('map_style');
+                    var myLatlng = new google.maps.LatLng(-23.501556001565184, -46.69854068803276);
+                    var image = new google.maps.MarkerImage(
+                      'images/map-logo.png',
+                        new google.maps.Size(58,65),
+                        new google.maps.Point(0,0),
+                        new google.maps.Point(24,62)
+                    );
+                    
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        clickable: false,
+                        title: 'Buro',
+                        icon: image
+                    });
+                }
+                //initialize the map on load
+                google.maps.event.addDomListener(window, 'load', initialize);
 
-						var marker = new google.maps.Marker({
-							position: myLatlng,
-							map: map,
-							clickable: false,
-							title: 'Casagrande',
-							icon: image
-						});
-					}
-					//initialize the map on load
-					google.maps.event.addDomListener(window, 'load', initialize);
-
-					$(function () {
-						$(".zoom-in").click(function () {
-							var zoom = map.getZoom();
-							map.setZoom(zoom + 1);
-							return false;
-						});
-						$(".zoom-out").click(function () {
-							var zoom = map.getZoom();
-							map.setZoom(zoom - 1);
-							return false;
-						});
-					});
-				},
-				// controls the map´s height
-				setMapHeight: function () {
-					var map = $("#map-canvas"),
-						mapHeight = $body.find(".map-container").data("map-height");
+                $(function(){
+                  $(".zoom-in").click(function(){
+                    var zoom = map.getZoom();
+                    map.setZoom(zoom+1);
+                    return false;
+                  });
+                  $(".zoom-out").click(function(){
+                    var zoom = map.getZoom();
+                    map.setZoom(zoom-1);
+                    return false;
+                  });
+                });
+            },
+            // controls the map´s height
+            setMapHeight: function(){
+            	var map = $("#map-canvas"),
+            		mapHeight = $body.find(".map-container").data("map-height");
 					map.css("height", mapHeight);
-				}
-			},//ui
-			tweaks: {
-				// function to control hovering in touch devices
-				setTouchNav: function () {
-					$('.nav.navbar-nav').each(function () {
-						/* global TouchNav */
-						new TouchNav({
-							navBlock: this
-						});
+            }
+          },//ui
+          tweaks : {
+          	// function to control hovering in touch devices
+			setTouchNav: function() {
+				$('.nav.navbar-nav').each(function() {
+					/* global TouchNav */
+					new TouchNav({
+						navBlock: this
 					});
-				},
-				setCustomHover: function () {
-					$('.post-article .img-holder a').touchHover();
-					$('.block-holder .img-holder').touchHover();
-				},
-				setMobileNavHover: function () {
-					if ($winWidth < 769) {
-						if (!$body.hasClass('mobile')) {
-							// mouse events for small screens
-							var navItms = $("#compact-menu > ul > li");
+				});
+			},
+			setCustomHover: function() {
+				$('.post-article .img-holder a').touchHover();
+				$('.block-holder .img-holder').touchHover();
+			},
+			setMobileNavHover: function() {
+				if( $winWidth < 769 ) {
+					if( !$body.hasClass('mobile') ){
+						// mouse events for small screens
+						var navItms = $("#compact-menu > ul > li");
 							window.mar = parseInt(navItms.css("margin-bottom"));
-							$(navItms).hoverIntent(function (e) {
-								var $cache = $(this),
+						$(navItms).hoverIntent(function(e){
+							var $cache = $(this),
+								$height = $cache.find(".dropdown-menu").outerHeight(),
+								listItem = $cache.find('li'),
+								listNum = listItem.length,
+								listH = listItem.height(),
+								listTotH = listNum * listH;
+
+							if( $(this).find('.dropdown-menu').length ){
+								$cache.animate({
+									marginBottom: listTotH+window.mar
+								}, 333);
+							}
+
+						}, function(index, item){
+							var $cache = $(this),
+								$height = $cache.find(".dropdown-menu").outerHeight();
+							$cache.animate({
+								'marginBottom': window.mar
+							}, 333);
+						});
+					}else{
+						// touch events for mobile devices
+						var navLinks = $("#compact-menu > ul > li > a");
+						$(navLinks).on("touchstart", function (e) {
+						    var link = $(this), //preselect the link
+						    	linkPar = $(this).parent(); //preselect the list (parent)
+						    // if the items is already opened or has not submenus
+						    // then these items will proceed with the regular click behavior
+						    if (link.hasClass('hover') || !linkPar.find('.dropdown-menu').length) {
+								return true;
+						    } else {
+						        link.addClass("hover");
+						        $(navLinks).not(this).removeClass("hover");
+						        if(link.hasClass('hover')){
+						        	var $cache = $(navLinks).not(this).parent();
+									$cache.animate({
+										'marginBottom': window.mar
+									}, 500);
+						        }
+						        e.preventDefault();
+
+						        var $cache = $(this).parent(),
 									$height = $cache.find(".dropdown-menu").outerHeight(),
-									listItem = $cache.find('li'),
+									listItem = $(this).parent().find('ul').find('li'),
 									listNum = listItem.length,
 									listH = listItem.height(),
 									listTotH = listNum * listH;
+								window.mar = parseInt($cache.css("margin-bottom"));
 
-								if ($(this).find('.dropdown-menu').length) {
-									$cache.animate({
-										marginBottom: listTotH + window.mar
-									}, 333);
-								}
-
-							}, function (index, item) {
-								var $cache = $(this),
-									$height = $cache.find(".dropdown-menu").outerHeight();
 								$cache.animate({
+									marginBottom: listTotH+$height+15
+								}, 500);
+						        return false; //extra, and to make sure the function has consistent return points
+						    }
+						});
+						// this part controls the click out the nav area
+						var navWrap = $("#compact-menu, #overlay");
+						$(navWrap).on('touchstart', function(e) {
+							var target = $(e.target);
+							if (target.is(navWrap)) {
+								$(navLinks).removeClass("hover");
+								$(navLinks).parent().animate({
 									'marginBottom': window.mar
-								}, 333);
-							});
-						} else {
-							// touch events for mobile devices
-							var navLinks = $("#compact-menu > ul > li > a");
-							$(navLinks).on("touchstart", function (e) {
-								var link = $(this), //preselect the link
-									linkPar = $(this).parent(); //preselect the list (parent)
-								// if the items is already opened or has not submenus
-								// then these items will proceed with the regular click behavior
-								if (link.hasClass('hover') || !linkPar.find('.dropdown-menu').length) {
-									return true;
-								} else {
-									link.addClass("hover");
-									$(navLinks).not(this).removeClass("hover");
-									if (link.hasClass('hover')) {
-										var $cache = $(navLinks).not(this).parent();
-										$cache.animate({
-											'marginBottom': window.mar
-										}, 500);
-									}
-									e.preventDefault();
-
-									var $cache = $(this).parent(),
-										$height = $cache.find(".dropdown-menu").outerHeight(),
-										listItem = $(this).parent().find('ul').find('li'),
-										listNum = listItem.length,
-										listH = listItem.height(),
-										listTotH = listNum * listH;
-									window.mar = parseInt($cache.css("margin-bottom"));
-
-									$cache.animate({
-										marginBottom: listTotH + $height + 15
-									}, 500);
-									return false; //extra, and to make sure the function has consistent return points
-								}
-							});
-							// this part controls the click out the nav area
-							var navWrap = $("#compact-menu, #overlay");
-							$(navWrap).on('touchstart', function (e) {
-								var target = $(e.target);
-								if (target.is(navWrap)) {
-									$(navLinks).removeClass("hover");
-									$(navLinks).parent().animate({
-										'marginBottom': window.mar
-									}, 500);
-								}
-							});
-						}
+								}, 500);
+							}
+						});
 					}
-				},
-				// function that creates the big titles
+				}
+			},
+			// function that creates the big titles
+			
 				// when hovering the main menu navigation
 				setDropOverlay: function () {
 					if (!$body.hasClass("no-menu-hover")) {
